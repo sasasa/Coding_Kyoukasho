@@ -1,0 +1,48 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	Media
+----------------------------------------*/
+.media {
+	display: flex;
+	align-items: center;
+	padding: 20px 0;
+	border-bottom: 1px solid #e7e7e7;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.media__thumb {
+	position: relative;
+	transition: .3s;
+	width: 30%;
+	margin-right: 20px;
+	flex-shrink: 0;
+}
+.media__body {
+	font-size: 14px;
+	/* background: #e7e7e7; */
+}
+.media__catch {
+	font-weight: bold;
+}
+.media__txt {
+	margin-top: 1em;
+	font-size: 0.8em;
+}
+/*hover*/
+.media:hover {
+	color: tomato;
+}
+.media:hover .card__thumb {
+	opacity: 0.7;
+}
+@media screen and (min-width: 768px),print {
+	.media__body {
+		font-size: 16px;
+	}
+}

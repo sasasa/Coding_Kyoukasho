@@ -1,0 +1,52 @@
+/* category
+------------------------------------------------------ */
+.category {
+  & + * {
+    margin-top: 40px;
+  }
+}
+.category__list {
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(2,1fr);
+  @include small {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+.category__link {
+  display: block;
+  padding: 10px;
+  background: $c_key2;
+  font-size: 14px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.2;
+  &[aria-current] {
+    background: $c_key1;
+    color: $c_white;
+    font-weight: bold;
+  }
+}
+/*for PC*/
+@include medium {
+  .category {
+    border-bottom: 5px solid $c_key1;
+    & + * {
+      margin-top: 50px;
+    }
+  }
+  .category__list {
+    display: flex;
+    gap: 3px;
+  }
+  .category__item {
+    display: flex;
+    width: calc((100% - 12px) / 6);
+  }
+  .category__link {
+    flex-grow: 1;
+    padding: 20px 5px 15px;
+    border-radius: 6px 6px 0 0;
+    font-size: 16px;
+  }
+}

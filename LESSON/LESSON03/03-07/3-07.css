@@ -1,0 +1,32 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/*flexboxでレイアウトすることを想定した初期スタイル*/
+.btns {
+  display: flex; /*flexbox化*/
+  flex-direction: column; /*主軸を上から下に変更*/
+  align-items: center; /*交差軸方向に中央揃え*/
+	background: #e7e7e7;
+}
+@media screen and (min-width: 768px),print {
+	.btns {
+		flex-direction: row; /*主軸を左から右に変更*/
+		justify-content: center; /*主軸方向に中央揃え*/
+	}
+}
+.btns__item {
+	margin: 10px;
+  width: 80%;
+  max-width: 300px;
+	border: 1px dashed #999;
+}
+.btn {
+	display: block;
+	padding: 15px;
+	background: skyblue;
+	border-radius: 8px;
+	text-align: center;
+	text-decoration: none;
+}

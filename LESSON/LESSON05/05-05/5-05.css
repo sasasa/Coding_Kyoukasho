@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Gridの設定
+----------------------------------------*/
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 100px 100px 50vw 1fr 1fr;
+  grid-template-areas: 
+    "title"
+    "catch"
+    "visual"
+    "contents1"
+    "contents2";
+  gap: 20px;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .container {
+    grid-template-columns: 1fr 1fr 20%;
+    grid-template-rows: 200px 1fr 1fr;
+    grid-template-areas: 
+      "title title catch"
+      "visual visual catch"
+      "contents1 contents2 catch";
+  }
+}
+
+/*----------------------------------------
+	Gridアイテムの設定
+----------------------------------------*/
+.title {
+  background: #509422;
+  grid-area: title;
+}
+.catch {
+  background: #aeda90;
+  grid-area: catch;
+}
+.visual {
+  background: #e5f3db;
+  grid-area: visual;
+}
+.contents1 {
+  background: #9acd32;
+  grid-area: contents1;
+}
+.contents2 {
+  background:#c5eb7b;
+  grid-area: contents2;
+}

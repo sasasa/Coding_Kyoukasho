@@ -1,0 +1,45 @@
+/* gnav
+------------------------------------------------------ */
+.gnav {
+  display: none;
+}
+@include medium {
+  /*1行に収まるように文字サイズをvw指定（最大20px）にしています。文字サイズがリアルタイムで変動するので、グロナビのその他のサイズ指定は文字連動のem単位で指定しています。*/
+  .gnav {
+    display: block;
+    padding: 1em;
+    background: $c_key2;
+    font-size: min((20/1084)*100vw,20px);
+  }
+  .gnav__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gnav__item {
+    margin: 0 1.25em;
+  }
+  .gnav__link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 1.4em;
+      height: 1.4em;
+      margin-right: 0.3em;
+      background: url(../img/ico_paw.svg) center center / contain no-repeat;
+      vertical-align: middle;
+    }
+    &:hover,
+    &:active,
+    &[aria-current] {
+      color: $c_key3;
+      font-weight: bold;
+      &::before {
+        background-image: url(../img/ico_paw_o.svg);
+      }
+    }
+  }
+}

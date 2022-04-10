@@ -1,0 +1,46 @@
+/* page-title
+------------------------------------------------------ */
+.page-title {
+  text-align: center;
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 40px;
+    height: 32px;
+    background: url(../img/ico_paw02.svg) 0 0 / contain no-repeat;
+  }
+  & + * {
+    margin-top: 40px;
+  }
+}
+.page-title__main {
+  display: block;
+  margin-top: 10px;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+.page-title__sub {
+  display: block;
+  margin-top: 10px;
+  color: $c_key1;
+  font-size: 15px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+@include medium {
+  .page-title {
+    &::before {
+      width: 60px;
+      height: 48px;
+    }
+    & + * {
+      margin-top: 60px;
+    }
+  }
+  .page-title__main {
+    font-size: 40px;
+  }
+  .page-title__sub {
+    font-size: 20px;
+  }
+}

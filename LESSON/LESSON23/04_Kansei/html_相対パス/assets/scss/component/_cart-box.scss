@@ -1,0 +1,80 @@
+/* カート枠
+------------------------------------------------------ */
+/*上部カートBOXと下部カートBOXは同一コンポーネントとして設計しています。
+いずれも商品バリエーションのあり／なしの2パターンに対応します。
+ブロックの粒度はもっと小さくしても良いかも知れません。
+*/
+.cart-box__title {
+  padding-bottom: 10px;
+  border-bottom: 1px dashed;
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 1.2;
+  @include medium {
+    padding-bottom: 20px;
+    font-size: 30px;
+  }
+}
+.cart-box__id {
+  margin-top: 10px;
+}
+.cart-box__price {
+  font-weight: bold;
+  font-size: 20px;
+  strong {
+    color: $c_red1;
+    font-size: 28px;
+  }
+  small {
+    font-weight: normal;
+    font-size: 16px;
+  }
+}
+.cart-box__variation {
+  margin-top: 30px;
+  >.cart + .cart {
+    margin-top: 15px;
+  }
+}
+
+/*下部カート枠*/
+/*下部カート用のモディファイアです。構成要素は同じですが枠線の有無、バリエーションがある場合のレイアウト等が上部とは異なるので調整しています。*/
+.cart-box._bottom {
+  margin-top: 80px;
+  padding: 15px;
+  border: 1px solid $c_key1;
+  @include medium {
+    margin-top: 100px;
+    padding: 30px;
+    .cart-box__variation {
+      display: flex;
+      justify-content: space-between;
+      .cart {
+        width: 46.875%;
+      }
+      .cart + .cart {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+/*バリエーションなし*/
+/*商品バリエーションが無い場合場合のカート表示レイアウトを調整しています。*/
+.cart-box._single {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  .cart-box__body {
+    flex-grow: 1;
+  }
+  .cart-box__thumb {
+    flex-shrink: 0;
+    width: 100px;
+    margin-right: 20px;
+    @include medium {
+      width: 200px;
+      margin-right: 30px;
+    }
+  }
+}

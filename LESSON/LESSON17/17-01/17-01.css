@@ -1,0 +1,52 @@
+.container {
+  max-width: 1080px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.heading {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+a {
+	transition: .3s;
+}
+a:hover {
+	opacity: 0.7;
+}
+h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+/*----------------------------------------
+	button
+----------------------------------------*/
+.btn-green {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  background-color: #338833;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.btn-pink {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  background-color: #eb46a6;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+}
+.btn-gray {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  background-color: #aaaaaa;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+}

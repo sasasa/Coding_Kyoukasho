@@ -1,0 +1,33 @@
+/* お知らせ
+------------------------------------------------------ */
+.news {
+  border-top: 1px dashed $c_key1;
+  line-height: 1.5;
+}
+.news__item {
+  display: flex;
+  flex-direction: column;
+  padding: 15px 0;
+  border-bottom: 1px dashed $c_key1;
+}
+.news__link {
+  display: inline-block;
+}
+@include medium {
+  .news__item {
+    flex-direction: row;
+    align-items: center;
+    padding: 20px 0;
+  }
+  .news__data {
+    display: flex;
+    align-items: center;
+  }
+  .news__date {
+    flex-shrink: 0;
+    width: 110px;
+  }
+  .news__link {
+    margin-left: 15px;
+  }
+}

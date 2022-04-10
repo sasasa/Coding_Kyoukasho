@@ -1,0 +1,28 @@
+/*----------------------------------------
+	container
+----------------------------------------*/
+.container { /*コンテンツ最大幅を固定*/
+  max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 20px;
+	outline: 1px dashed red; /*ダミー*/
+}
+
+/*----------------------------------------
+	section
+----------------------------------------*/
+.section { /*外枠sectionはwidth:auto = 全幅*/
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.section._bg { /*背景色をつける*/
+	background: #cdecf0;
+}
+.section__ttl {
+	margin-bottom: 1em;
+	font-size: 24px;
+	letter-spacing: 0.2em;
+}
+.section__txt {
+	line-height: 1.8;
+}

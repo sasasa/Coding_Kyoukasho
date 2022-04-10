@@ -1,0 +1,76 @@
+/* ブログ一覧
+------------------------------------------------------ */
+.blog-list {
+  border-top: 1px dashed $c_key1;
+}
+.blog-list__item {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 20px 0;
+  border-bottom: 1px dashed $c_key1;
+}
+.blog-list__title {
+  font-weight: bold;
+}
+.blog-list__text,
+.blog-list__btn {
+  display: none;
+}
+.blog-list__thumb {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  margin-right: 20px;
+  background: $c_key2;
+  color: $c_key1;
+  font-weight: bold;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+@include medium {
+  .blog-list__item {
+    padding: 40px 0;
+    .tag {
+      margin-left: 30px;
+    }
+  }
+  .blog-list__title {
+    font-size: 20px;
+    line-height: 1.5;
+  }
+  .blog-list__text {
+    display: block;
+    margin-top: 10px;
+  }
+  .blog-list__btn {
+    display: block;
+    margin: 20px 0 0 auto;
+    width: 317px;
+  }
+  .blog-list__thumb {
+    overflow: hidden;
+    position: relative;
+    width: calc((318/1084)*100%);
+    height: auto;
+    margin-right: 30px;
+    font-size: 30px;
+    &::before {
+      content: "";
+      display: block;
+      padding-top: calc((190/318)*100%);
+    }
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}

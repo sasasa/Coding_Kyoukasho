@@ -1,0 +1,106 @@
+/* よくあるご質問
+------------------------------------------------------ */
+.faq {
+  margin-left: -20px;
+  margin-right: -20px;
+  dt:not(:first-child) {
+    margin-top: 20px;
+  }
+  @include medium {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/*質問*/
+.faq__question {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  background: $c_key2;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+}
+.faq__q-icon {
+  flex-shrink: 0;
+  color: $c_key1;
+  font-size: 30px;
+  line-height: 1;
+  vertical-align: middle;
+}
+.faq__q-text {
+  flex-grow: 1;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+.faq__action {
+  flex-shrink: 0;
+  position: relative;
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-left: auto;
+  &::before,
+  &::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0;
+    border-top: 1px solid;
+    transition: all .3s;
+  }
+  &::after {
+    transform: rotate(90deg);
+    .faq__question[aria-expanded="true"] & {
+      transform: rotate(0);
+    }
+  }
+}
+@include medium {
+  .faq__question {
+    padding: 15px;
+  }
+  .faq__q-icon {
+    font-size: 40px;
+  }
+  .faq__q-text {
+    margin-left: 20px;
+    font-size: 18px;
+  }
+  .faq__action {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+/*回答*/
+.faq__answer {
+  display: flex;
+  padding: 20px 20px 20px 10px;
+}
+.faq__a-icon {
+  flex-shrink: 0;
+  font-size: 30px;
+  font-weight: bold;
+  line-height: 1;
+  vertical-align: middle;
+}
+.faq__a-text {
+  margin-left: 15px;
+}
+@include medium {
+  .faq__answer {
+    padding: 20px 20px 20px 15px;
+  }
+  .faq__a-icon {
+    font-size: 40px;
+  }
+  .faq__text {
+    margin-left: 20px;
+  }
+}

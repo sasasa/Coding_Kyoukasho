@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-08</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="22-08.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Oswald&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      //ハンバーガーメニューボタンがクリックされた時
+      $('.hamburger').on('click',function(){
+        
+        //"is-open" classがついているかどうかを expanded に格納
+        const expanded = $(this).hasClass('is-open');
+        //ボタンテキストのDOMを$btnTxtに格納
+        const $btnTxt = $('.hamburger__txt');
+        //メニューのDOMを$gnavに格納
+        const $gnav = $('.gnav');
+
+        //もし expanded が falseだったら（メニューが非表示）
+        if(!expanded){
+          $(this).addClass('is-open'); //'is-open' classを追加
+          $btnTxt.text('Close'); //ボタンテキストを'Close'に変更
+          $gnav.slideDown(); //メニューを表示
+        //もし expanded が trueだったら（メニューが展開済）
+        }else {
+          $(this).removeClass('is-open'); //'is-open' classを削除
+          $btnTxt.text('Menu'); //ボタンテキストを'Menu'に変更
+          $gnav.slideUp(); //メニューを非表示
+        }
+      });
+    });
+  </script>
+</head>
+<body>
+  <header class="header">
+    <h1 class="logo header__logo"><a href="#">Grass Field</a></h1>
+    <button type="button" class="hamburger">
+      <span class="hamburger__line"></span>
+      <span class="hamburger__txt">Menu</span>
+    </button>
+    <nav class="gnav">
+      <ul class="gnav__list">
+        <li class="gnav__item"><a href="#" class="gnav__link">Grass Fieldとは</a></li>
+        <li class="gnav__item"><a href="#" class="gnav__link">事業案内</a></li>
+        <li class="gnav__item"><a href="#" class="gnav__link">会社概要</a></li>
+        <li class="gnav__item"><a href="#" class="gnav__link">商品一覧</a></li>
+        <li class="gnav__item"><a href="#" class="gnav__link">よくあるご質問</a></li>
+        <li class="gnav__item"><a href="#" class="gnav__link">お問い合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+</html>

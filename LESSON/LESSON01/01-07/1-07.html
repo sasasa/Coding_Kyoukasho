@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1-07</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="1-07.css">
+</head>
+<body>
+
+    <section class="case">
+      <h1>▼emの活用事例</h1>
+
+      <section class="case-item">
+        <h2>・本文の字下げ</h2>
+        <p class="indent-1 fz16">頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。</p>
+        <p class="indent-1 fz12">頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。頭の字下げを1em＝全角１文字分で指定しています。文字サイズの指定が変わっても常にその時の1文字分だけ字下げされます。</p>
+      </section>
+
+      <section class="case-item">
+        <h2>・リンクに付随するアイコン類</h2>
+        <p class="fz12"><a href="#" class="arw">小サイズボタン</a></p>
+        <p class="fz16"><a href="#" class="arw">標準サイズボタン</a></p>
+        <p class="fz20"><a href="#" class="arw">大サイズボタン</a></p>
+      </section>
+
+      <section class="case-item">
+        <h3>・行送り</h3>
+        <p class="article fz16">文字サイズ16px、line-height:2の行送り指定。単位をつけない場合emとして認識されます。文字サイズ16px、line-height:2の行送り指定。単位をつけない場合emとして認識されます。</p>
+        <p class="article fz12">文字サイズ12px、line-height:2の行送り指定。単位をつけない場合emとして認識されます。文字サイズ12px、line-height:2の行送り指定。単位をつけない場合emとして認識されます。</p>
+      </section>
+    </section>
+    
+    <section class="case">
+      <h1>▼remの活用事例</h1>
+
+      <section class="case-item">
+        <h2>・文字サイズにremを使った場合（pxとの比較）</h2>
+        <p class="rem-text">ブラウザの文字サイズ拡大機能を殺さないrem指定のテキスト（※ブラウザの設定を変更して確認してください）</p>
+        <p class="px-text">ブラウザの文字サイズ拡大機能が無効になるpx指定のテキスト（※ブラウザの設定を変更して確認してください）</p>
+      </section>
+
+      <section class="case-item">
+        <h2>・文字サイズにremを使った場合（1rem=16px / emとの比較）</h2>
+        <div class="rem-list">
+          <ul>
+            <li>1.125remのテキスト（18px）</li>
+            <li>1.125remのテキスト（18px）
+              <ul>
+                <li>1.125remのテキスト（18px）</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="em-list">
+          <ul>
+            <li>1.125emのテキスト（18px）</li>
+            <li>1.125emのテキスト（18px）
+              <ul>
+                <li>1.125emのテキスト（20.25px）</li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </section>
+
+    <section class="case">
+      <h1>▼vw・vhの活用事例</h1>
+
+      <section class="case-item">
+        <h2>・ファーストビュー全体を覆うようなボックスを実装する</h2>
+        <a href="1-07-mv.html" target="_blank">サンプルを見る</a>
+      </section>
+
+      <section class="case-item">
+        <h2>・縦横比率を維持したボックスを実装する</h2>
+        <div class="vw-box">1:1を維持したまま拡大・縮小</div>
+      </section>
+
+      <section class="case-item">
+        <h2>・テキストをブラウザ幅に応じてなめらかに伸縮させる</h2>
+        <p class="vw-text">font-size: 5vw;</p>
+      </section>
+      
+    </section>
+
+</body>
+</html>

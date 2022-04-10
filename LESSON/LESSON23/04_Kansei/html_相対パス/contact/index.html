@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問い合わせ | ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueのよくあるご質問ページです。">
+  <link rel="stylesheet" href="../assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="../index.html" aria-label="トップページへ戻る"><img src="../assets/img/logo_under_header.svg" alt="-nekonokomono- l'atelier Queue"></a></p>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="../products/index.html" class="gnav__link">商品一覧</a></li>
+      <li class="gnav__item"><a href="../blog/index.html" class="gnav__link">ねこブログ</a></li>
+      <li class="gnav__item"><a href="../staff/index.html" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="../faq/index.html" class="gnav__link">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="../contact/index.html" class="gnav__link" aria-current="page">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="../assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="../index.html" class="spmenu__link">トップページ</a></li>
+        <li class="spmenu__item"><a href="../products/index.html" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="../blog/index.html" class="spmenu__link">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="../staff/index.html" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="../faq/index.html" class="spmenu__link">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="../contact/index.html" class="spmenu__link" aria-current="page">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="../law/index.html" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="../privacy/index.html" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="../">ホーム</a></li>
+      <li class="breadcrumb__item"><a href="../contact/" aria-current="page">お問い合わせ</a></li>
+    </ol>
+  </nav>
+
+  <main class="main-contents">
+    <div class="container _narrow">
+
+      <h1 class="page-title">
+        <span class="page-title__main">お問い合わせ</span>
+        <span class="page-title__sub">Contact</span>
+      </h1>
+
+      <p class="page-lead">当店へのご質問・お問い合わせ等は以下のフォームからご連絡下さい。</p>
+
+      <!-- Chapter5の章末練習問題をベースに組んでありますが、PCレイアウトが2カラムではなく1カラムなので表組みは使っていません。 -->
+      <form action="#" method="POST" id="form">
+
+        <div class="contact">
+          <label for="contact_type" class="input-label">問合せ種類
+            <span class="require" aria-hidden="true">必須</span>
+          </label>
+          <div class="input-field">
+            <div class="select-wrap">
+              <select name="contact_type" id="contact_type" required>
+                <option value="" selected disabled>選択して下さい</option>
+                <option value="商品について">商品について</option>
+                <option value="購入方法について">購入方法について</option>
+                <option value="在庫・入荷情報について">在庫・入荷情報について</option>
+                <option value="その他のお問合せ">その他のお問合せ</option>
+              </select>
+            </div>
+            <p class="error-text" role="alert" aria-live="polite" aria-hidden="true">お問合せ種類を選択してください。</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <label for="contact_msg" class="input-label">お問合せ内容
+            <span class="require" aria-hidden="true">必須</span>
+          </label>
+          <div class="input-field">
+            <textarea name="contact_msg" id="contact_msg" cols="30" rows="10" placeholder="お問い合わせ内容をご記入ください。" required></textarea>
+            <p class="error-text" role="alert" aria-live="polite" aria-hidden="true">お問合せ内容を入力してください。</p>
+          </div>
+        </div>
+
+        <div class="contact">
+          <label for="name" class="input-label">お名前
+            <span class="require" aria-hidden="true">必須</span>
+          </label>
+          <div class="input-field">
+            <input type="text" id="name" name="name" placeholder="猫野三毛蔵" aria-describedby="name-description" required>
+            <p class="error-text" role="alert" aria-live="polite" aria-hidden="true">お名前を入力してください。</p>
+          </div>
+          <p class="input-note" id="name-description">※ニックネームなどでも結構です。</p>
+        </div>
+
+        <div class="contact">
+          <label for="name" class="input-label">メールアドレス
+            <span class="require" aria-hidden="true">必須</span>
+          </label>
+          <div class="input-field">
+            <input type="email" id="email" name="email" placeholder="mikezou@sample.co.jp" required>
+            <p class="error-text" role="alert" aria-live="polite" aria-hidden="true">正しい形式のメールアドレスを入力してください。</p>
+          </div>
+        </div>
+
+        <div class="btn-center">
+          <button id="submit" class="btn btn--lg btn--action btn--next">入力内容を確認する</button>
+        </div>
+
+      </form>
+
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="../assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="../assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="../index.html" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="../products/index.html" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="../blog/index.html" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="../staff/index.html" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="../faq/index.html" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="../contact/index.html" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="../law/index.html" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="../privacy/index.html" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品一覧 | ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueの商品一覧ページです。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="/" aria-label="トップページへ戻る"><img src="/assets/img/logo_under_header.svg" alt="-nekonokomono- l'atelier Queue"></a></p>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="/products/" class="gnav__link" aria-current="page">商品一覧</a></li>
+      <li class="gnav__item"><a href="/blog/" class="gnav__link">ねこブログ</a></li>
+      <li class="gnav__item"><a href="/staff/" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="/faq/" class="gnav__link">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="/contact/" class="gnav__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="/assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="/" class="spmenu__link" aria-current="page">トップページ</a></li>
+        <li class="spmenu__item"><a href="/products/" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="/blog/" class="spmenu__link">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="/staff/" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="/faq/" class="spmenu__link">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="/contact/" class="spmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="/law/" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="/privacy/" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb__item"><a href="#" aria-current="page">商品一覧</a></li>
+    </ol>
+  </nav>
+
+  <main class="main-contents">
+    <div class="container">
+
+      <h1 class="page-title">
+        <span class="page-title__main">商品一覧</span>
+        <span class="page-title__sub">Products</span>
+      </h1>
+
+      <!-- デザイン的にはタブ型をしていますが、機能的にはタブではなく単なるリンクメニューなので、
+      タブとしてのWAI-ARIAは特に設定しません。現在位置を示すaria-currentのみ追加しています。 -->
+      <!-- ブログの方のカテゴリタブとしても使用するため、汎用的な命名としています。 -->
+      <nav class="category" aria-label="商品カテゴリ">
+        <ul class="category__list">
+          <li class="category__item">
+            <a href="#" class="category__link" aria-current="page">すべて</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">レジンブローチ</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">猫用首輪</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">けりぐるみ</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">アクセサリー</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">その他雑貨</a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="grid grid--pc3col pd-card-list">
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">【焼印付】爪とぎ型キーホルダー</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd001.jpg" alt=""></figure>
+          <p class="pd-card__ribbon">新商品</p>
+          <p class="pd-card__text">可愛らしいミニチュアサイズの「猫の爪とぎ」型キーホルダー。木製ケースの裏面には猫シルエットの焼印付きでオシャレ！</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="/products/detail.html" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">肉球ブローチ（7個セット）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd002.jpg" alt=""></figure>
+          <p class="pd-card__text">定番の肉球型のレジンブローチ（7個セット）です。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">レース猫首輪（鈴付き）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd003.jpg" alt=""></figure>
+          <p class="pd-card__text">アースカラーのレース＋アンティーク調の金具でシックな印象の猫首輪です。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">レジンブローチ（三毛）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd004.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="/products/detail.html" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">ドット柄猫用首輪（鈴なし）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd005.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">けりぐるみ（青ねこ）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd006.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">猫リバーシ（茶白）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd007.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="/products/detail.html" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">猫リバーシ（黒白）</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd008.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+        <section class="grid__item pd-card">
+          <h3 class="pd-card__title">2連猫ペンダント</h3>
+          <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd009.jpg" alt=""></figure>
+          <p class="pd-card__text">商品概要説明テキストが入ります。最大60文字まで入ります。商品概要説明テキストが入ります。最大60文字まで入ります。</p>
+          <p class="pd-card__price">000円<span>(税抜)</span></p>
+          <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+        </section>
+      </div>
+
+      <!-- WPの関数から出力されるコードをそのままコピペ -->
+      <nav class="navigation pagination" role="navigation">
+        <div class="nav-links">
+          <a class="prev page-numbers" href="#">前へ</a>
+          <span aria-current="page" class="page-numbers current">1</span>
+          <a class="page-numbers" href="#">2</a>
+          <a class="page-numbers" href="#">3</a>
+          <span class="page-numbers dots">…</span>
+          <a class="page-numbers" href="#">7</a>
+          <a class="next page-numbers" href="#">次へ</a>
+        </div>
+      </nav>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="/assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="/assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="/" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="/products/" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="/blog/" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="/staff/" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="/faq/" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="/contact/" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="/law/" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="/privacy/" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

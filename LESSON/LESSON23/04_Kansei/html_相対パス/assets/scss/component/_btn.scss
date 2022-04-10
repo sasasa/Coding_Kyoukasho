@@ -1,0 +1,139 @@
+/* button
+------------------------------------------------------ */
+
+/*button共通*/
+.btn {
+  display: inline-block;
+  width: 100%;
+  padding: 15px;
+  border: 1px solid;
+  border-radius: 6px;
+  background: $c_white;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover,
+  &:focus {
+    background: $c_key2;
+    border-color: $c_key1;
+    color: $c_text;
+  }
+}
+
+/*小ボタン*/
+.s-btn {
+  display: inline-block;
+  padding: 0 1.5em;
+  background: $c_text;
+  border-radius: 6px;
+  color: $c_white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 13px;
+  &:hover,
+  &:focus {
+    background: $c_key1;
+    color: $c_white;
+  }
+  @include medium {
+    font-size: 16px;
+  }
+}
+
+/*大ボタン*/
+.btn--lg {
+  max-width: 400px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+/*アクション系*/
+.btn--action {
+  border-color: $c_key1;
+  background: $c_key1;
+  color: $c_white;
+  &:hover,
+  &:focus {
+    border-color: $c_key1;
+    background: $c_key1;
+    color: $c_white;
+    opacity: 0.7;
+  }
+}
+
+/*アイコン*/
+.btn--next {
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 0.57em;
+    height: 0.57em;
+    margin-left: 0.2em;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(45deg);
+    vertical-align: middle;
+  }
+}
+.btn--back {
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 0.57em;
+    height: 0.57em;
+    margin-right: 0.2em;
+    border-top: 2px solid;
+    border-right: 2px solid;
+    transform: rotate(-135deg);
+    vertical-align: middle;
+  }
+}
+
+/*カートボタン*/
+.btn--cart {
+  padding: 10px;
+  border-color: transparent;
+  background: $c_key1;
+  color: $c_white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all .3s;
+  &:hover,
+  &:focus {
+    border-color: transparent;
+    background: $c_key1;
+    color: $c_white;
+    opacity: 0.7;
+  }
+  &::before {
+    content:"";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+    background: url(../img/ico_cart.svg) center center / contain no-repeat;
+    vertical-align: middle;
+  }
+}
+
+/*中央配置ボタン*/
+.btn-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+  >* + * {
+    margin-top: 20px;
+  }
+  @include medium {
+    flex-direction: row;
+    >* + * {
+      margin-top: 0;
+      margin-left: 20px;
+    }
+  }
+}

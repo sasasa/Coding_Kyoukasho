@@ -1,0 +1,77 @@
+/* pagenation
+------------------------------------------------------ */
+//for the_posts_pagination()
+
+.pagination {
+  margin-top: 50px;
+  .nav-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .page-numbers {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: min((40/375)*100vw,40px);
+    height: min((40/375)*100vw,40px);
+    margin: 0 2px;
+    padding: 0 0.5em;
+    background: $c_key2;
+    border-radius: 6px;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: min((14/375)*100vw,14px);
+    &.current {
+      background: $c_key1;
+      color: $c_white;
+    }
+    &.dots {
+      min-width: 0;
+      padding: 0;
+      background: none;
+    }
+    &.prev {
+      padding: 0 0.8em;
+      &::before {
+        content: "";
+        display: inline-block;
+        width: 0.57em;
+        height: 0.57em;
+        border-top: 2px solid;
+        border-left: 2px solid;
+        transform: rotate(-45deg);
+        vertical-align: middle;
+      }
+    }
+    &.next {
+      padding: 0 0.8em;
+      &::after {
+        content: "";
+        display: inline-block;
+        width: 0.57em;
+        height: 0.57em;
+        border-top: 2px solid;
+        border-right: 2px solid;
+        transform: rotate(45deg);
+        vertical-align: middle;
+      }
+    }
+  }
+}
+/*for PC*/
+@include medium {
+  .pagination {
+    margin-top: 80px;
+    .page-numbers {
+      min-width: 50px;
+      height: 50px;
+      margin: 0 5px;
+      font-size: 18px;
+      &.prev,
+      &.next {
+        padding: 0 1.5em;
+      }
+    }
+  }
+}

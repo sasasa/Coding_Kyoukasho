@@ -1,0 +1,64 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	TOPページ専用
+----------------------------------------*/
+
+/* main-visual
+----------------------------------------*/
+.main-visual {
+  background: #37952F;
+  color: #fff;
+}
+.main-visual__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+}
+.main-visual__image {
+  text-align: center;
+}
+.main-visual__catch {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2;
+}
+@media screen and (min-width: 768px),print {
+  .main-visual {
+    padding: 40px 0;
+  }
+  .main-visual__inner {
+    max-width: 1080px;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .main-visual__catch {
+    display: flex;
+    justify-content: center;
+    padding: 0 8.3333%; /*(90 / 1080) * 100%*/
+    font-size: 36px; /*IEのためのフォールバック*/
+    font-size: min(3.33vw, 36px); /*改行位置キープのためvwで拡縮*/
+  }
+  .main-visual__image {
+    flex-shrink: 0;
+    width: 40%;
+  }
+}
+
+/* service
+----------------------------------------*/
+
+/* pickup
+----------------------------------------*/
+.pickup-list .item__caption {
+  position: relative;
+  padding-left: 15px;
+}
+.pickup-list .item__caption i {
+  position: absolute;
+  left: 0;
+  top: 0.25em;
+}

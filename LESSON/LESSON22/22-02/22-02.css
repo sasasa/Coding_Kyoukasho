@@ -1,0 +1,46 @@
+@charset "UTF-8";
+/*サンプル表示用のダミースタイル*/
+h1 {
+  display: none;
+}
+.container {
+  max-width: 1080px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.sample {
+  margin: 50px 0;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+button {
+  width: 60px;
+  height: 60px;
+  font-size: 48px;
+  cursor: pointer;
+}
+.fa-twitter {
+  color: #00acee;
+  font-size: 48px;
+}
+h2 {
+  margin-top: 30px;
+  font-size: 1.2em;
+}
+h2+p {
+  margin-top: 15px;
+  line-height: 1.8;
+}
+.more {
+  margin-top: 20px;
+  text-align: right;
+}
+.more a::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  height: 0.7em;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+}

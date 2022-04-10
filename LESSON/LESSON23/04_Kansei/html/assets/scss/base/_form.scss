@@ -1,0 +1,166 @@
+/*----------------------------------------
+	Form Parts
+----------------------------------------*/
+/*各フォーム部品の基本スタイルを上書きします*/
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="search"],
+textarea,
+select {
+  -webkit-appearance: none;
+  appearance: none; /*ブラウザ標準スタイルを無効にする*/
+  width: 100%;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid $c_gray2;
+  border-radius: 4px;
+  font-family: inherit;
+}
+input[type="number"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px 20px;
+  background: #fff;
+  border: 1px solid $c_gray2;
+  border-radius: 4px;
+}
+/*フォーカス時*/
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="url"]:focus,
+input[type="search"]:focus,
+textarea:focus,
+select:focus,
+input[type="number"],
+input[type="password"] {
+  outline: none;
+  box-shadow: 0 0 5px rgba(168,142,37,0.7);
+}
+/*エラー時*/
+.is-error input[type="text"],
+.is-error input[type="email"],
+.is-error input[type="tel"],
+.is-error input[type="url"],
+.is-error input[type="number"],
+.is-error input[type="password"],
+.is-error textarea,
+.is-error select,
+.is-error .select-wrap{
+  color: $c_red1;
+  border-color: $c_red1;
+}
+
+/*select
+--------------------------*/
+.select-wrap {
+  position: relative;
+}
+.select-wrap::after {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-right: 2px solid;
+  border-bottom: 2px solid;
+  transform: rotate(45deg);
+}
+select::-ms-expand { /*IEでもselectの矢印を消す*/
+　display: none;
+}
+
+/*radio, checkbox
+------------------------------------*/
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0; /*透明にして見えなくする*/
+  position: absolute; /*本来の配置から切り離す*/
+}
+/*クリック範囲*/
+input[type="radio"]+span,
+input[type="checkbox"]+span {
+  display: inline-block;
+  position: relative;
+  margin: 0 2em 0 0;
+  padding: 0.3em 0.3em 0.3em 2em;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/*フォーカス時*/
+input[type="radio"]:focus+span,
+input[type="checkbox"]:focus+span {
+  outline: none;
+  box-shadow: 0 0 5px rgba(168,142,37,0.7);
+}
+
+/*ラジオボタンスタイル*/
+input[type="radio"]+span:before {
+  content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  width: 1.375em;
+  height: 1.375em;
+	border: 1px solid $c_text;
+  border-radius: 50%;
+  line-height: 1;
+  background: #fff;
+}
+/*ラジオボタンチェック印（未選択）*/
+input[type="radio"]+span:after {
+  content: "";
+  display: none;
+}
+/*ラジオボタンチェック印（選択）*/
+input[type="radio"]:checked+span:after {
+  display: block;
+  position: absolute;
+  top: 0.45em;
+  left: 0.2em;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: $c_text;
+  line-height: 1;
+}
+/*チェックボックススタイル*/
+input[type="checkbox"]+span:before {
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+  content: "";
+  width: 1.25em;
+  height: 1.25em;
+  border: 1px solid $c_text;
+  background: #fff;
+  line-height: 1;
+  vertical-align: middle;
+}
+/*チェックボックス未チェック時*/
+input[type="checkbox"]+span:after {
+  content: "";
+  display: none;
+}
+/*チェックボックスチェック時*/
+input[type="checkbox"]:checked+span:after {
+  display: block;
+  position: absolute;
+  top: 0.3em;
+  left: 0.4em;
+  width: 0.5em;
+  height: 1em;
+  content: "";
+  border-bottom: 3px solid $c_text;
+  border-right: 3px solid $c_text;
+  transform: rotate(45deg);
+}

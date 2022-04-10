@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	flexbox + position
+----------------------------------------*/
+.container {
+  min-height: 100vh;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.inner {
+  /*PCで2カラムにするために追加したものですが、要素が入れ子になるためSPでのflexbox化の起点となるのはこのセレクタになります。*/
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  border: 2px solid;
+}
+.title {
+  background: #509422;
+  height: 100px;
+}
+.catch {
+  background: #aeda90;
+  margin-top: 20px;
+  height: 100px;
+}
+.visual {
+  background: #e5f3db;
+  height: 50vw;
+  max-height: 500px;
+  margin-top: 20px;
+}
+.contentsWrap {
+  flex-grow: 1; /*ページ下端までエリアを伸ばす*/
+  display: flex;
+  flex-direction: column;
+  border: 2px solid red;
+}
+.contents1 {
+  background:#9acd32;
+  margin-top: 20px;
+  flex-grow: 1; /*親要素の中で自動的にエリアを伸ばす*/
+}
+.contents2 {
+  background:#c5eb7b;
+  margin-top: 20px;
+  flex-grow: 1; /*親要素の中で自動的にエリアを伸ばす*/
+}
+
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .container {
+    position: relative; /*②を絶対配置するための基準ボックスとする*/
+    padding-right: calc(20vw + 20px); /*②を配置するスペースを確保*/
+    /*%だと.containerでのpadding-rightの基準と.catchでのwidthの基準が違うことが原因で
+    サイズが揃わないので、vwで指定*/
+  }
+  .title {
+    height: 200px;
+  }
+  .catch { /*flexboxの制御下から除外するために絶対配置*/
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20vw; /*.containerのpadding-rightのサイズに合わせて幅指定*/
+    height: 100%;
+    margin-top: 0;
+  }
+  .contentsWrap {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .contents1,
+  .contents2 {
+    flex-grow: 0;
+    width: calc((100% - 20px) / 2);
+  }
+}
+@media screen and (min-width: 1000px),print {
+  /*ブラウザ拡大した時に必要以上に②エリアが広がらないようにする*/
+  .container {
+    padding-right: 220px;
+  }
+  .catch {
+    width: 200px;
+  }
+}

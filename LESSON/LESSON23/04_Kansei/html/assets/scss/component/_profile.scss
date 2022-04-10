@@ -1,0 +1,26 @@
+/* プロフィール
+------------------------------------------------------ */
+.profile {
+  text-align: center;
+}
+.profile__ph {
+  display: inline-block;
+  width: 140px;
+  height: 140px;
+}
+.profile__account {
+  margin-top: 20px;
+  font-weight: bold;
+}
+.profile__text {
+  margin-top: 20px;
+}
+.profile__sns {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  >li {
+    width: 80px;
+    margin: 0 20px;
+  }
+}

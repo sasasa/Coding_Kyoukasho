@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>株式会社Grass Field</title>
+  <meta name="description" content="株式会社Grass Fieldの公式Wウェブサイトです。">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <style>
+    .header {
+      justify-content: flex-start;
+    }
+    .header__text {
+      margin-left: 20px;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .main-contents {
+      margin: 150px 0;
+    }
+    .footer {
+      justify-content: center;
+    }
+    .block-title {
+      margin-top: 80px;
+      margin-bottom: 10px;
+      font-size: 20px;
+    }
+    .block {
+      padding: 30px 0;
+      border-top: 1px dashed #ddd;
+      border-bottom: 1px dashed #ddd;
+    }
+    .block--bg {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+      padding-left: calc(50vw - 50%);
+      padding-right: calc(50vw - 50%);
+      background: #37952F;
+      border: 0;
+      color: #fff;
+    }
+    .block--wide {
+      margin-left: calc(50% - 50vw);
+      margin-right: calc(50% - 50vw);
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__logo"><a href="/"><img src="img/logo.svg" alt="株式会社Grass Field"></a> </h1>
+    <p class="header__text">コンポーネント一覧</p>
+  </header>
+  <main class="main-contents">
+    <div class="container" style="margin-top: 200px">
+
+      <!-- ボタン /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼ボタン種類</div>
+      <div class="block">
+        <a href="#" class="button button--default button--lg">ボタン（標準）</a>
+      </div>
+      <div class="block">
+        <a href="#" class="button button--outline button--lg">ボタン（枠線）</a>
+      </div>
+      <div class="block block--bg">
+        <a href="#" class="button button--ghost button--lg">ボタン（白抜き）</a>
+      </div>
+      <div class="block">
+        <button class="button button--action button--lg">ボタン（Action）</button>
+      </div>
+      <div class="block">
+        <button class="button button--action button--lg" disabled>ボタン（Disabled）</button>
+      </div>
+
+      <div class="block-title">▼ボタンサイズ</div>
+      <div class="block">
+        <a href="#" class="button button--default button--lg">大ボタン（標準）</a>
+      </div>
+      <div class="block">
+        <a href="#" class="button button--default button--md">中ボタン（標準）</a>
+      </div>
+      <div class="block">
+        <a href="#" class="button button--default button--sm">小ボタン（標準）</a>
+      </div>
+
+      <div class="block-title">▼ボタンレイアウト</div>
+      <div class="block">
+        <div class="button-center">
+          <a href="#" class="button button--outline button--lg">ボタン（枠線）</a>
+          <button class="button button--action button--lg">ボタン（Action）</button>
+        </div>
+      </div>
+      <div class="block">
+        <div class="button-center">
+          <a href="#" class="button button--default button--lg">ボタン（標準）</a>
+        </div>
+      </div>
+
+      <!-- テキストスタイル /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼テキストスタイル</div>
+      <div class="block">
+        <p><a href="#">この文章はダミーです。</a>文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        <p><strong class="text-strong">この文章はダミーです。</strong>文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        <p><strong class="text-alert">この文章はダミーです。</strong>文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </div>
+      <div class="block">
+        <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </div>
+      <div class="block">
+        <p class="text-note">※この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+      </div>
+
+      <!-- リスト /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼リスト</div>
+      <div class="block">
+        <ul class="list-normal">
+          <li>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</li>
+          <li>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</li>
+        </ul>
+      </div>
+      <div class="block">
+        <ul class="list-arrow">
+          <li><a href="#">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</a></li>
+          <li><a href="#">この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</a></li>
+        </ul>
+      </div>
+      <div class="block">
+        <ol class="list-decimal">
+          <li>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</li>
+          <li>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</li>
+        </ol>
+      </div>
+
+      <!-- 枠囲み /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼枠囲み</div>
+      <div class="block">
+        <section class="frame">
+          <h2 class="frame__title">見出しテキストが入ります見出しテキストが入ります</h2>
+          <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        </section>
+      </div>
+      <div class="block">
+        <section class="frame frame--alert">
+          <h2 class="frame__title">見出しテキストが入ります見出しテキストが入ります</h2>
+          <p>この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。</p>
+        </section>
+      </div>
+
+      <!-- ページタイトル /////////////////////////////////////////////////////////// -->
+      <!-- ページタイトル（大） -->
+      <div class="block-title">▼ページタイトル（大）</div>
+      <div class="block block--wide">
+
+        <div class="page-header-lg page-header-lg__service">
+          <h1 class="page-title">
+            <span class="page-title__sub">Service</span>
+            <span class="page-title__main">事業案内</span>
+          </h1>
+        </div>
+
+      </div>
+
+      <!-- ページタイトル（中） -->
+      <div class="block-title">▼ページタイトル（中）</div>
+      <div class="block block--wide">
+
+        <div class="page-header-md">
+          <h1 class="page-title">
+            <span class="page-title__sub">Contact</span>
+            <span class="page-title__main">お問合わせ</span>
+          </h1>
+          <p class="page-header-md__lead">弊社の事業・商品へのご質問・お問い合わせ等は以下のフォームからご連絡下さい。</p>
+        </div>
+
+      </div>
+
+      <!-- ページタイトル（小） -->
+      <div class="block-title">▼ページタイトル（小）</div>
+      <div class="block block--wide">
+
+        <div class="page-header-sm">
+          <h1 class="page-title">
+            <span class="page-title__main">個人情報保護方針</span>
+          </h1>
+        </div>
+
+      </div>
+
+      <!-- 大見出し　 /////////////////////////////////////////////////////////// -->
+      <!-- 大見出し（英語） -->
+      <div class="block-title">▼大見出し（英語）</div>
+      <div class="block">
+        <h2 class="heading-lv2-en">
+          <span class="heading-lv2-en__main">Service</span>
+        </h2>
+      </div>
+      <div class="block">
+        <h2 class="heading-lv2-en">
+          <span class="heading-lv2-en__main">Service</span>
+          <span class="heading-lv2-en__sub">日本語サブタイトル</span>
+        </h2>
+      </div>
+      <div class="block block--bg">
+        <h2 class="heading-lv2-en heading-lv2-en--white">
+          <span class="heading-lv2-en__main">Service</span>
+          <span class="heading-lv2-en__sub">日本語サブタイトル</span>
+        </h2>
+      </div>
+
+      <!-- 大見出し（日本語） -->
+      <div class="block-title">▼大見出し（日本語）</div>
+      <div class="block">
+        <h2 class="heading-lv2-ja">
+          <span class="heading-lv2-ja__main">見出しテキストが入ります</span>
+        </h2>
+      </div>
+      <div class="block">
+        <h2 class="heading-lv2-ja">
+          <span class="heading-lv2-ja__sub">サブタイトルが入ります</span>
+          <span class="heading-lv2-ja__main">見出しテキストが入ります</span>
+        </h2>
+      </div>
+      <div class="block block--bg">
+        <h2 class="heading-lv2-ja heading-lv2-ja--white">
+          <span class="heading-lv2-ja__sub">サブタイトルが入ります</span>
+          <span class="heading-lv2-ja__main">見出しテキストが入ります</span>
+        </h2>
+      </div>
+
+      <!-- 中見出し　 /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼中見出し</div>
+      <div class="block">
+        <h3 class="heading-lv3">見出しテキストが入ります</h3>
+      </div>
+      <div class="block">
+        <h3 class="heading-lv3 heading-lv3--center">見出しテキストが入ります</h3>
+      </div>
+      <div class="block block--bg">
+        <h3 class="heading-lv3 heading-lv3--center heading-lv3--white">見出しテキストが入ります</h3>
+      </div>
+
+      <!-- 小見出し  /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼小見出し</div>
+      <div class="block">
+        <h4 class="heading-lv4">見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります</h4>
+      </div>
+      <div class="block block--bg">
+        <h4 class="heading-lv4 heading-lv4--white">見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります見出しテキストが入ります</h4>
+      </div>
+
+      <!-- 小見出し以下  /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼小見出し以下</div>
+      <div class="block">
+        <h5 class="heading-lv5">見出しテキストが入ります</h5>
+      </div>
+      <div class="block">
+        <h6 class="heading-lv6">見出しテキストが入ります</h6>
+      </div>
+
+      <!-- アイテム一覧  /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼アイテム一覧</div>
+      <div class="block">
+        <!-- 4カラム -->
+        <ul class="grid grid--pc4col">
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <!-- 3カラム -->
+        <ul class="grid grid--pc3col">
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="block">
+        <!-- 2カラム -->
+        <ul class="grid grid--pc2col">
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="item">
+              <div class="item__image"><img src="img/ph_dmy01.jpg" alt=""></div>
+              <p class="item__caption">キャプションテキスト</p>
+              <p class="item__description">説明テキスト説明テキスト説明テキスト説明テキスト</p>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- カード一覧  /////////////////////////////////////////////////////////// -->
+      <div class="block-title">▼カード一覧</div>
+      <div class="block">
+        <div class="grid grid--pc3col">
+          <article class="grid__item">
+            <a href="#" class="card">
+              <div class="card__image"><img src="img/ph_dmy02.jpg" alt=""></div>
+              <div class="card__body">
+                <h2 class="card__title">タイトルテキスト</h2>
+                <p class="card__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="card__btn">詳しく見る</p>
+              </div>
+            </a>
+          </article>
+          <article class="grid__item">
+            <a href="#" class="card">
+              <div class="card__image"><img src="img/ph_dmy02.jpg" alt=""></div>
+              <div class="card__body">
+                <h2 class="card__title">タイトルテキスト</h2>
+                <p class="card__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="card__btn">詳しく見る</p>
+              </div>
+            </a>
+          </article>
+          <article class="grid__item">
+            <a href="#" class="card">
+              <div class="card__image"><img src="img/ph_dmy02.jpg" alt=""></div>
+              <div class="card__body">
+                <h2 class="card__title">タイトルテキスト</h2>
+                <p class="card__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="card__btn">詳しく見る</p>
+              </div>
+            </a>
+          </article>
+          <article class="grid__item">
+            <a href="#" class="card">
+              <div class="card__image"><img src="img/ph_dmy02.jpg" alt=""></div>
+              <div class="card__body">
+                <h2 class="card__title">タイトルテキスト</h2>
+                <p class="card__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="card__btn">詳しく見る</p>
+              </div>
+            </a>
+          </article>
+          <article class="grid__item">
+            <a href="#" class="card">
+              <div class="card__image"><img src="img/ph_dmy02.jpg" alt=""></div>
+              <div class="card__body">
+                <h2 class="card__title">タイトルテキスト</h2>
+                <p class="card__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p>
+                <p class="card__btn">詳しく見る</p>
+              </div>
+            </a>
+          </article>
+        </div>
+      </div>
+
+    </div><!-- /.container -->
+  </main><!-- /.main-contents -->
+  <footer class="footer">
+    <p class="footer__copyright"><small lang="en">&copy; Sample All Rights Reserved.</small></p>
+  </footer>
+</body>
+</html>

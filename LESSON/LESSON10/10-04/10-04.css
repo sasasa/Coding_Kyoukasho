@@ -1,0 +1,98 @@
+html,body {
+	overflow-x: hidden; /*横スクロールの発生を防止*/
+	height: 100%;
+}
+
+/*----------------------------------------
+	container
+----------------------------------------*/
+/*サイト全体で共通のコンテンツ幅指定用コンテナ枠*/
+.container {
+	max-width: 1080px;
+	margin: auto;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+/*----------------------------------------
+	mainVisual
+----------------------------------------*/
+.mainVisual {
+	display: flex;
+	flex-direction: column-reverse;
+	margin-bottom: 50px;
+}
+/*テキストエリア*/
+.mainVisual__body {
+	position: relative;
+	z-index: 1;
+	margin-top: -60px;
+	margin-right: 15px;
+	padding: 30px 35px;
+	background: #0027FF;
+	color: #fff;
+	font-family: 'Sawarabi Mincho', sans-serif;
+}
+/*見出し*/
+.mainVisual__ttl {
+	position: relative;
+	font-size: 48px;
+	font-weight: normal;
+	line-height: 1.2;
+}
+.mainVisual__ttl br {
+	display: block;
+}
+.mainVisual__ttl::after {
+	content: "";
+	display: block;
+	margin: 15px 0 15px -35px;
+	border-top: 1px solid currentColor;
+}
+/*テキスト*/
+.mainVisual__txt {
+	line-height: 2;
+}
+
+/*for TAB*/
+@media screen and (min-width: 768px) {
+	.mainVisual__ph {
+		margin-left: 35px;
+	}
+	.mainVisual__body {
+		margin-top: -114px;
+		margin-right: 0;
+		width: 67.3%;
+	}
+	.mainVisual__ttl {
+		font-size: 48px;
+	}
+	.mainVisual__ttl br {
+		display: none;
+	}
+	.mainVisual__ttl::after {
+		margin-left: -35px;
+	}
+}
+
+/*for PC*/
+@media screen and (min-width: 1080px),print {
+	/*写真*/
+	.mainVisual__ph {
+		margin-left: 125px;
+	}
+	.mainVisual__ph img {
+		max-width: none;
+		width: 100%;
+		max-height: 940px;
+		object-fit: cover;
+		object-position: right bottom;
+	}
+	/*テキストエリア*/
+	.mainVisual__body {
+		width: 62.5%;
+		padding: 80px;
+		padding-left: calc((100vw - 1080px) / 2 + 15px);
+		/*15pxはスクロールバー分の調整分*/
+	}
+}

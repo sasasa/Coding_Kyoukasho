@@ -1,0 +1,31 @@
+@charset "UTF-8";
+/*----------------------------------------
+	Layout
+----------------------------------------*/
+.header {
+  height: 100px; /*ダミー*/
+  background: #509422;
+}
+.contents {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  margin: 20px 0
+}
+.main {
+  flex-grow: 1;
+  margin-left: 20px;
+  background: #e5f3db;
+  height: 300px; /*ダミー*/
+}
+.sidebar {
+  width: 30%;
+  max-width: 260px;
+  background: #aeda90;
+}
+.footer {
+  background: #509422;
+  height: 100px; /*ダミー*/
+}
+
+

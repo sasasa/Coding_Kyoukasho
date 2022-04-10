@@ -1,0 +1,25 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/*ボタン*/
+.btns {
+	background: #e7e7e7;
+	text-align: center; /*2つのボタンを中央寄せに配置*/
+}
+.btns__item {
+	display: inline-block; /*横並びするようにインラインブロック化*/
+	width: 80%; /*.btnから移動*/
+  max-width: 300px; /*.btnから移動*/
+	margin: 10px;
+	border: 1px dashed #999;
+}
+.btn {
+	display: block; /*a要素のブロック化*/
+	padding: 15px;
+	background: skyblue;
+	border-radius: 8px;
+	text-align: center;
+	text-decoration: none;
+}

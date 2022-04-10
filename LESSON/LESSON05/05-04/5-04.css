@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+
+/*----------------------------------------
+	Gridの設定
+----------------------------------------*/
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 50px 1fr auto auto 50px;
+  grid-template-areas: 
+    "header"
+    "main"
+    "lnav"
+    "sidebar"
+    "footer";
+  gap: 20px;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+}
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .container {
+    grid-template-columns: 24% 1fr 24%;
+    grid-template-rows: 100px 1fr 100px;
+    grid-template-areas: 
+      "header header header"
+      "lnav main sidebar"
+      "footer footer footer";
+  }
+}
+
+/*補足
+grid-template-columnsで列数と列幅を指定、
+grid-template-rowsで行数と行の高さを指定、
+grid-template-areasで、行列の格子で囲まれた1つひとつのセルに名前をつけ、
+1行ずつセル名を半角スペースで指定することでレイアウト枠を指定します。
+*/
+
+/*----------------------------------------
+	Gridアイテムの設定
+----------------------------------------*/
+.header {
+  background: #509422;
+  grid-area: header;
+}
+.main {
+  background: #e5f3db;
+  grid-area: main;
+}
+.lnav {
+  background: #aeda90;
+  grid-area: lnav;
+}
+.sidebar {
+  background: #aeda90;
+  grid-area: sidebar;
+}
+.footer {
+  background: #509422;
+  grid-area: footer;
+}

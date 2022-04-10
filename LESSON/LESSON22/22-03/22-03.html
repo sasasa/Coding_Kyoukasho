@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-03</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="22-03.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+<h1>aria-labelledby属性のサンプル</h1>
+
+<div class="container">
+
+  <div class="sample">
+    <!-- 例①：内包する見出しを領域に関連付ける -->
+    <nav aria-labelledby="menu-title">
+      <h2 id="menu-title">メインメニュー</h2>
+      <ul>
+        <li><a href="#">メニュー１</a></li>
+        <li><a href="#">メニュー２</a></li>
+        <li><a href="#">メニュー３</a></li>
+        <li><a href="#">メニュー４</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="sample">
+    <!-- 例②：親子関係にない要素をラベルとして関連付ける -->
+    <ul aria-labelledby="my-label">
+      <li>項目1</li>
+      <li>項目2</li>
+      <li>項目3</li>
+    </ul>
+    <p id="my-label">○○の一覧</p>
+  </div>
+
+  <div class="sample">
+    <!-- 例③：複数のラベルを関連付ける -->
+    <h2 id="billing">請求書</h2>
+    <div>
+      <span id="name">名前</span>
+      <input type="text" aria-labelledby="billing name">
+    </div>
+    <div>
+      <span id="address">住所</span>
+      <input type="text" aria-labelledby="billing address">
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

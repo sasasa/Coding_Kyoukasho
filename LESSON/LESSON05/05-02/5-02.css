@@ -1,0 +1,26 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Hero
+----------------------------------------*/
+.hero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 500px;
+	background: #509422;
+}
+.hero__inner {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 250px;
+	height: 250px;
+  border-radius: 50%;
+	border: 2px solid #000;
+	background: #fff;
+}
+.hero__txt {
+	font-weight: bold;
+	font-size: 20px;
+}

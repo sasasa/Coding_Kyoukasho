@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>お問合せ | 株式会社Grass Field</title>
+  <meta name="description" content="株式会社Grass Fieldのお問合せページです。">
+  <link rel="stylesheet" href="../css/common.css">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&family=Oswald:wght@500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="../js/script.js"></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="/"><img src="../img/logo.svg" alt="株式会社Grass Field"></a></p>
+    <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="gnav" aria-expanded="false">
+      <span class="hamburger__line" aria-hidden="true"></span>
+    </button>
+    <nav id="gnav" class="gnav" aria-label="メインメニュー">
+      <ul class="gnav__list">
+        <li class="gnav__item"><a href="/" class="gnav__link">Home</a></li>
+        <li class="gnav__item"><a href="/service/" class="gnav__link">事業内容</a></li>
+        <li class="gnav__item"><a href="/products/" class="gnav__link">商品紹介</a></li>
+        <li class="gnav__item"><a href="/company/" class="gnav__link">会社概要</a></li>
+        <li class="gnav__item"><a href="/recruit/" class="gnav__link">採用情報</a></li>
+        <li class="gnav__item"><a href="/contact/" class="gnav__link" aria-current="page">お問合わせ</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main class="main-contents">
+    <div class="page-header-md">
+      <h1 class="page-title">
+        <span class="page-title__sub">Contact</span>
+        <span class="page-title__main">お問合わせ</span>
+      </h1>
+      <p class="page-header-md__lead">弊社の事業・商品へのご質問・お問い合わせ等は以下のフォームからご連絡下さい。</p>
+    </div>
+
+    <div class="container">
+      <section class="section">
+        <h2 class="heading-lv3 section__title">お問合わせについて</h2>
+        <p>通常、3営業日以内に担当者よりご連絡差し上げます。<br>
+          お急ぎの場合はお電話にてご連絡下さい。（TEL: 00-0000-0000　平日9:00〜17:00）</p>
+      </section>
+      <section class="section">
+        <h2 class="heading-lv3 section__title">お問合せフォーム</h2>
+        
+        <form action="#" method="POST" id="form">
+          <!-- 表組みのままだと「ひょう」として読み上げられてしまい邪魔なのでrole="presentation"とすることでアクセシビリティーツリーからこの要素を除外 -->
+          <table class="contactTable" role="presentation">
+            <tr>
+              <th>
+                <!-- label要素の中のspan要素が「○○とその他一項目」のように読み上げられてしまう（VoiceOver）ため、スクリーンリーダーから隠しました。
+                「必須」という情報はinput要素のrequried属性から取得された読み上げられるので問題はありません -->
+                <label for="contact_type" class="inputLabel">問合せ種類
+                  <span class="require" aria-hidden="true">必須</span>
+                </label>
+              </th>
+              <td>
+                <div class="inputField">
+                  <div class="selectWrap">
+                    <select name="contact_type" id="contact_type" required>
+                      <option value="" selected disabled>選択して下さい</option>
+                      <option value="弊社事業について">弊社事業について</option>
+                      <option value="弊社商品について">弊社商品について</option>
+                      <option value="採用について">採用について</option>
+                      <option value="メディア取材について">メディア取材について</option>
+                      <option value="その他のお問合せ">その他のお問合せ</option>
+                    </select>
+                  </div>
+                  <!-- エラーメッセージ専用要素なので警告ロールを設定、動的な変更を通知するaria-live属性を追加、初期表示はスクリーンリーダーから隠す -->
+                  <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">お問合せ種類を選択してください。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="contact_msg" class="inputLabel">お問合せ内容
+                  <span class="require" aria-hidden="true">必須</span>
+                </label>
+              </th>
+              <td>
+                <div class="inputField">
+                  <textarea name="contact_msg" id="contact_msg" cols="30" rows="10" required></textarea>
+                  <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">お問合せ内容を入力してください。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div class="inputLabel" id="nameGroup">
+                  お名前
+                  <span class="require" aria-hidden="true">必須</span>
+                </div>
+              </th>
+              <td>
+                <div class="nameLayout" aria-labelledby="nameGroup">
+                  <div class="inputField">
+                    <label for="name1" class="inputSubLabel">姓</label>
+                    <input type="text" id="name1" name="name1" placeholder="山田" required>
+                    <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">姓を入力してください。</p>
+                  </div>
+                  <div class="inputField">
+                    <label for="name2" class="inputSubLabel">名</label>
+                    <input type="text" id="name2" name="2" placeholder="太郎" required>
+                    <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">名を入力してください。</p>
+                  </div>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div class="inputLabel" id="kanaGroup">
+                  フリガナ
+                  <span class="require" aria-hidden="true">必須</span>
+                </div>
+              </th>
+              <td>
+                <div class="nameLayout" aria-labelledby="kanaGroup">
+                  <div class="inputField">
+                    <label for="kana1" class="inputSubLabel">セイ</label>
+                    <input type="text" id="kana1" name="kana1" placeholder="ヤマダ" pattern="^[ァ-ンヴー]+$" required aria-describedby="kana-description">
+                    <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">フリガナの姓を入力してください。</p>
+                  </div>
+                  <div class="inputField">
+                    <label for="kana2" class="inputSubLabel">メイ</label>
+                    <input type="text" id="kana2" name="kana2" placeholder="タロウ" pattern="^[ァ-ンヴー]+$" required aria-describedby="kana-description">
+                    <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">フリガナの名を入力してください。</p>
+                  </div>
+                </div>
+                <!-- 注意書きにはid属性をつけ、各フォームにaria-describedbyで紐付ける -->
+                <p class="inputNote" id="kana-description">※全角カタカナでご入力下さい。</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="email" class="inputLabel">メールアドレス
+                  <span class="require" aria-hidden="true">必須</span>
+                </label>
+              </th>
+              <td>
+                <div class="inputField">
+                  <input type="email" id="email" name="email" placeholder="yamada@sample.co.jp" required>
+                  <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">正しい形式のメールアドレスを入力してください。</p>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="tel" class="inputLabel">電話番号
+                  <span class="require" aria-hidden="true">必須</span>
+                </label>
+              </th>
+              <td>
+                <div class="inputField">
+                  <input type="tel" id="tel" name="tel" pattern="\d{2,5}-?\d{2,4}-?\d{3,4}" placeholder="09012345678" required aria-describedby="tel-description">
+                  <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">電話番号を入力してください。</p>
+                </div>
+                <p class="inputNote" id="tel-description">※半角数字でご入力下さい。ハイフン(-)は任意です。</p>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <div class="inputLabel" id="attribute">法人/個人
+                  <span class="require" aria-hidden="true">必須</span>
+                </div>
+              </th>
+              <td>
+                <div class="inputField">
+                  <ul class="radioList_hr" aria-labelledby="attribute">
+                    <li>
+                      <label>
+                        <input type="radio" name="attribute" value="法人" checked required>
+                        <span>法人</span>
+                      </label>
+                    </li>
+                    <li>
+                      <label>
+                        <input type="radio" name="attribute" value="個人" required>
+                        <span>個人</span>
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <th>
+                <label for="company" class="inputLabel">会社名</label>
+              </th>
+              <td>
+                <div class="inputField">
+                  <input type="text" id="company" name="company" placeholder="サンプル株式会社" required aria-describedby="company-description">
+                  <p class="errorText" role="alert" aria-live="polite" aria-hidden="true">法人のお客様は会社名を入力してください。</p>
+                </div>
+                <p class="inputNote" id="company-description">※法人のお客様の場合は必ずご記入ください。</p>
+              </td>
+            </tr>
+          </table>
+
+          <div class="privacyBox">
+            <p id="privacy-description">「<a href="#">プライバシーポリシー</a>」をご確認いただき、個人情報の取扱いについて同意いただける場合は「同意する」を選択してください。</p>
+            <div class="privacyBox__check">
+              <label>
+                <input type="checkbox" id="agree" name="agree" value="同意します" required aria-describedby="privacy-description">
+                <span>個人情報保護方針に同意する</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="button-center">
+            <button id="submit" class="button button--action button--lg" disabled>入力内容を確認する</button>
+          </div>
+
+        </form>
+      </section>
+    </div>
+
+  </main>
+  <nav class="breadcrumb" aria-label="パンくずナビ">
+    <ol class="breadcrumb__list">
+      <li><a href="/">ホーム</a></li>
+      <li><a href="/contact/" aria-current="page">お問合せ</a></li>
+    </ol>
+  </nav>
+  <footer class="footer">
+    <ul class="footer__menu">
+      <li><a href="#">サイトポリシー</a></li>
+      <li><a href="#">プライバシーポリシー</a></li>
+      <li><a href="#">サイトマップ</a></li>
+    </ul>
+    <p class="footer__copyright"><small lang="en">&copy; Sample All Rights Reserved.</small></p>
+  </footer>
+</body>
+</html>

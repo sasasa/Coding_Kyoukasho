@@ -1,0 +1,66 @@
+/* 委託販売先情報
+------------------------------------------------------ */
+.rentalbox {
+  display: flex;
+  flex-direction: column-reverse; /*サムネイルとテキストコンテンツの上下入れ替え*/
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  & + .rentalbox {
+    margin-top: 30px;
+  }
+  a {
+    word-break: break-all;
+  }
+}
+.rentalbox__body {
+  margin-top: 20px;
+}
+.rentalbox__title {
+  padding: 10px;
+  background: $c_text;
+  color: $c_white;
+}
+.rentalbox__data {
+  margin-top: 20px;
+  font-size: 14px;
+  dt {
+    clear:left;
+    float: left;
+    width: 6em;
+    font-weight: bold;
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+  }
+  dd {
+    overflow: hidden;
+    &:not(:first-of-type) {
+      margin-top: 10px;
+    }
+  }
+}
+@include medium {
+  .rentalbox {
+    flex-direction: row-reverse; /*サムネイルとテキストコンテンツの左右入れ替え*/
+    justify-content: space-between;
+    max-width: none;
+    & + .rentalbox {
+      margin-top: 40px;
+    }
+  }
+  .rentalbox__thumb {
+    width: calc((440/1084)*100%);
+  }
+  .rentalbox__body {
+    margin-top: 0;
+    width: calc((624/1084)*100%);
+  }
+  .rentalbox__title {
+    padding: 8px 20px;
+    font-size: 20px;
+  }
+  .rentalbox__data {
+    font-size: 16px;
+  }
+}

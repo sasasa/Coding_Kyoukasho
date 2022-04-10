@@ -1,0 +1,34 @@
+/* 商品詳細レイアウト
+------------------------------------------------------ */
+/*grid-template-areasを使ったgridレイアウトはIE11でも対応可能です。
+（※要Autoprefixer）*/
+.pd-detail {
+  display: grid;
+  gap: 30px;
+  @include medium {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "mv cart"
+      "mv info";
+    gap: 15px 20px;
+
+    .pd-detail__cart {
+      grid-area: cart;
+    }
+    .pd-detail__ph {
+      grid-area: mv;
+    }
+    .pd-detail__info {
+      grid-area: info;
+    }
+  }
+}
+.pd-detail__info {
+  border: 1px solid $c_key1;
+  padding: 20px;
+}
+.pd-detail__info-title {
+  margin-bottom: 10px;
+  font-weight: bold;
+}

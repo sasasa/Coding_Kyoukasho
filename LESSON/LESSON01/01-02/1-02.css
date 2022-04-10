@@ -1,0 +1,8 @@
+.container {
+	/*最大値を固定*/
+	max-width: 1000px;
+	/*ブラウザの中央に配置*/
+	margin-left: auto;
+	margin-right: auto;
+	background: #eee;
+}

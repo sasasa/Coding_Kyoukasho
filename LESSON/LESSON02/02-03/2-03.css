@@ -1,0 +1,233 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Base
+----------------------------------------*/
+html,body {
+  height: 100%;
+}
+a {
+  color: #509422;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #70cc33;
+}
+
+/*----------------------------------------
+	Layout
+----------------------------------------*/
+body {
+  display: flex;
+  flex-direction: column;
+}
+main {
+  flex-grow: 1;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/*----------------------------------------
+	Header
+----------------------------------------*/
+.header {
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+}
+.header__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/*Logo*/
+.header__logo {
+  margin-left: 15px;
+  font-family: 'Fjalla One', sans-serif;
+  font-size: 20px;
+}
+
+/*Hamburger*/
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: #509422;
+  cursor: pointer;
+}
+.hamburger__line {
+  position: relative;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before {
+  top: -8px;
+}
+.hamburger__line::after {
+  bottom: -8px;
+}
+
+/*Gnav*/
+.gnavList {
+  display: none;
+}
+
+/*for PC*/
+@media screen and (min-width: 992px),print {
+  .header__inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    height: 100px;
+    padding: 0 15px;
+  }
+  .header__logo {
+    margin-left: 0;
+    font-size: 34px;
+  }
+  .hamburger {
+    display: none;
+  }
+  .gnavList {
+    display: flex;
+  }
+  .gnavList a {
+    position: relative;
+    display: block;
+    margin: 0 1em;
+    padding: 1em 0;
+    color: #000;
+    font-weight: bold;
+  }
+  .gnavList a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 4px;
+    background: #509422;
+    transition: transform 0.3s;
+    transform: scale(0,1);
+  }
+  .gnavList a:hover::before {
+    transform: scale(1,1)
+  }
+}
+
+/*----------------------------------------
+	Footer
+----------------------------------------*/
+.footer {
+  margin-top: 50px;
+  padding: 30px 15px;
+  background: #509422;
+  color: #fff;
+  text-align: center;
+  font-size: 0.8em;
+}
+
+
+/*----------------------------------------
+	Heading
+----------------------------------------*/
+.headingL {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+  font-size: 20px;
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+@media screen and (min-width: 768px),print {
+  .headingL {
+    font-size: 40px;
+  }
+}
+
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.card {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover {
+  color: inherit;
+}
+.card__ttl {
+  margin-bottom: 15px;
+  padding-bottom: 5px;
+  border-bottom: 2px solid #509422;
+  font-size: 1.2em;
+}
+.card__txt {
+  line-height: 1.7;
+}
+.card__btn {
+  text-align: right;
+}
+.card__btn > span {
+  display: inline-block;
+  padding: 5px 15px;
+  border: 1px solid;
+  font-size: 0.85em;
+  transition: background-color 0.3s, color 0.3s;
+}
+.card:hover .card__btn > span {
+  background: #509422;
+  color: #fff;
+}
+/*for PC*/
+@media screen and (min-width: 768px) {
+  .card__btn {
+    margin-top: 10px;
+    text-align: center;
+  }
+  .card__btn > span {
+    width: 100%;
+  }
+}
+
+/*----------------------------------------
+	card一覧レイアウト
+----------------------------------------*/
+.cardList__item {
+  margin-top: 30px;
+}
+/*for Tab*/
+@media screen and (min-width: 768px) {
+  .cardList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: -30px;
+  }
+  .cardList__item {
+    width: calc((100% - 30px) / 2);
+  }
+}
+/*for PC*/
+@media screen and (min-width: 992px) {
+  .cardList__item {
+    width: calc((100% - 60px) / 4);
+  }
+}

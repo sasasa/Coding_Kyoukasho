@@ -1,0 +1,24 @@
+/* 投稿記事ヘッダー
+------------------------------------------------------ */
+.post-header {
+  max-width: 800px;
+  margin: auto;
+  & + * {
+    margin-top: 30px !important; //ヘッダー下は必ずこの数値
+    @include medium {
+      margin-top: 40px !important;
+    }
+  }
+}
+.post-header__meta {
+  .tag {
+    margin-left: 30px;
+  }
+}
+.post-header__title {
+  border-bottom: 1px dashed;
+  font-size: 26px;
+  @include medium {
+    font-size: 36px;
+  }
+}

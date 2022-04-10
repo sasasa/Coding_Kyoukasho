@@ -1,0 +1,59 @@
+.container {
+  max-width: 1440px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	Card
+----------------------------------------*/
+.card {
+	display: block;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.card__thumb {
+	overflow: hidden;
+}
+.card__thumb img {
+	max-width: none;
+	width: 100%;
+	border-radius: 5px 5px 0 0;
+	transition: transform .3s;
+}
+.card__txt {
+	margin: 20px;
+}
+/*hover*/
+.card:hover {
+	color: tomato;
+}
+.card:hover .card__thumb img {
+	transform: scale(1.1);
+}
+
+/*----------------------------------------
+	CardList04
+----------------------------------------*/
+.cardList04 {
+	display: grid; /*girdレイアウトにする*/
+	gap: 20px; /*隣接するアイテム間余白を20pxに設定*/
+}
+@media screen and (min-width: 768px),print {
+	.cardList04 {
+		grid-template-columns: repeat(2,1fr); /*均等2カラム指定*/
+	}
+}
+@media screen and (min-width: 992px),print {
+	.cardList04 {
+		grid-template-columns: repeat(3,1fr); /*均等3カラム指定*/
+	}
+}
+@media screen and (min-width: 1200px),print {
+	.cardList04 {
+		grid-template-columns: repeat(4,1fr); /*均等4カラム指定*/
+	}
+}

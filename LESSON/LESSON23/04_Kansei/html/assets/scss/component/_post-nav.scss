@@ -1,0 +1,66 @@
+/* 投稿記事ナビゲーション
+------------------------------------------------------ */
+/*先頭の記事・末尾の記事でボタンが片方消えてもレイアウトが崩れないように、gridレイアウトで指定しています。*/
+.post-nav {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "prev next"
+    "back back";
+  margin-top: 80px;
+  @include medium {
+    margin-top: 100px;
+    grid-template-columns: 142px 1fr 142px;
+    grid-template-rows: auto;
+    grid-template-areas: "prev back next";
+  }
+}
+.post-nav__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 142px;
+  height: 50px;
+  border-radius: 6px;
+  background: $c_key2;
+  font-size: 18px;
+  text-decoration: none;
+  &._prev {
+    grid-area: prev;
+    &::before {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid;
+      border-right: 2px solid;
+      transform: rotate(-135deg);
+    }
+  }
+  &._next {
+    grid-area: next;
+    justify-self: end;
+    &::after {
+      content: "";
+      display: block;
+      width: 10px;
+      height: 10px;
+      border-top: 2px solid;
+      border-right: 2px solid;
+      transform: rotate(45deg);
+    }
+  }
+}
+.post-nav__back {
+  grid-area: back;
+  justify-self: center;
+  display: block;
+  margin-top: 30px;
+  font-size: 18px;
+  text-align: center;
+  @include medium {
+    margin-top: 0;
+    align-self: center;
+  }
+}

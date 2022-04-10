@@ -1,0 +1,92 @@
+/* ねこ店員紹介
+------------------------------------------------------ */
+.staff {
+  display: flex;
+  flex-direction: column-reverse;
+  & + .staff {
+    margin-top: 50px;
+  }
+}
+.staff__ph {
+  margin-left: -20px;
+  margin-right: -20px;
+}
+.staff__body {
+  margin-right: -20px;
+  padding: 30px 20px 50px;
+  background: $c_key2;
+}
+.staff__title {
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px dashed;
+  font-size: 22px;
+}
+/*反転タイプ*/
+.staff._reverse {
+  .staff__body {
+    margin-right: 0;
+    margin-left: -20px;
+  }
+}
+
+/*for PC*/
+/*写真の高さと背景色エリアの高さが連動することになるデザイン仕様であるため、
+Chapter2の章末練習問題に出てきた類似のレイアウトのようにposition:absoluteを使うことは避けました。
+隣り合うボックスの高さが自動的に連動する仕様はflexboxの特徴なので、
+・flexboxで横並び
+・calc(50% - 50vw)で片側の端まで引き伸ばす
+・transformで画像の位置を上にずらす
+といった手法を採用しています。*/
+@include medium {
+  .staff {
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 130px;
+    background: $c_key2;
+    & + .staff {
+      margin-top: 160px;
+    }
+  }
+  .staff__body {
+    flex-shrink: 0;
+    width: 50%;
+    margin: 0;
+    padding: 40px;
+    background: none;
+  }
+  .staff__ph {
+    flex-grow: 1;
+    margin: 0;
+    margin-left: calc(50% - 50vw);
+    transform: translateY(-50px);
+  }
+
+  /*反転タイプ*/
+  .staff._reverse {
+    flex-direction: row;
+    .staff__ph {
+      margin-left: 0;
+      margin-right: calc(50% - 50vw);
+    }
+    .staff__body {
+      margin: 0;
+    }
+  }
+}
+
+/*PC用カンプの文字サイズをそのまま768px以上で適用するとレイアウトが維持できなかったので
+一段階上のブレイクポイントからの適用としました。
+また、文字サイズをmin()などでシームレスに拡大縮小するようにしても美しいと思います。*/
+@include large {
+  .staff__title {
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    font-size: 30px;
+  }
+  .staff__text {
+    font-size: 20px;
+    line-height: 2;
+  }
+}

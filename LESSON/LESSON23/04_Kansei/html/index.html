@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueのホームページです。1点ものの手作り猫グッズ、猫モチーフのアクセサリー・雑貨などを販売しています。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="top-header">
+    <div class="top-header__inner">
+      <h1 class="top-header__logo"><a href="/"><img src="/assets/img/logo_top_header.svg" alt="ハンドメイド猫グッズのお店 -nekonokomono- l'atelier Queue（アトリエ・クー）"></a></h1>
+      <div class="top-header__txt">
+        <p>“Queue(クー)”は、フランス語で「しっぽ」の意味です。<br>
+          猫にも人にも心地好いをモットーに、猫おもちゃ、雑貨を作っています。</p>
+      </div>
+    </div>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="/products/" class="gnav__link">商品一覧</a></li>
+      <li class="gnav__item"><a href="/blog/" class="gnav__link">ねこブログ</a></li>
+      <li class="gnav__item"><a href="/staff/" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="/faq/" class="gnav__link">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="/ contact/" class="gnav__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="/assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="/" class="spmenu__link">トップページ</a></li>
+        <li class="spmenu__item"><a href="/products/" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="/blog/" class="spmenu__link">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="/staff/" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="/faq/" class="spmenu__link">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="/contact/" class="spmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="/law/" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="/privacy/" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <main class="main-contents _home">
+    <div class="container">
+
+      <section class="section">
+        <!-- lv2見出し：猫アイコン付き／なし・一覧ボタンあり／なしを組み合わせできるようにしています。 -->
+        <header class="heading-lv2 _icon _btn">
+          <h2 class="heading-lv2__title">お知らせ</h2>
+          <p class="heading-lv2__btn"><a href="/blog/" class="s-btn">一覧へ</a></p>
+        </header>
+        <!-- お知らせ一覧：お知らせ専用の一覧コンポーネントです。 -->
+        <dl class="news">
+          <div class="news__item">
+            <dt class="news__date"><time>2021-11-01</time></dt>
+            <dd class="news__data">
+              <span class="tag tag--new">新商品情報</span>
+              <a href="/blog/detail.html" class="news__link">【焼印付】爪とぎ型キーホルダー登場！</a>
+            </dd>
+          </div>
+          <div class="news__item">
+            <dt class="news__date"><time>2021-10-28</time></dt>
+            <dd class="news__data">
+              <span class="tag">入荷情報</span>
+              <a href="#" class="news__link">里親募集型猫カフェ猫式さんの委託販売ブースにアクセサリー・猫首輪・けりぐるみを納品しました。</a>
+            </dd>
+          </div>
+          <div class="news__item">
+            <dt class="news__date"><time>2021-10-12</time></dt>
+            <dd class="news__data">
+              <span class="tag">イベント出店</span>
+              <a href="#" class="news__link">ニャンフェス14に参加決定。鋭意新作製作中です！</a>
+            </dd>
+          </div>
+        </dl>
+      </section>
+
+      <section class="section">
+        <header class="heading-lv2 _icon">
+          <h2 class="heading-lv2__title">おすすめ商品</h2>
+        </header>
+
+        <!-- レイアウト専用3カラムグリッド＋商品カード -->
+        <!-- レイアウトグリッド仕様が下の商品カテゴリと同じなので、レイアウトのみ汎用グリッド化しています。
+        デザインカンプ上にはPC3カラムのものしかありませんが、汎用グリッドなのであらかじめ2カラム・4カラム版も用意してあります。
+        -->
+        <div class="grid grid--pc3col pd-card-list">
+          <section class="grid__item pd-card">
+            <h3 class="pd-card__title">【焼印付】爪とぎ型キーホルダー</h3>
+            <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd001.jpg" alt=""></figure>
+            <p class="pd-card__ribbon">新商品</p>
+            <p class="pd-card__text">可愛らしいミニチュアサイズの「猫の爪とぎ」型キーホルダー。木製ケースの裏面には猫シルエットの焼印付きでオシャレ！</p>
+            <p class="pd-card__price">000円<span>(税抜)</span></p>
+            <p class="pd-card__btn"><a href="/products/detail.html" class="btn btn--next">詳細を見る</a></p>
+          </section>
+          <section class="grid__item pd-card">
+            <h3 class="pd-card__title">肉球ブローチ（7個セット）</h3>
+            <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd002.jpg" alt=""></figure>
+            <p class="pd-card__text">定番の肉球型のレジンブローチ（7個セット）です。</p>
+            <p class="pd-card__price">000円<span>(税抜)</span></p>
+            <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+          </section>
+          <section class="grid__item pd-card">
+            <h3 class="pd-card__title">レース猫首輪（鈴付き）</h3>
+            <figure class="pd-card__thumb"><img src="/assets/img/dmy_pd003.jpg" alt=""></figure>
+            <p class="pd-card__text">アースカラーのレース＋アンティーク調の金具でシックな印象の猫首輪です。</p>
+            <p class="pd-card__price">000円<span>(税抜)</span></p>
+            <p class="pd-card__btn"><a href="#" class="btn btn--next">詳細を見る</a></p>
+          </section>
+        </div>
+      </section>
+
+      <section class="section">
+        <header class="heading-lv2 _icon _btn">
+          <h2 class="heading-lv2__title">商品カテゴリー</h2>
+        </header>
+
+        <!-- レイアウト専用3カラムグリッド＋商品カテゴリー -->
+        <ul class="grid grid--pc3col pd-category-list">
+          <li class="grid__item">
+            <a href="#" class="pd-category">
+              <div class="pd-category__thumb"><img src="/assets/img/thumb_cate01.jpg" alt="" width="120" height="120" loading="lazy"></div>
+              <div class="pd-category__title">レジンブローチ</div>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="pd-category">
+              <div class="pd-category__thumb"><img src="/assets/img/thumb_cate02.jpg" alt="" width="120" height="120" loading="lazy"></div>
+              <div class="pd-category__title">猫用首輪</div>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="pd-category">
+              <div class="pd-category__thumb"><img src="/assets/img/thumb_cate03.jpg" alt="" width="120" height="120" loading="lazy"></div>
+              <div class="pd-category__title">けりぐるみ</div>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="pd-category">
+              <div class="pd-category__thumb"><img src="/assets/img/thumb_cate04.jpg" alt="" width="120" height="120" loading="lazy"></div>
+              <div class="pd-category__title">アクセサリー</div>
+            </a>
+          </li>
+          <li class="grid__item">
+            <a href="#" class="pd-category">
+              <div class="pd-category__thumb"><img src="/assets/img/thumb_cate05.jpg" alt="" width="120" height="120" loading="lazy"></div>
+              <div class="pd-category__title">その他雑貨</div>
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section section--bg">
+        <h2 class="section__title">委託販売先</h2>
+        <p class="section__lead">当店は現在以下の3店舗のレンタルボックスにて委託販売をさせていただいております。<br>
+          商品を実際に手にとってお確かめいただけますので、お近くの方はお気軽にお立ち寄り下さい。</p>
+        
+        <!-- 委託販売先専用のブロックとして定義（グリッド幅が独自であるため） -->
+        <!-- セクションの冒頭が見出し用ととなるようにサムネイルを末尾に回しています。 -->
+        <section class="rentalbox">
+          <div class="rentalbox__body">
+            <h3 class="rentalbox__title">台湾スイーツ豆花専門 黒猫豆花 様</h3>
+            <dl class="rentalbox__data">
+              <dt>住所</dt>
+              <dd>神奈川県川崎市高津区二子2丁目7-40　フォーレスト多摩川102</dd>
+              <dt>営業時間</dt>
+              <dd>10:00-21:00（時短営業中は20:00まで）</dd>
+              <dt>定休日</dt>
+              <dd>水曜日</dd>
+              <dt>Website</dt>
+              <dd><a href="https://kuroneko-douhua.com/" target="_blank">https://kuroneko-douhua.com/</a></dd>
+            </dl>
+          </div>
+          <figure class="rentalbox__thumb"><img src="/assets/img/img_rental_kuroneko_douhua.jpg" alt="黒猫豆花の外観写真" width="440" height="303" loading="lazy"></figure>
+        </section>
+        <section class="rentalbox">
+          <div class="rentalbox__body">
+            <h3 class="rentalbox__title">May’s Cafe -ハンドメイド雑貨＆CAFE-  様</h3>
+            <dl class="rentalbox__data">
+              <dt>住所</dt>
+              <dd>東京都世田谷区太子堂5-17-20-1F</dd>
+              <dt>営業時間</dt>
+              <dd>土日祝日11:00〜19:00のみ営業中</dd>
+              <dt>定休日</dt>
+              <dd>月〜金曜日</dd>
+              <dt>Instagram</dt>
+              <dd><a href="https://www.instagram.com/mays._.cafe/" target="_blank">https://www.instagram.com/mays._.cafe/</a></dd>
+            </dl>
+          </div>
+          <figure class="rentalbox__thumb"><img src="/assets/img/img_rental_mayscafe.jpg" alt="May's Cafeの外観写真" width="440" height="303" loading="lazy"></figure>
+        </section>
+        <section class="rentalbox">
+          <div class="rentalbox__body">
+            <h3 class="rentalbox__title">里親募集型猫カフェ 猫式 様</h3>
+            <dl class="rentalbox__data">
+              <dt>住所</dt>
+              <dd>神奈川県川崎市高津区溝口1－20－10　東方ビル3F</dd>
+              <dt>営業時間</dt>
+              <dd>12：00～20：00（最終受付19:30）</dd>
+              <dt>定休日</dt>
+              <dd>月曜日</dd>
+              <dt>Website</dt>
+              <dd><a href="https://www.neko-shiki.net/" target="_blank">https://www.neko-shiki.net/</a></dd>
+            </dl>
+          </div>
+          <figure class="rentalbox__thumb"><img src="/assets/img/img_rental_nekoshiki.jpg" alt="猫式の店内写真" width="440" height="303" loading="lazy"></figure>
+        </section>
+      </section>
+
+      <section class="section">
+        <h2 class="section__title">プロフィール</h2>
+        <!-- プロフィール専用のブロックとして定義（独自レイアウトであるため） -->
+        <div class="profile">
+          <figure class="profile__ph"><img src="/assets/img/img_profile.jpg" alt="@latelierqueueのアカウント写真" width="140" height="140" loading="lazy"></figure>
+          <p class="profile__account">@latelierqueue</p>
+          <p class="profile__text">猫雑貨・猫おもちゃ、その他ハンドメイド<br>
+            時々農家になります。</p>
+          <ul class="profile__sns">
+            <li><a href="https://twitter.com/latelierqueue" target="_blank"><img src="/assets/img/sns_twitter.png" alt="Twitter" width="80" height="80" loading="lazy"></a></li>
+            <li><a href="https://www.instagram.com/latelierqueue/" target="_blank"><img src="/assets/img/sns_insta.png" alt="Instagram" width="80" height="80" loading="lazy"></a></li>
+          </ul>
+        </div>
+      </section>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="/assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="/assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="/" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="/products/" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="/blog/" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="/staff/" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="/faq/" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="/contact/" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="/law/" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="/privacy/" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

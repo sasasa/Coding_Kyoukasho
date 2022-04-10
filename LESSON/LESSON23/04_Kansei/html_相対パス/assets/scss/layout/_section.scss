@@ -1,0 +1,50 @@
+/* section
+------------------------------------------------------ */
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  @include medium {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+.section:not(.section--bg) {
+  & + section:not(.section--bg) {
+    padding-top: 0;
+  }
+}
+.section--bg {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  background: $c_key2;
+}
+
+/*セクション付属タイトル*/
+.section__title {
+  font-size: 24px;
+  text-align: center;
+  & + * {
+    margin-top: 30px;
+  }
+  @include medium {
+    font-size: 30px;
+    & + * {
+      margin-top: 40px;
+    }
+  }
+}
+
+/*セクション付属リード文*/
+.section__lead {
+  & + * {
+    margin-top: 50px;
+  }
+  @include medium {
+    text-align: center;
+    & + * {
+      margin-top: 80px;
+    }
+  }
+}

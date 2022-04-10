@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-14</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="12-14.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+$(function(){
+  //ファイルが選択されたら
+  $('input[type="file"]').on('change', function () {
+    //この要素のfilesプロパティ情報を変数「file」に格納
+    var file = $(this).prop('files')[0];
+    //fileNameというclassのついたpタグのテキストをファイル名情報に置き換える
+    $('p.fileName').text(file.name);
+  });
+});
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>ファイルアップロード</h1>
+
+    <div class="inputField">
+      <label class="fileUpload" tabindex="0">
+        <input type="file" name="file" accept="image/*">画像ファイルを選択
+      </label>
+      <p class="fileName">選択されていません</p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+.container {
+  max-width: 880px;
+  margin: auto;
+	padding: 0 20px;
+}
+header {
+  padding: 40px 20px;
+  background: skyblue;
+}
+footer {
+  padding: 20px;
+  background: #000;
+  color: #fff;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+.heading-lv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28px;
+  line-height: 1.5;
+}
+.heading-lv2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  margin-top: 20px;
+  border-top: 1px solid;
+}
+.heading-lv2 + *, /*大見出しの下に来る要素に一律で40pxの余白をつける*/
+.section .heading-lv2 + * { /*.section p より詳細度上げる*/
+  margin-top: 40px;
+}
+
+/*----------------------------------------
+	Section
+----------------------------------------*/
+/*セクション間隔（共通）*/
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/*背景なしのセクションが隣接した場合の調整*/
+.section:not(.section--bg) + .section:not(.section--bg) {
+  padding-top: 0;
+}
+/*背景色付き*/
+.section--bg {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  background-color: #edf3fa;
+}
+
+/*----------------------------------------
+	セクション冒頭のmargin-top調整
+----------------------------------------*/
+.heading-lv2 {
+  margin-top: 100px; /*サンプルの動作確認用の設定*/
+}
+.section p {
+  margin-top: 20px; /*一律で上margin設定*/
+  line-height: 2;
+}
+.section >:first-child { /*セクション先頭の子要素の上marginを0にする*/
+  margin-top: 0;
+}

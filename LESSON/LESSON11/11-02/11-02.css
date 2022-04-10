@@ -1,0 +1,35 @@
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+
+/*for PC*/
+/*表組み状態をデフォルトとしたいのでPCレイアウトを標準とする*/
+.table02 {
+	width: 100%;
+	table-layout: fixed; 
+	border-collapse: collapse;
+}
+.table02 th,
+.table02 td {
+	padding: 15px;
+	border: 1px solid #ccc;
+}
+.table02 th {
+	background: #f7f7f7;
+}
+/*for SP*/
+/*モバイルレイアウトでは縦積みになるように上書き*/
+@media screen and (max-width: 767px) {
+	.table02 tr,
+	.table02 th,
+	.table02 td {
+		display: block; /*縦積み化*/
+		margin-top: -1px; /*罫線を重ねる*/
+		text-align: left;
+	}
+	.table02 td {
+		padding-left: 30px;
+	}
+}

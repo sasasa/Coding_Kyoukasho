@@ -1,0 +1,21 @@
+/*ファーストビューエリア*/
+.mv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh; /*viewportの高さいっぱいに表示*/
+  background: #c1e4e9;
+  text-align: center;
+}
+/*コンテンツエリア*/
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 15px;
+}
+
+/*補足：
+vwはスクロールバーを含むサイズであるため、スクロールバーが表示されるとその分だけコンテンツが横にはみ出してしまい、横スクロールが発生します。
+この問題を回避するため、幅は100%で指定しています。
+*/

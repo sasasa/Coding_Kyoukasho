@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>よくあるご質問 | ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueのよくあるご質問ページです。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="/" aria-label="トップページへ戻る"><img src="/assets/img/logo_under_header.svg" alt="-nekonokomono- l'atelier Queue"></a></p>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="/products/" class="gnav__link">商品一覧</a></li>
+      <li class="gnav__item"><a href="/blog/" class="gnav__link">ねこブログ</a></li>
+      <li class="gnav__item"><a href="/staff/" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="/faq/" class="gnav__link" aria-current="page">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="/contact/" class="gnav__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="/assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="/" class="spmenu__link">トップページ</a></li>
+        <li class="spmenu__item"><a href="/products/" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="/blog/" class="spmenu__link">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="/staff/" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="/faq/" class="spmenu__link" aria-current="page">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="/contact/" class="spmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="/law/" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="/privacy/" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb__item"><a href="/faq/" aria-current="page">よくあるご質問</a></li>
+    </ol>
+  </nav>
+
+  <main class="main-contents">
+    <div class="container">
+
+      <h1 class="page-title">
+        <span class="page-title__main">よくあるご質問</span>
+        <span class="page-title__sub">FAQ</span>
+      </h1>
+
+      <div class="page-lead">
+        <p>お客様から寄せられたよくあるご質問をあつめました。<br>
+          ご一読いただいても問題が解決しない場合は<a href="/contact/">お問合せフォーム</a>からご連絡下さい。</p>
+      </div>
+      
+      <!-- スクリプト側でariaを利用した汎用的なアコーディオン用関数を用意しているので、開閉指定用のclassとFAQ専用のスタイル指定用classを併記する形としています。-->
+      <dl class="accordion faq">
+        <dt>
+          <button id="accordion1-toggle" class="accordion__toggle faq__question" 
+            aria-controls="accordion1-panel" 
+            aria-expanded="false">
+            <span class="faq__q-icon">Q</span>
+            <span class="faq__q-text">質問テキストが入ります</span>
+            <span class="faq__action"><span class="visually-hidden">回答パネルを開く</span></span>
+          </button>
+        </dt>
+        <dd id="accordion1-panel" class="accordion__panel" 
+            aria-hidden="true" 
+            aria-labelledby="accordion1-toggle">
+          <div class="faq__answer">
+            <span class="faq__a-icon">A</span>
+            <div class="faq__a-text">
+              <p>回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。</p>
+            </div>
+          </div>
+        </dd>
+
+        <dt>
+          <button id="accordion2-toggle" class="accordion__toggle faq__question" 
+            aria-controls="accordion2-panel" 
+            aria-expanded="false">
+            <span class="faq__q-icon">Q</span>
+            <span class="faq__q-text">質問テキストが入ります質問テキストが入ります</span>
+            <span class="faq__action"><span class="visually-hidden">回答パネルを開く</span></span>
+          </button>
+        </dt>
+        <dd id="accordion2-panel" class="accordion__panel" 
+            aria-hidden="true" 
+            aria-labelledby="accordion2-toggle">
+          <div class="faq__answer">
+            <span class="faq__a-icon">A</span>
+            <div class="faq__a-text">
+              <p>回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。</p>
+            </div>
+          </div>
+        </dd>
+
+        <dt>
+          <button id="accordion3-toggle" class="accordion__toggle faq__question" 
+            aria-controls="accordion3-panel" 
+            aria-expanded="false">
+            <span class="faq__q-icon">Q</span>
+            <span class="faq__q-text">質問テキストが入ります質問テキストが入ります</span>
+            <span class="faq__action"><span class="visually-hidden">回答パネルを開く</span></span>
+          </button>
+        </dt>
+        <dd id="accordion3-panel" class="accordion__panel" 
+            aria-hidden="true" 
+            aria-labelledby="accordion3-toggle">
+          <div class="faq__answer">
+            <span class="faq__a-icon">A</span>
+            <div class="faq__a-text">
+              <p>回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。</p>
+            </div>
+          </div>
+        </dd>
+
+        <dt>
+          <button id="accordion4-toggle" class="accordion__toggle faq__question" 
+            aria-controls="accordion4-panel" 
+            aria-expanded="false">
+            <span class="faq__q-icon">Q</span>
+            <span class="faq__q-text">質問テキストが入ります質問テキストが入ります</span>
+            <span class="faq__action"><span class="visually-hidden">回答パネルを開く</span></span>
+          </button>
+        </dt>
+        <dd id="accordion4-panel" class="accordion__panel" 
+            aria-hidden="true" 
+            aria-labelledby="accordion4-toggle">
+          <div class="faq__answer">
+            <span class="faq__a-icon">A</span>
+            <div class="faq__a-text">
+              <p>回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。回答テキストが入ります。</p>
+            </div>
+          </div>
+        </dd>
+
+      </dl>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="/assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="/assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="/" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="/products/" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="/blog/" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="/staff/" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="/faq/" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="/contact/" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="/law/" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="/privacy/" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

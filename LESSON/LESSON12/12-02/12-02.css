@@ -1,0 +1,49 @@
+body {
+	font-family: sans-serif;
+}
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+.inputBox,
+.default {
+	display: block;
+	margin: 20px 0;
+}
+label {
+	display: block;
+	margin: 20px;
+}
+
+/*placeholderスタイルの調整
+----------------------------------*/
+/* Placeholder Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 18- */
+:-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 19+ */
+::-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder IE 10+ */
+:-ms-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}

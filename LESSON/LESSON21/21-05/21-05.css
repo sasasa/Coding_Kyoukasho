@@ -1,0 +1,87 @@
+@charset "UTF-8";
+/*サンプル表示用のダミースタイル*/
+h1 {
+  display: none;
+}
+body {
+  margin: 20px;
+}
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 20px;
+}
+.sample {
+  margin: 50px 0 10px;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+
+/*----------------------------------------
+	button
+----------------------------------------*/
+.btn {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  max-width: 460px;
+  padding: 15px;
+  border-radius: 4px;;
+  background: #ec9c67;
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.2em;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  cursor: pointer;
+}
+.btn:hover,
+.btn:focus {
+  opacity: 0.7;
+}
+.btn__icon {
+  width: auto;
+  height: 1.5em;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+
+/*詳細を見る*/
+.btn--more {
+  position: relative;
+  border-color: inherit;
+}
+.btn--more::after {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  transition: all .3s;
+}
+.btn--more:hover::after {
+  right: 10px;
+}
+/*カートに入れる*/
+.btn--cart {
+  background: #ec9c67;
+  color: #fff;
+}
+.btn--cart::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin-right: 0.3em;
+  background: url(img/icon_cart.png) 0 0 / contain no-repeat;
+}

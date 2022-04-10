@@ -1,0 +1,21 @@
+@charset "UTF-8";
+/*サンプル表示用のダミースタイル*/
+h1 {
+  display: none;
+}
+.container {
+  max-width: 1080px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+.sample {
+  margin: 50px 0;
+  padding: 30px;
+  border: 1px solid #eee;
+}
+a {
+  color: inherit;
+}
+i {
+  margin-right: 0.3em;
+}

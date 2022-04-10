@@ -1,0 +1,89 @@
+/* ==================================================================
+レイアウト
+=================================================================== */
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+	font-size: 1.8em;
+}
+h2 {
+	margin-top: 30px;
+	margin-bottom: 10px;
+	font-size: 1.2em;
+}
+.inputField {
+	margin: 15px 0;
+}
+.inputField input[name="zip1"] {
+	width: 100px;
+}
+.inputField input[name="zip2"] {
+	width: 120px;
+}
+.inputField input[name="num"] {
+	width: 100px;
+}
+.inputNote {
+	display: block;
+	margin-top: 5px;
+	color: #999;
+	font-size: 0.8em;
+}
+
+/* ==================================================================
+フォーム部品スタイル
+=================================================================== */
+
+/*テキストボックス・テキストエリア
+------------------------------------*/
+input[type="text"],
+input[type="search"], 
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	max-width: 300px;
+	padding: 10px 20px 8px 20px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+}
+textarea {
+	max-width: none;
+}
+
+/*placeholderスタイルの調整
+----------------------------------*/
+/* Placeholder Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 18- */
+:-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 19+ */
+::-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder IE 10+ */
+:-ms-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}

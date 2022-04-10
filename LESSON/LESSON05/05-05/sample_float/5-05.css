@@ -1,0 +1,75 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	float
+----------------------------------------*/
+.container {
+  max-width: 1000px;
+  min-height: 100vh;/*display:blockなので100vhにしても子要素の高さは自動では確保できない*/
+  margin: 0 auto;
+}
+.title {
+  background: #509422;
+  height: 100px;
+}
+.catch {
+  background: #aeda90;
+  margin-top: 20px;
+  height: 100px; 
+}
+.visual {
+  background: #e5f3db;
+  margin-top: 20px;
+  height: 50vw;
+  max-height: 300px;
+}
+.contents1 {
+  background: #9acd32;
+  margin-top: 20px;
+  min-height: 200px; /*エリアの下端まで自動的に伸ばすようなことはできない*/
+}
+.contents2 {
+  background: #c5eb7b;
+  margin-top: 20px;
+  min-height: 200px; /*エリアの下端まで自動的に伸ばすようなことはできない*/
+}
+
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .container::after {
+    content: "";
+    display: block;
+    clear: both; /*float解除*/
+  }
+  .title {
+    float: left;
+    width: calc(80% - 20px);
+    height: 200px;
+  }
+  .catch {
+    float: right; /*右端に寄せて配置*/
+    width: 20%;
+    height: 740px; /*floatなので左カラムのコンテンツの高さに合わせて自動的に高さを確保することはできない（要JS）*/
+    margin-top: 0;
+  }
+  .visual {
+    float: left;
+    width: calc(80% - 20px);
+  }
+  .contentsWrap {
+    width: calc(80% - 20px);
+  }
+  .contentsWrap::after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .contents1 {
+    float: left;
+    width: calc((100% - 20px) / 2);
+  }
+  .contents2 {
+    float: right;
+    width: calc((100% - 20px) / 2);
+  }
+}

@@ -1,0 +1,180 @@
+.container {
+  max-width: 880px;
+  margin: auto;
+	padding: 0 20px;
+}
+p {
+  line-height: 2;
+}
+header {
+  padding: 40px 20px;
+  background: skyblue;
+}
+footer {
+  padding: 20px;
+  background: #000;
+  color: #fff;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+/*コーディングの原則はmargin-top、Blockにはmarginつけない方針ですが、
+見出しの下の余白はデザイン的な意味では本来見出し自体にセットで最適なサイズが設計されているものであるので、
+見出しのデザイン設計を確実に再現するため、例外的に見出しのみBlock自体に直接下marginをつけています。
+ただし、同じデザインの見出しであっても配置場所によってその下のmarginサイズが異なるようなデザイン設計
+となっている場合は原則どおりBlock本体にはmarginをつけないようにした方が良いでしょう。*/
+.heading-lv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  font-size: 28px;
+  line-height: 1.5;
+}
+.heading-lv2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  margin-top: 20px;
+  border-top: 1px solid;
+}
+.heading-lv3 {
+  margin-bottom: 20px;
+  padding-left: 1em;
+  border-left: 4px solid #558ebd;
+  font-size: 22px;
+  line-height: 1.5;
+}
+
+/*----------------------------------------
+	Section
+----------------------------------------*/
+/*セクション間隔（共通）*/
+.section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/*背景なしのセクションが隣接した場合の調整*/
+.section:not(.section--bg) + .section:not(.section--bg) {
+  padding-top: 0;
+}
+/*背景色付き*/
+.section--bg {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  background-color: #edf3fa;
+}
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.card {
+	display: block;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	background: #fff;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.card__thumb {
+	position: relative;
+	transition: .3s;
+}
+.card__thumb::before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+.card__thumb img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+}
+.card__txt {
+	margin: 20px;
+}
+
+/*----------------------------------------
+	Card一覧（カード専用レイアウト）
+----------------------------------------*/
+.card-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: -20px; /*1行目の上マージンを相殺*/
+}
+.card-list__item {
+	margin-top: 20px;
+}
+
+
+@media screen and (min-width: 768px),print {
+	/*PCレイアウトで2カラム表示*/
+	.card-list--col2 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col2 .card-list__item {
+		width: calc((100% - 20px) / 2);
+	}
+
+	/*PCレイアウトで3カラム表示*/
+	.card-list--col3 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col3 .card-list__item {
+		width: calc((100% - 40px) / 3);
+	}
+}
+
+/*----------------------------------------
+	Pickup
+----------------------------------------*/
+.pickup {
+	padding: 30px;
+	background: #e7e7ff;
+}
+.pickup__body {
+	margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+	.pickup {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.pickup__card {
+		width: 40%;
+	}
+	.pickup__body {
+		width: 57%;
+		margin-top: 0;
+		line-height: 2;
+	}
+}
+
+/*----------------------------------------
+	Utilities
+----------------------------------------*/
+.u-mt0 {margin-top: 0 !important;}
+.u-mt10 {margin-top: 10px !important;}
+.u-mt20 {margin-top: 20px !important;}
+.u-mt30 {margin-top: 30px !important;}
+.u-mt40 {margin-top: 40px !important;}
+.u-mt50 {margin-top: 50px !important;}
+.u-mt60 {margin-top: 60px !important;}
+.u-mt70 {margin-top: 70px !important;}
+.u-mt80 {margin-top: 80px !important;}
+.u-mt90 {margin-top: 90px !important;}
+.u-mt100 {margin-top: 100px !important;}

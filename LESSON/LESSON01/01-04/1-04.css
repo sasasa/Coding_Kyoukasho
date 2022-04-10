@@ -1,0 +1,17 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+/*補足：
+サンプルで2カラムレイアウトを作るだけなら div.container は不要ですが、
+本書のサンプルでは今後もコンテンツエリアのベースとして div.container を使用していくので、
+ほとんどのサンプルは原則としてこのコンテナ枠の中に配置する形式を取っています。
+*/
+
+.row {
+	display: flex;
+}
+.col2 {
+	width: 50%; /*親要素のcontent-boxサイズを基準として計算する*/
+	border: 1px dashed #999;
+}

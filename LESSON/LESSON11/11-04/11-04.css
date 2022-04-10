@@ -1,0 +1,25 @@
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+
+.tableWrapper {
+	width: 100%;
+	padding-bottom: 10px;
+	overflow-x: auto; /*中身がはみ出したら横スクロールバーを出す*/
+}
+
+.table04 {
+	width: 940px; /*中のテーブルサイズを固定幅にする*/
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+.table04 th,
+.table04 td {
+	padding: 15px;
+	border: 1px solid #ccc;
+}
+.table04 th {
+	background: #f7f7f7;
+}

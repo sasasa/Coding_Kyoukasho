@@ -1,0 +1,45 @@
+html,body {
+	overflow-x: hidden; /*横スクロールの発生を防止*/
+}
+
+/*----------------------------------------
+	container
+----------------------------------------*/
+.container { /*一律でページ全体のコンテンツ最大幅を固定*/
+  max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	section
+----------------------------------------*/
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.section__header {
+	outline: 1px dashed red; /*ダミー*/
+}
+.section__header::after {
+	content: "";
+	display: block;
+	height: 10vw;
+	min-height: 100px;
+	background: #cdecf0;
+}
+.section__header._normal::after {
+	margin-left: calc(50% - 50vw);
+}
+.section__header._reverse::after {
+	margin-right: calc(50% - 50vw);
+}
+.section__ttl {
+	margin-bottom: 10px;
+	font-size: 24px;
+	letter-spacing: 0.2em;
+}
+.section__txt {
+	margin-top: 30px;
+	line-height: 1.8;
+}

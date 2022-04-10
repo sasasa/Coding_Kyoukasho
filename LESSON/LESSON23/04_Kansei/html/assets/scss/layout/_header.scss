@@ -1,0 +1,38 @@
+/* header
+------------------------------------------------------ */
+.header {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 110px;
+  background: url(../img/bg_top_header.jpg) center center / cover;
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.5);
+  }
+}
+.header__logo {
+  position: relative;
+  z-index: 1;
+  width: 200px;
+  height: 70px;
+}
+@include medium {
+  .header {
+    justify-content: flex-start;
+    height: 200px;
+    background: url(../img/bg_top_header.jpg) center center / auto 100% repeat-x;
+  }
+  .header__logo {
+    width: 400px;
+    height: 140px;
+    margin-left: 30px;
+  }
+}

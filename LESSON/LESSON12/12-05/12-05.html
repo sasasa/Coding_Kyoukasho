@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-05</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="12-05.css">
+</head>
+<body>
+  <div class="container">
+    <h1>入力補助機能サンプル</h1>
+    <form action="#">
+
+    <h2>文字数制限</h2>
+    <div class="inputField">
+      郵便番号：
+      <input type="text" name="zip1" maxlength="3" placeholder="001" inputmode="numeric"> - 
+      <input type="text" name="zip2" maxlength="4" placeholder="0001" inputmode="numeric">
+    </div>
+
+    <h2>最小値・最大値・ステップ入力</h2>
+    <div class="inputField">
+      <input type="number" name="num" min="10" max="200" step="10"> 個
+      <small class="inputNote">※最小10、最大200個まで、10個単位でご注文ください。</small>
+    </div>
+
+    <h2>正規表現</h2>
+    <div class="inputField">
+      フリガナ： <input type="text" name="kana" pattern="/^[ァ-ンヴー]+$/" placeholder="ヤマダタロウ">
+      <small class="inputNote">※全角カタカナでご入力ください。</small>
+    </div>
+
+    </form>
+  </div>
+</body>
+</html>

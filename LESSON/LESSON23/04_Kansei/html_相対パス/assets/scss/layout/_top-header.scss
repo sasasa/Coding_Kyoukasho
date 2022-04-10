@@ -1,0 +1,51 @@
+/* top-header
+------------------------------------------------------ */
+/*IE11無視のプロジェクトなのでmin関数でレスポンシブ時のサイズバランスを調整しています*/
+.top-header {
+  border-bottom: min((30/375)*100vw,30px) solid $c_key2;
+  &::after {
+    content: "";
+    display: block;
+    height: min((200/375)*100vw,200px);
+    background: url(../img/bg_top_header_sp.jpg) center center / cover;
+  }
+}
+.top-header__logo {
+  max-width: 424px;
+  margin: auto;
+}
+.top-header__inner {
+  max-width: $width;
+  margin: auto;
+  padding: 10px 20px 30px;
+}
+.top-header__txt {
+  padding: 30px 0;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  font-size: min((16/375)*100vw,20px);
+  line-height: 1.8;
+}
+@include medium {
+  .top-header {
+    border-bottom: 0;
+    &::after {
+      background: url(../img/bg_top_header.jpg) center center / auto 200px repeat-x;
+    }
+  }
+  .top-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0;
+  }
+  .top-header__logo {
+    width: calc((424/1084)*100%);
+  }
+  .top-header__txt {
+    width: calc((624/1084)*100%);
+    margin: 30px 0;
+    padding: 30px 55px;
+    font-size: min((20/1084)*100vw,20px);
+  }
+}

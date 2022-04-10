@@ -1,0 +1,13 @@
+/* page-lead
+------------------------------------------------------ */
+.page-lead {
+  & + * {
+    margin-top: 40px;
+  }
+  @include medium {
+    text-align: center;
+    & + * {
+      margin-top: 80px;
+    }
+  }
+}

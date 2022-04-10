@@ -1,0 +1,51 @@
+/* grid
+------------------------------------------------------ */
+/*IE11非対応案件なのでgridレイアウトを採用*/
+.grid {
+  display: grid;
+  gap: 20px;
+  @include small {
+    &.pd-card-list {
+      gap: 40px 20px; //商品カード一覧の場合のみ
+    }
+  }
+}
+
+/*PC4カラム用*/
+.grid--pc4col {
+  @include x-small {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include small {
+    grid-template-columns: repeat(3,1fr);
+  }
+  @include medium {
+    grid-template-columns: repeat(4,1fr);
+  }
+}
+
+/*PC3カラム*/
+.grid--pc3col {
+  @include x-small {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include small {
+    grid-template-columns: repeat(2,1fr);
+  }
+  @include medium {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+/*PC2カラム*/
+.grid--pc2col {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  @include medium {
+    max-width: none;
+    grid-template-columns: repeat(2,1fr);
+  }
+}

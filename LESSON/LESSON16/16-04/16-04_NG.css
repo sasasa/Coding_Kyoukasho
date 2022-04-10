@@ -1,0 +1,109 @@
+.container {
+  max-width: 1080px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.heading {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+a {
+	transition: color .3s;
+}
+a:hover {
+	opacity: 0.7;
+}
+
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.card {
+	display: block;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	background: #fff;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.card__thumb {
+	position: relative;
+	transition: .3s;
+}
+.card__thumb::before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+.card__thumb img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+}
+.card__txt {
+	/*サムネイルの下にpタグひとつという構造を前提として直接余白をつけてしまっている。
+	p要素に付属するmarginとしてカードの本文領域をレイアウトしてしまうと、サムネイルの下に
+	他の要素が追加された場合に作り直しが発生してしまう。*/
+	margin: 20px; 
+}
+
+
+/*----------------------------------------
+	Card一覧（カード専用レイアウト）
+----------------------------------------*/
+.card-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: -20px; /*1行目の上マージンを相殺*/
+}
+.card-list__item {
+	margin-top: 20px;
+}
+
+
+@media screen and (min-width: 768px),print {
+	/*PCレイアウトで2カラム表示*/
+	.card-list--col2 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col2 .card-list__item {
+		width: calc((100% - 20px) / 2);
+	}
+
+	/*PCレイアウトで3カラム表示*/
+	.card-list--col3 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col3 .card-list__item {
+		width: calc((100% - 40px) / 3);
+	}
+}
+
+/*----------------------------------------
+	タグ
+----------------------------------------*/
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+}
+.tag-list__item {
+	margin-right: 10px;
+}
+.tag {
+	display: inline-block;
+	padding: 5px;
+	background: #e7e7ff;
+	border-radius: 4px;
+	font-size: 12px;
+	line-height: 1;
+}

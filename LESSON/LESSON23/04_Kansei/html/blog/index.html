@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブログ一覧 | ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueのブログ一覧ページです。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="/" aria-label="トップページへ戻る"><img src="/assets/img/logo_under_header.svg" alt="-nekonokomono- l'atelier Queue"></a></p>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="/products/" class="gnav__link">商品一覧</a></li>
+      <li class="gnav__item"><a href="/blog/" class="gnav__link" aria-current="page">ねこブログ</a></li>
+      <li class="gnav__item"><a href="/staff/" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="/faq/" class="gnav__link">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="/contact/" class="gnav__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="/assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="/" class="spmenu__link">トップページ</a></li>
+        <li class="spmenu__item"><a href="/products/" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="/blog/" class="spmenu__link" aria-current="page">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="/staff/" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="/faq/" class="spmenu__link">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="/contact/" class="spmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="/law/" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="/privacy/" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb__item"><a href="#" aria-current="page">ねこブログ</a></li>
+    </ol>
+  </nav>
+
+  <main class="main-contents">
+    <div class="container">
+
+      <h1 class="page-title">
+        <span class="page-title__main">ねこブログ</span>
+        <span class="page-title__sub">Blog</span>
+      </h1>
+
+      <!-- 商品カテゴリタブと同一モジュールを使用しています。 -->
+      <nav class="category" aria-label="ブログカテゴリ">
+        <ul class="category__list">
+          <li class="category__item">
+            <a href="#" class="category__link" aria-current="page">すべて</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">お知らせ</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">新作紹介</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">ねこ店員の日常</a>
+          </li>
+          <li class="category__item">
+            <a href="#" class="category__link">その他</a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- ブログ一覧専用のコンポーネントとしています。 -->
+      <ul class="blog-list">
+        <li class="blog-list__item">
+          <div class="blog-list__body">
+            <time class="blog-list__date">2021-11-01</time>
+            <span class="tag tag--new">新商品情報</span>
+            <p class="blog-list__title"><a href="#">【焼印付】爪とぎ型キーホルダー登場！</a></p>
+            <p class="blog-list__text">概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。…</p>
+            <p class="blog-list__btn"><a href="detail.html" class="btn btn--next">もっと見る</a></p>
+          </div>
+          <div class="blog-list__thumb"><img src="/assets/img/dmy_thumb_blog01.jpg" alt=""></div>
+        </li>
+        <li class="blog-list__item">
+          <div class="blog-list__body">
+            <time class="blog-list__date">2021-10-31</time>
+            <span class="tag">ちゃまめ氏</span>
+            <p class="blog-list__title"><a href="#">何か問題でも…？</a></p>
+            <p class="blog-list__text">概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。…</p>
+            <p class="blog-list__btn"><a href="detail.html" class="btn btn--next">もっと見る</a></p>
+          </div>
+          <div class="blog-list__thumb"><img src="/assets/img/dmy_thumb_blog02.jpg" alt=""></div>
+        </li>
+        <li class="blog-list__item">
+          <div class="blog-list__body">
+            <time class="blog-list__date">2021-10-28</time>
+            <span class="tag">入荷情報</span>
+            <p class="blog-list__title"><a href="#">里親募集型猫カフェ猫式さんの委託販売ブースにアクセサリー・猫首輪・けりぐるみを納品しました。</a></p>
+            <p class="blog-list__text">概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。…</p>
+            <p class="blog-list__btn"><a href="detail.html" class="btn btn--next">もっと見る</a></p>
+          </div>
+          <div class="blog-list__thumb"><img src="/assets/img/dmy_thumb_blog03.jpg" alt=""></div>
+        </li>
+        <li class="blog-list__item">
+          <div class="blog-list__body">
+            <time class="blog-list__date">2021-10-20</time>
+            <span class="tag">タグ</span>
+            <p class="blog-list__title"><a href="#">ブログタイトルが入ります。ブログタイトルが入ります。</a></p>
+            <p class="blog-list__text">概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。概要テキストが入ります。…</p>
+            <p class="blog-list__btn"><a href="detail.html" class="btn btn--next">もっと見る</a></p>
+          </div>
+          <div class="blog-list__thumb">No Image</div>
+        </li>
+      </ul>
+
+      <nav class="navigation pagination" role="navigation">
+        <div class="nav-links">
+          <a class="prev page-numbers" href="#">前へ</a>
+          <span aria-current="page" class="page-numbers current">1</span>
+          <a class="page-numbers" href="#">2</a>
+          <a class="page-numbers" href="#">3</a>
+          <span class="page-numbers dots">…</span>
+          <a class="page-numbers" href="#">7</a>
+          <a class="next page-numbers" href="#">次へ</a>
+        </div>
+      </nav>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="/assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="/assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="/" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="/products/" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="/blog/" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="/staff/" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="/faq/" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="/contact/" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="/law/" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="/privacy/" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

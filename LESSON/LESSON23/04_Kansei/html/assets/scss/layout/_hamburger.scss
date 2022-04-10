@@ -1,0 +1,71 @@
+/* hamburger
+------------------------------------------------------ */
+.hamburger {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  z-index: 10000;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  padding-top: 15px;
+  border: 0;
+  border-radius: 50%;
+  background: $c_text;
+  color: $c_white;
+  cursor: pointer;
+  transition: background-color .3s;
+  &:hover,
+  &:focus-visible {
+    background: $c_key1;
+  }
+}
+.hamburger__line {
+  position: relative;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s;
+}
+.hamburger__line::before {
+  top: -9px;
+}
+.hamburger__line::after {
+  bottom: -9px;
+}
+.hamburger__txt {
+  margin-top: 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+/*閉じる*/
+/*aria-expandedの状態でスタイルを適用*/
+.hamburger[aria-expanded="true"] .hamburger__line{
+  background: transparent;
+}
+.hamburger[aria-expanded="true"] .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger[aria-expanded="true"] .hamburger__line::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@include medium {
+  .hamburger {
+    display: none;
+  }
+}

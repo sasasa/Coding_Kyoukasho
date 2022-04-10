@@ -1,0 +1,34 @@
+html,body {
+	overflow-x: hidden; /*横スクロールの発生を防止*/
+}
+
+/*----------------------------------------
+	container
+----------------------------------------*/
+.container { /*一律でページ全体のコンテンツ最大幅を固定*/
+  max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 20px;
+	outline: 1px dashed red; /*ダミー*/
+}
+
+/*----------------------------------------
+	section
+----------------------------------------*/
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.section._bg { /*全幅背景*/
+	margin-left: calc(50% - 50vw);
+	margin-right: calc(50% - 50vw);
+	background: #cdecf0;
+}
+.section__ttl {
+	margin-bottom: 1em;
+	font-size: 24px;
+	letter-spacing: 0.2em;
+}
+.section__txt {
+	line-height: 1.8;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-11</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="22-11.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Oswald&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script>
+    $(function(){
+      $('.tab').on('click',function(){
+        const $tab = $('.tab');
+        const $tabPanel = $('.tab-panel');
+        const targetID = '#' + $(this).data('target');
+
+        $tab.removeClass('is-active');
+        $(this).addClass('is-active');
+        $tabPanel.removeClass('is-active');
+        $(targetID).addClass('is-active');
+      });
+    });
+  </script>
+</head>
+<body>
+  <h1>タブUIのサンプル</h1>
+  <div class="container">
+
+  <div class="tabs">
+    <ul class="tab-list">
+      <li class="tab-list__item">
+      <button type="button" id="tab01" class="tab is-active" data-target="tabpanel01">タブ１</button>
+      </li>
+      <li class="tab-list__item">
+      <button type="button" id="tab02" class="tab" data-target="tabpanel02">タブ２</button>
+      </li>
+      <li class="tab-list__item">
+      <button type="button "id="tab03" class="tab" data-target="tabpanel03">タブ３</button>
+      </li>
+    </ul>
+    <div id="tabpanel01" class="tab-panel is-active">
+      <p>
+        タブパネル１<br>
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+    <div id="tabpanel02" class="tab-panel">
+      <p>
+        タブパネル２<br>
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+    <div id="tabpanel03" class="tab-panel">
+      <p>
+        タブパネル３<br>
+        この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。
+      </p>
+    </div>
+  </div>
+
+  </div>
+</body>
+</html>

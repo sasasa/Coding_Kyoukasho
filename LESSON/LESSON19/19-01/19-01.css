@@ -1,0 +1,60 @@
+.container {
+  max-width: 880px;
+  margin: auto;
+	padding: 0 20px;
+}
+p {
+  line-height: 2;
+}
+p + p {
+  margin-top: 1.5em; /*要素間の余白は原則margin-top*/
+}
+header {
+  padding: 40px 20px;
+  background: skyblue;
+}
+footer {
+  padding: 20px;
+  background: #000;
+  color: #fff;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+.heading-lv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 28px;
+  line-height: 1.5;
+}
+.heading-lv2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  margin-top: 20px;
+  border-top: 1px solid;
+}
+.heading-lv2 + * { /*大見出しの下に来る要素に一律で40pxの余白をつける*/
+  margin-top: 40px;
+}
+
+/*----------------------------------------
+	Section
+----------------------------------------*/
+/*背景色なし*/
+.section {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+/*背景色あり*/
+.section-bg {
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  padding-left: calc(50vw - 50%);
+  padding-right: calc(50vw - 50%);
+  padding-top: 100px;
+  padding-bottom: 100px;
+  background-color: #edf3fa;
+}

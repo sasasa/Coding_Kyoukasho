@@ -1,0 +1,95 @@
+/* お問い合わせフォーム
+------------------------------------------------------ */
+.contact {
+  margin-top: -1px;
+  padding: 30px 0;
+  border-top: 1px dashed $c_key1;
+  border-bottom: 1px dashed $c_key1;
+}
+
+/*入力エリア*/
+.input-field {
+  margin-top: 20px;
+}
+
+/*ラベル*/
+.input-label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*必須ラベル*/
+.require {
+  display: inline-block;
+  margin-left: 30px;
+  padding: 0 15px;
+  background: $c_red1;
+  color: #fff;
+  font-weight: normal;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+/*注意書き*/
+.input-note {
+  margin-top: 10px;
+  color: $c_gray2;
+  font-size: 12px;
+}
+
+/*エラーメッセージ*/
+.error-text {
+  display: none;
+  align-items: center;
+  margin-top: 16px;
+  color: $c_red1;
+  font-weight: bold;
+}
+.input-field.is-error .error-text {
+  display: block;
+}
+.error-text::before {
+  content: "";
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  margin-right: 0.2em;
+  background: url(../img/ico_attention.svg) center center / contain no-repeat;
+  vertical-align: middle;
+}
+
+/*確認用テキスト*/
+.confirm-text {
+  margin-top: -10px;
+}
+
+
+/*----------------------------------------
+	送信ボタン
+----------------------------------------*/
+.formBtns {
+  display: flex;
+  justify-content: center;
+}
+.buttonAction {
+  -webkit-appearance: none;
+  appearance: none;
+  display: block;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+  max-width: 400px;
+  border: 2px solid #FF7600;
+  background: #FF7600;
+  color: #fff;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-align: center;
+  letter-spacing: 0.2em;
+  transition: opacity 0.3s, color 0.3s;
+  cursor: pointer;
+}
+.buttonAction:hover {
+  opacity: 0.7;
+}

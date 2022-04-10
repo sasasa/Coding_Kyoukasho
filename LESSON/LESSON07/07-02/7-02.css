@@ -1,0 +1,79 @@
+.container {
+  max-width: 1440px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	Card
+----------------------------------------*/
+.card {
+	display: block;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.card__thumb {
+	position: relative;
+	transition: .3s;
+}
+.card__thumb::before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+.card__thumb img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+}
+.card__txt {
+	margin: 20px;
+}
+/*hover*/
+.card:hover {
+	color: tomato;
+}
+.card:hover .card__thumb {
+	opacity: 0.7;
+}
+
+/*----------------------------------------
+	cardList
+----------------------------------------*/
+.cardList {
+	display: flex;
+	flex-direction: column;
+	margin-top: -20px; /*1行目の上マージンを相殺*/
+}
+.cardList__item {
+	margin-top: 20px;
+}
+@media screen and (min-width: 768px),print {
+	.cardList {
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-left: -20px; /*左端列の左マージンを相殺*/
+	}
+	.cardList__item {
+		margin-left: 20px;
+		width: calc((100% - 40px) / 2); /*各列の左マージン分合計を除いて1/2*/
+	}
+}
+@media screen and (min-width: 992px),print {
+	.cardList__item {
+		width: calc((100% - 60px) / 3); /*各列の左マージン分合計を除いて1/3*/
+	}
+}
+@media screen and (min-width: 1200px),print {
+	.cardList__item {
+		width: calc((100% - 80px) / 4); /*各列の左マージン分合計を除いて1/4*/
+	}
+}

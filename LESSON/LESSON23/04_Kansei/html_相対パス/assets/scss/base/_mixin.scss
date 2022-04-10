@@ -1,0 +1,267 @@
+@charset "utf-8";
+// ============================================================
+// mixin
+// ============================================================
+
+//=================================
+// font-size
+//=================================
+
+@mixin fz($size){
+	font-size: ($size*10) + px;
+	font-size: $size + rem;
+}
+
+@mixin fz_em($size,$context){
+	font-size: ($size / $context) + em;
+}
+
+//=================================
+// vw size
+//=================================
+@function vs($size, $design:375){
+  $rate: 100 / $design;
+  @return $rate * $size * 1vw;
+}
+
+
+//=================================
+// safe-area
+//=================================
+@mixin safe_area {
+  padding-top: constant(safe-area-inset-top);
+  padding-bottom: constant(safe-area-inset-bottom);
+  padding-left: constant(safe-area-inset-left);
+  padding-right: constant(safe-area-inset-right);
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+
+//=================================
+// media query
+//=================================
+@mixin x-small {
+	@media screen and (max-width: 575px) {
+		@content;
+	}
+}
+@mixin small {
+	@media screen and (min-width: 576px),print {
+		@content;
+	}
+}
+@mixin medium {
+	@media screen and (min-width: 768px),print {
+		@content;
+	}
+}
+@mixin large {
+	@media screen and (min-width: 992px),print {
+		@content;
+	}
+}
+@mixin x-large {
+	@media screen and (min-width: 1200px),print {
+		@content;
+	}
+}
+@mixin xx-large {
+	@media screen and (min-width: 1400px),print {
+		@content;
+	}
+}
+
+
+
+// ----------------------------------------------------------------------
+// overflowで慣性スクロール
+// ----------------------------------------------------------------------
+@mixin touchscroll($dir) {
+	@if $dir == x {
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+	} @else if $dir == y {
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	} @else if $dir == xy {
+		overflow: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+}
+
+// ----------------------------------------------------------------------
+// 両端揃え
+// ----------------------------------------------------------------------
+@mixin justify {
+	text-align: justify;
+	text-justify: inter-ideograph;
+	font-feature-settings: "palt";
+}
+
+
+// ----------------------------------------------------------------------
+// 画像置換（テキスト飛ばし）
+// ----------------------------------------------------------------------
+
+// overflowでの画像置換
+@mixin replace {
+	text-indent:100%;
+	white-space:nowrap;
+	overflow:hidden;
+}
+@mixin replaceClear { //画像置換解除
+	text-indent:0;
+	white-space:normal;
+	overflow:visible;
+}
+
+// text-indentでの画像置換
+@mixin replaceIndent {
+	text-indent:-9999px;
+}
+@mixin replaceIndentClear { //画像置換解除
+	text-indent:inherit;
+}
+
+
+
+//=================================
+// object fit images
+//=================================
+@mixin ofi($size) {
+  object-fit: $size;
+  @include ie {
+    font-family: 'object-fit: #{$size};'
+  }
+}
+
+//=================================
+// focus-ring
+//=================================
+@mixin focus-with-keyboard {
+  html[data-whatinput="keyboard"] &:focus {
+    @content;
+  }
+}
+
+@mixin focus-without-keyboard {
+  html[data-whatinput="initial"] &:focus,
+  html[data-whatinput="mouse"] &:focus,
+  html[data-whatinput="touch"] &:focus {
+    @content;
+  }
+}
+
+@mixin focus-clear {
+  outline: none;
+}
+
+@mixin focus-clear-without-keyboard {
+  @include focus-without-keyboard {
+    @include focus-clear;
+  }
+}
+
+//=================================
+// text-overflow 文字数末尾に「...」
+//=================================
+
+@mixin textover($textover) {
+	width:$textover;
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow: ellipsis;
+	-webkit-text-overflow: ellipsis;
+	-o-text-overflow:ellipsis;
+}
+
+//=================================
+// 複数行の末尾に「...」
+//=================================
+// Multiline text with ellipsis
+// Supported IE and Firefox
+//対象箇所の親に
+//・overflow:hidden
+//を指定すること
+
+@mixin multi_ellipsis(
+  $container-bg,
+  $font-size-base,
+  $line-height-computed,
+  $lines-to-show) 
+  {
+  display: block;
+  font-size: $font-size-base;
+  height: $font-size-base * $line-height-computed * $lines-to-show;
+  line-height: $line-height-computed;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  &:before,
+  &:after {
+    position: absolute;
+    background: $container-bg;
+  }
+  &:before {
+    content: "...";
+    top: $font-size-base * $line-height-computed * ($lines-to-show - 1);
+    right: 0;
+    padding-left: 0.3em;
+  }
+  &:after {
+    content: "";
+    height: 100%;
+    width: 100%;
+  }
+}
+
+//=================================
+// text hover color
+//=================================
+@mixin hoverTxt($color1,$color2) {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  background: linear-gradient(to right, $color2, $color2 50%, $color1 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  &:hover {
+    background-position: 0 100%;
+  }
+}
+
+//=================================
+// Block hover color
+//=================================
+@mixin hoverBlock($color1,$color2) {
+  overflow: hidden;
+  position: relative;
+  display: block;
+  width: 100%;
+  background: $color1;
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: $color2;
+    transform: translateX(-100%);
+    transition: .3s;
+  }
+  &:hover,
+  &:focus {
+    &::before {
+      transform: translateX(0);
+    }
+  }
+}

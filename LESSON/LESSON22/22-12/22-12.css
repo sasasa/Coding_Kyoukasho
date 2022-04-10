@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+/*サンプル表示のためのダミースタイル*/
+html,body {
+  height: 100%;
+}
+h1 {
+  display: none;
+}
+.container {
+  max-width: 1080px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+/*----------------------------------------
+	Tab
+----------------------------------------*/
+.tab-list {
+  display: flex;
+}
+.tab-list__item:not(:first-child) {
+  margin-left: 5px;
+}
+.tab {
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  bottom: -1px;
+  margin: 0;
+  padding: 10px 20px;
+  border-radius: 4px 4px 0 0;
+  border: 1px solid #ccc;
+  background: #f2f2f2;
+  cursor: pointer;
+}
+.tab.is-active {
+  background: #fff;
+  border-bottom: 1px solid #fff;
+}
+
+/*----------------------------------------
+	Tabパネル
+----------------------------------------*/
+.tab-panel {
+  display: none;
+  padding: 30px;
+  border: 1px solid #ccc;
+}
+.tab-panel.is-active {
+  display: block;
+}

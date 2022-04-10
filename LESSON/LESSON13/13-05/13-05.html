@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>13-05</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="13-05.css">
+</head>
+<body>
+  <div class="container">
+    <h1 class="heading">新規会員登録</h1>
+    <p class="lead">下記の登録フォームからユーザー名・パスワード・メールアドレスをご登録ください。</p>
+    <form action="#">
+      <div class="form">
+        <div class="form__item">
+          <label for="username" class="form__ttl">ユーザー名<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField -half">
+              <input type="text" name="username" id="username" maxlength="20" required>
+            </div>
+            <small class="inputNote">※20文字以内</small>
+          </div>
+        </div>
+        <div class="form__item">
+          <label for="password" class="form__ttl">パスワード<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField -half">
+              <input type="password" name="password" id="password" pattern="^([0-9A-Za-z]{8,})$" required>
+            </div>
+            <small class="inputNote">※半角英数字8文字以上</small>
+          </div>
+        </div>
+        <div class="form__item">
+          <label for="email" class="form__ttl">メールアドレス<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField">
+              <input type="email" name="email" id="email" placeholder="sample@sample.jp" required>
+            </div>
+          </div>
+        </div>
+        <div class="form__item">
+          <div class="form__ttl" id="genderGroupLabel">性別<span class="label-any">任意</span></div>
+          <div class="form__body">
+            <ul class="radioList" aria-labelledby="genderGroupLabel">
+              <li><label><input type="radio" name="gender" value="男"><span>男</span></label></li>
+              <li><label><input type="radio" name="gender" value="女"><span>女</span></label></li>
+              <li><label><input type="radio" name="gender" value="その他"><span>その他</span></label></li>
+            </ul>
+          </div>
+        </div>
+        <div class="form__item" role="gruop" aria-labelledby="birthdayGroupLabel">
+          <div class="form__ttl" id="birthdayGroupLabel">生年月日<span class="label-any">任意</span></div>
+          <div class="form__body">
+            <div class="inlineBlock">
+              <div class="selectWrap">
+                <select name="year" id="year">
+                  <option value="" selected></option>
+                  <option value="1930">1930</option>
+                  <option value="1931">1931</option>
+                  <option value="1932">1932</option>
+                  <option value="1933">1933</option>
+                  <option value="1934">1934</option>
+                  <option value="1935">1935</option>
+                  <option value="1936">1936</option>
+                  <option value="1937">1937</option>
+                  <option value="1938">1938</option>
+                  <option value="1939">1939</option>
+                  <option value="1940">1940</option>
+                  <option value="1941">1941</option>
+                  <option value="1942">1942</option>
+                  <option value="1943">1943</option>
+                  <option value="1944">1944</option>
+                  <option value="1945">1945</option>
+                  <option value="1946">1946</option>
+                  <option value="1947">1947</option>
+                  <option value="1948">1948</option>
+                  <option value="1949">1949</option>
+                  <option value="1950">1950</option>
+                  <option value="1951">1951</option>
+                  <option value="1952">1952</option>
+                  <option value="1953">1953</option>
+                  <option value="1954">1954</option>
+                  <option value="1955">1955</option>
+                  <option value="1956">1956</option>
+                  <option value="1957">1957</option>
+                  <option value="1958">1958</option>
+                  <option value="1959">1959</option>
+                  <option value="1960">1960</option>
+                  <option value="1961">1961</option>
+                  <option value="1962">1962</option>
+                  <option value="1963">1963</option>
+                  <option value="1964">1964</option>
+                  <option value="1965">1965</option>
+                  <option value="1966">1966</option>
+                  <option value="1967">1967</option>
+                  <option value="1968">1968</option>
+                  <option value="1969">1969</option>
+                  <option value="1970">1970</option>
+                  <option value="1971">1971</option>
+                  <option value="1972">1972</option>
+                  <option value="1973">1973</option>
+                  <option value="1974">1974</option>
+                  <option value="1975">1975</option>
+                  <option value="1976">1976</option>
+                  <option value="1977">1977</option>
+                  <option value="1978">1978</option>
+                  <option value="1979">1979</option>
+                  <option value="1980">1980</option>
+                  <option value="1981">1981</option>
+                  <option value="1982">1982</option>
+                  <option value="1983">1983</option>
+                  <option value="1984">1984</option>
+                  <option value="1985">1985</option>
+                  <option value="1986">1986</option>
+                  <option value="1987">1987</option>
+                  <option value="1988">1988</option>
+                  <option value="1989">1989</option>
+                  <option value="1990">1990</option>
+                  <option value="1991">1991</option>
+                  <option value="1992">1992</option>
+                  <option value="1993">1993</option>
+                  <option value="1994">1994</option>
+                  <option value="1995">1995</option>
+                  <option value="1996">1996</option>
+                  <option value="1997">1997</option>
+                  <option value="1998">1998</option>
+                  <option value="1999">1999</option>
+                  <option value="2000">2000</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                </select>
+              </div>
+              <label for="month">月</label>
+              <div class="selectWrap">
+                <select name="month" id="month">
+                  <option value="" selected></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                </select>
+              </div>
+              <label for="month">月</label>
+              <div class="selectWrap">
+                <select name="day" id="day">
+                  <option value="" selected></option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                  <option value="8">8</option>
+                  <option value="9">9</option>
+                  <option value="10">10</option>
+                  <option value="11">11</option>
+                  <option value="12">12</option>
+                  <option value="13">13</option>
+                  <option value="14">14</option>
+                  <option value="15">15</option>
+                  <option value="16">16</option>
+                  <option value="17">17</option>
+                  <option value="18">18</option>
+                  <option value="19">19</option>
+                  <option value="20">20</option>
+                  <option value="21">21</option>
+                  <option value="22">22</option>
+                  <option value="23">23</option>
+                  <option value="24">24</option>
+                  <option value="25">25</option>
+                  <option value="26">26</option>
+                  <option value="27">27</option>
+                  <option value="28">28</option>
+                  <option value="29">29</option>
+                  <option value="30">30</option>
+                  <option value="31">31</option>
+                </select>
+              </div>
+              <label for="day">日</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="acceptArea">
+          <p class="acceptArea__txt"><a href="#">ご利用規約</a>と<a href="#">プライバシーポリシー</a>をご確認の上、<br>同意していただける場合は「同意する」にチェックを入れてください。<strong class="label-required">必須</strong></p>
+          <label class="acceptArea__check"><input type="checkbox" value="同意する"><span>同意する</span></label>
+        </div>
+
+        <div class="btnArea">
+          <button class="submitBtn">会員登録する</button>
+        </div>
+
+      </div>
+    </form>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21-11</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="21-11.css">
+</head>
+<body>
+  <h1>キーボードフォーカスのテスト</h1>
+  <p>Tabキーを押してどのようにdiv要素のボタンにフォーカスが当たるか確認してみましょう</p>
+  <div class="container">
+    
+  <div class="sample">
+    <a href="#" class="btn">a要素</a>
+    <button class="btn">button要素</button>
+    <div class="btn">div要素</div>
+  </div>
+  <p>※tabindexなし</p>
+
+  <div class="sample">
+    <a href="#" class="btn">a要素</a>
+    <button class="btn">button要素</button>
+    <div class="btn" tabindex="0">div要素</div>
+  </div>
+  <p>※tabindexあり（div要素にtabindex="0"）</p>
+
+
+  </div>
+</body>
+</html>

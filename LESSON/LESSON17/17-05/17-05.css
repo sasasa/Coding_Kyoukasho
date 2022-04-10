@@ -1,0 +1,73 @@
+.container {
+  max-width: 1080px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.heading {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+a {
+	transition: .3s;
+}
+a:hover {
+	opacity: 0.7;
+}
+h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/*----------------------------------------
+	button
+----------------------------------------*/
+/*標準サイズ*/
+.btn {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+/*大サイズ*/
+.btn--large {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+}
+
+/*色バリエーション*/
+.btn--green {
+  background-color: #338833;
+}
+.btn--pink {
+  background-color: #eb46a6;
+}
+.btn--gray {
+  background-color: #aaaaaa;
+}
+
+/*円形ボタン*/
+.rounded-btn {
+  display: inline-block;
+  min-width: 200px;
+  padding: 1em 2em; /*サイズ展開しても円形を保つためem指定*/
+  border-radius: 2em; /*サイズ展開しても円形を保つためem指定*/
+  border: 2px solid;
+  background: #fff;
+  color: #338833;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+}
+/*円形ボタン大サイズ*/
+.rounded-btn--large {
+  width: 100%;
+  max-width: 400px;
+  font-size: 1.2em;
+}

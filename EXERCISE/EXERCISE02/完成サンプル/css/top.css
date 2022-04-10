@@ -1,0 +1,167 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	TOPページ専用
+----------------------------------------*/
+
+/* mainVisual
+----------------------------------------*/
+.mainVisual {
+  background: #37952F;
+  color: #fff;
+}
+.mainVisual__inner {
+  display: flex;
+  flex-direction: column-reverse;
+  padding: 20px;
+}
+.mainVisual__image {
+  text-align: center;
+}
+.mainVisual__catch {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 2;
+}
+@media screen and (min-width: 768px),print {
+  .mainVisual {
+    padding: 40px 0;
+  }
+  .mainVisual__inner {
+    max-width: 1080px;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .mainVisual__catch {
+    display: flex;
+    justify-content: center;
+    padding: 0 8.3333%; /*(90 / 1080) * 100%*/
+    font-size: 36px; /*IEのためのフォールバック*/
+    font-size: min(3.33vw, 36px); /*改行位置キープのためvwで拡縮*/
+  }
+  .mainVisual__image {
+    flex-shrink: 0;
+    width: 40%;
+  }
+}
+
+/* serviceList
+----------------------------------------*/
+.serviceList {
+  display: flex;
+  flex-direction: column;
+  margin-top: -20px;
+}
+.serviceList__item {
+  max-width: 400px;
+  margin: 20px auto 0;
+  background: #fff;
+  box-shadow: 0 0 6px rgba(0,0,0,.1);
+}
+.serviceList__thumb img{
+  max-width: none;
+  width: 100%;
+}
+.serviceList__data {
+  margin: 20px;
+}
+.serviceList__data dt {
+  font-weight: bold;
+  font-size: 20px;
+}
+.serviceList__data dd {
+  margin-top: 10px;
+  line-height: 1.875;
+}
+.serviceList__btn {
+  margin: 20px;
+}
+@media screen and (min-width: 768px),print {
+  .serviceList {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .serviceList__item {
+    display: flex;
+    flex-direction: column; /*ボタン位置を下端に揃えるために縦軸に変更*/
+    width: calc((100% - 40px) / 3);
+  }
+  .serviceList__btn {
+    margin-top: auto; /*カード內でボタン位置を下端に揃える*/
+  }
+}
+
+/* pickupList
+----------------------------------------*/
+.pickupList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -20px;
+}
+.pickupList__item {
+  width: calc((100% - 15px) / 2);
+  margin-top: 20px;
+}
+.pickupList__item a {
+  color: inherit;
+  font-weight: bold;
+  text-decoration: none;
+}
+.pickupList__thumb {
+  max-width: none;
+  width: 100%;
+}
+.pickupList__title {
+  position: relative;
+  margin-top: 1em;
+  padding-left: 1em;
+  font-size: 14px;
+  line-height: 1.28;
+}
+.pickupList__title::before {
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  content: "";
+  display: block;
+  width: 0.6em;
+  height: 0.6em;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+}
+@media screen and (min-width: 768px),print {
+  .pickupList__item {
+    width: calc((100% - 40px) / 3);
+  }
+  .pickupList::after {
+    content: "";
+    display: block;
+    width: calc((100% - 40px) / 3);
+  }
+  .pickupList__title {
+    font-size: 18px;
+    transition: color 0.3s;
+  }
+  .pickupList__item a:hover .pickupList__title {
+    color: #37952F;
+  }
+}
+@media screen and (min-width: 922px),print {
+  .pickupList__item {
+    width: calc((100% - 60px) / 4);
+  }
+  .pickupList::before,
+  .pickupList::after {
+    content: "";
+    display: block;
+    width: calc((100% - 60px) / 4);
+  }
+  .pickupList::before {
+    order: 1;
+  }
+}

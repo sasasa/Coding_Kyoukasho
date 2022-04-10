@@ -1,0 +1,48 @@
+/* ==================================================================
+ページレイアウト
+=================================================================== */
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+  margin-bottom: 20px;
+	font-size: 32px;
+}
+
+/*セレクトボックス
+------------------------------------*/
+select {
+  -webkit-appearance: none;
+  appearance: none; /*ブラウザ標準スタイルを解除*/
+  display: block;
+  width: 100%;
+  padding: 10px 30px 8px 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.selectWrap { /*selectの親要素をアイコン配置の基準とする*/
+  position: relative;
+  display: block;
+}
+.selectWrap::after { /*矢印アイコン自作*/
+  position: absolute;
+  right: 10px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid #999;
+  border-bottom: 2px solid #999;
+  transform: rotate(45deg);
+  pointer-events: none; /*矢印の上もクリック可能にする*/
+}
+
+/*for IE（右端の矢印を消す）*/
+select::-ms-expand {
+  display: none;
+}

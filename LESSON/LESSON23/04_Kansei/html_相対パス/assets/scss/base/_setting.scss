@@ -1,0 +1,92 @@
+@charset "utf-8";
+// ============================================================
+// 設定
+// ============================================================
+
+// HTML5の場合は「true」
+$html5 : true;
+
+// 画像パス_reset.scss
+$imgPath : "/assets/img/";
+
+// ページの全体の横幅（大）
+//$width_lg : 1080px;
+
+// ページの全体の横幅（標準）
+$width : 1084px;
+
+// ページの全体の横幅（中間）
+$width_md : 800px;
+
+// ページの全体の横幅（狭い）
+//$width_sm : 800px;
+
+// カラム数
+$colNum : 12;
+
+// カラム幅
+$colWidth : 70px;
+
+// ガター幅
+$gutter : 10px;
+
+// スマホ時ガター幅
+$sp-gutter : 25px;
+
+//標準フォントサイズ(sp)
+$fz_sp: 14;
+
+//標準フォントサイズ(pc)
+$fz_pc: 16px;
+
+// 標準font-family
+// $font_serif : 'Shippori Mincho', serif;
+$font_sans : 'Noto Sans JP', sans-serif;
+
+//欧文font-family
+// $font_heebo : 'Heebo', sans-serif;
+// $font_roboto : 'Roboto', sans-serif;
+// $font_bebas : 'Bebas Neue', cursive;
+
+
+//白黒
+$c_white: #ffffff;
+$c_black: #000000;
+
+//グレー（使わないほうがいいかも）
+$c_gray1: #DDDDDD;
+$c_gray2: #707070;
+// $c_gray2: #BEBEBE;
+// $c_gray3: #707070;
+// $c_gray4: #E8E8E9;
+// $c_gray5: #505050;
+
+//キーカラー
+$c_key1: #CEB967;
+$c_key2: #F5EFD7;
+$c_key3: #A88E25;
+
+//黄色系
+// $c_yellow1: #FFD800;
+
+//青系
+// $c_blue1: #1286EA;
+// $c_blue2: #3D98B4;
+// $c_blue3: #BAF4FF;
+
+//緑系
+// $c_green1: #02964E;
+// $c_green2: #EEF3F1;
+
+//赤系
+$c_red1: #F7320E;
+// $c_red2: #F7E6E9;
+// $c_red3: #FCF2F2;
+
+// 標準テキストカラー
+$c_text: #341E12;
+
+// リンクカラー
+$c_link: $c_text;
+$c_hover: $c_key3;
+$c_active: $c_key3;

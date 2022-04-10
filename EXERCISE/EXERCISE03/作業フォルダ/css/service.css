@@ -1,0 +1,128 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	事業内容専用
+----------------------------------------*/
+
+/* serviceWrap 
+-------------------------------*/
+.serviceWrap {
+  margin-left: -20px;
+  margin-right: -20px;
+  padding-bottom: 80px;
+  background: #F6FCF5;
+}
+@media screen and (min-width: 768px),print {
+  .serviceWrap {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    padding-left: calc(50vw - 50%);
+    padding-right: calc(50vw - 50%);
+    padding-bottom: 200px;
+    /*背景色の開始位置をずらしてブロークングリッドを表現*/
+    background: linear-gradient(#FFF 140px, #F6FCF5 140px);
+  }
+}
+
+/* service
+-------------------------------*/
+.service:not(:first-child) {
+  margin-top: 40px;
+}
+.service__body {
+  position: relative;
+  z-index: 1;
+  margin: -50px 20px 0;
+  padding: 40px 20px;
+  background: #fff;
+  border: 1px solid #37952F;
+}
+.service__title .sub {
+  display: block;
+  color: #37952F;
+}
+.service__title .main {
+  font-size: 20px;
+}
+.service__txt {
+  margin-top: 25px;
+  font-size: 14px;
+  line-height: 2;
+}
+.service__txt p + p {
+  margin-top: 1em;
+}
+.service__photos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  /*flexはmargin相殺が効かないので.service__photos liの20pxと足して30pxになるように調整*/
+  margin-top: 10px; 
+}
+.service__photos li {
+  width: calc((100% - 20px)/2);
+  margin-top: 20px;
+}
+.service__photos img { /*素材写真が小さいので100%拡大化*/
+  max-width: none;
+  width: 100%;
+}
+@media screen and (min-width: 568px) {
+  /*各サービス紹介内の写真は2カラムのままではすぐに大きくなりすぎるので早めにPC用レイアウトに変更*/
+  .service__photos {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+  }
+  .service__photos li {
+    width: calc((100% - 60px)/4);
+  }
+  .service__photos li:not(:last-child) {
+    margin-right: 20px;
+  }
+}
+@media screen and (min-width: 768px),print {
+  /*サービス紹介ブロック*/
+  .service {
+    position: relative;
+    padding-top: 70px; /*ブロック上端から70px下げる*/
+  }
+  .service:not(:first-child) {
+    margin-top: 50px;
+  }
+  /*イメージ写真*/
+  /*画像の高さが500px固定・幅は常に50vwということは、隣り合うテキストブロックの高さと連動させる必要がないため、absoluteで配置しています。*/
+  .service__image {
+    position: absolute;
+    top: 0;
+    left: 50%; /*右半分を画像とするため、left起点で配置*/
+    width: 50vw;
+  }
+  .service._reverse .service__image {
+    left: auto;
+    right: 50%; /*左半分を画像とするため、right起点で配置*/
+  }
+  .service__image img {
+    max-width: none; /*素材写真が小さいので100%拡大化*/
+    width: 100%;
+    height: 500px; /*デザイン仕様に合わせて高さ固定*/
+    object-fit: cover; /*歪み防止*/
+  }
+  /*テキストブロック*/
+  .service__body {
+    margin: 0;
+    padding: 40px;
+    width: calc((716/1084)*100%);
+  }
+  .service._reverse .service__body {
+    margin-left: auto; /*テキストブロックを右に寄せる*/
+  }
+  .service__title .sub {
+    font-size: 20px;
+  }
+  .service__title .main {
+    font-size: 28px;
+  }
+  .service__txt {
+    font-size: 16px;
+  }
+}

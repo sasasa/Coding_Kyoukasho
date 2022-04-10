@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>19-06_NG</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="19-06_NG.css">
+</head>
+<body>
+  <div class="container">
+    <form action="#" method="POST">
+
+      <!-- 入力フォーム -->
+      <div class="form">
+        <div class="form__item">
+          <label for="username" class="form__ttl">ユーザー名<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField -half">
+              <input type="text" name="username" id="username" maxlength="20" required>
+            </div>
+            <small class="inputNote">※20文字以内</small>
+          </div>
+        </div>
+        <div class="form__item">
+          <label for="password" class="form__ttl">パスワード<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField -half">
+              <input type="password" name="password" id="password" pattern="^([0-9A-Za-z]{8,})$" required>
+            </div>
+            <small class="inputNote">※半角英数字8文字以上</small>
+          </div>
+        </div>
+        <div class="form__item">
+          <label for="email" class="form__ttl">メールアドレス<strong class="label-required">必須</strong></label>
+          <div class="form__body">
+            <div class="inputField">
+              <input type="email" name="email" id="email" placeholder="sample@sample.jp" required>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- 送信ボタン類 -->
+      <div class="btns btns--center">
+        <input type="reset" value="書き直す" class="btns__item btn btn--reverse">
+        <input type="submit" value="確認する" class="btns__item btn btn--large">
+      </div>
+
+    </form>
+
+  </div>
+</body>
+</html>

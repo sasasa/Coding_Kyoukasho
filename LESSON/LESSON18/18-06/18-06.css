@@ -1,0 +1,91 @@
+.container {
+  max-width: 880px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  line-height: 1.8;
+}
+.section + .section {
+  padding-top: 0;
+}
+.sub-section {
+  margin-top: 60px;
+}
+.aside-section {
+  padding: 30px;
+  background: #eef4f8;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+/*Lv2*/
+.heading-lv2 { /*見出し要素の親Blockに枠スタイルを指定*/
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+  padding: 10px 0 10px 20px;
+  border-left: 4px solid #558ebd;
+  border-bottom: 1px solid #ccc;
+  line-height: 1.5;
+}
+.heading-lv2__title { /*見出し要素にはテキストスタイルのみ指定*/
+  font-size: 28px;
+}
+.heading-lv2__btn {
+  flex-shrink: 0; /*テキストが長くなった時でもサイズが変わらないようにする*/
+  margin-left: 20px; /*テキストとボタンの間に適切な余白を維持する*/
+}
+
+/*----------------------------------------
+	button
+----------------------------------------*/
+/*標準サイズ*/
+.btn {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  border: 2px solid transparent;
+  background-color: #558ebd;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: .3s;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.7; 
+}
+
+/*大サイズ*/
+.btn--large {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+}
+
+/*小サイズ*/
+.btn--small {
+  min-width: 0;
+  padding: 10px 20px;
+  font-size: 0.85em;
+}
+
+/*極小サイズ*/
+.btn--xsmall {
+  min-width: 0;
+  padding: 0 10px;
+  font-size: 0.85em;
+}
+
+/*縦圧縮ボタン*/
+.btn--compressed {
+  padding: 5px 30px;
+}

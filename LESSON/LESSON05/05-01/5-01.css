@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Gnav
+----------------------------------------*/
+.gnav {
+  background: #e7e7e7;
+}
+.gnavList {
+  display: flex;
+  max-width: 1000px;
+  margin: 0 auto;
+  border-right: 1px solid #ccc;
+}
+.gnavList__item {
+  width: 25%;
+  border-left: 1px solid #ccc;
+}
+.gnavList__link {
+  position: relative;
+  display: block;
+  padding: 1em 0;
+  color: #000;
+  font-weight: bold;
+  font-size: 0.75rem;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+.gnavList__link:hover {
+  color: #509422;
+}
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .gnavList__link {
+    font-size: 1rem;
+  }
+}

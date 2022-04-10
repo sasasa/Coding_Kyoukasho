@@ -1,0 +1,29 @@
+/* ==================================================================
+ページレイアウト
+=================================================================== */
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+  margin-bottom: 20px;
+	font-size: 32px;
+}
+
+/*ファイルアップロード
+------------------------------------*/
+input[type="file"] { /*非表示にする*/
+  opacity: 0;
+  position: absolute;
+}
+.fileUpload { /*ボタンを自作*/
+  display: inline-block;
+  padding: 10px 20px;
+  background: #3D98B4;
+  color: #fff;
+  cursor: pointer;
+}
+.fileUpload:focus { /*フォーカス時のスタイル（※tabindex=0でフォーカス可能になる）*/
+  outline: 2px solid #7ec3d8;
+}

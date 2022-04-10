@@ -1,0 +1,1137 @@
+@charset "UTF-8";
+/*----------------------------------------
+	reset
+----------------------------------------*/
+*,
+::before,
+::after {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+* {
+  font-size: inherit;
+  line-height: inherit;
+}
+
+::before,
+::after {
+  text-decoration: inherit;
+  vertical-align: inherit;
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, dialog, figure, footer, header, main, menu, nav, section,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+header, footer, article, section, aside, main, nav, menu, figure, figcaption {
+  display: block;
+}
+
+span, small, strong, em, b, i {
+  color: inherit;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+  vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th {
+  text-align: left;
+}
+
+input, select {
+  vertical-align: middle;
+}
+
+input, textarea {
+  margin: 0;
+  padding: 0;
+}
+
+address {
+  font-style: normal;
+}
+
+q::before,
+q::after {
+  display: none;
+}
+
+/*----------------------------------------
+	header
+----------------------------------------*/
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+.header__logo {
+  flex-shrink: 0;
+  width: 105px;
+  margin-left: 20px;
+}
+@media screen and (min-width: 992px),print {
+  .header {
+    height: 100px;
+  }
+  .header__logo {
+    width: 210px;
+    margin-left: 50px;
+  }
+}
+
+/*----------------------------------------
+	hamburger
+----------------------------------------*/
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background: #37952F;
+  cursor: pointer;
+}
+.hamburger__line {
+  position: relative;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 25px;
+  height: 2px;
+  background: #fff;
+  transition: transform 0.3s;
+}
+.hamburger__line::before {
+  top: -8px;
+}
+.hamburger__line::after {
+  bottom: -8px;
+}
+/*閉じる*/
+.hamburger._open .hamburger__line{
+  background: transparent;
+}
+.hamburger._open .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger._open .hamburger__line::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 992px),print {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*----------------------------------------
+	gnav
+----------------------------------------*/
+/*gnavはSP・PCのレイアウトの差異が非常に大きいため、
+他のパーツのようにSP用の記述をした後でPC用の記述で上書きをすると
+SP用の指定の打ち消しが多数必要となってしまいます。
+このようなデザインの場合は打ち消しや上書きを最小限に抑えるため、
+各デバイス共通のスタイル／SP専用のスタイル／PC専用のスタイル 
+といった具合にデバイスごとにスタイル指定を切り分けた方が
+効率的で分かりやすいCSSになります。*/
+.gnav__link {
+  color: inherit;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+.gnav__link:hover {
+  color:#37952F;
+}
+@media screen and (max-width: 991px) {
+  .gnav {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 50px;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: #fff;
+    overflow-y: auto; /*中身があふれたら縦スクロール*/
+    -webkit-overflow-scrolling: touch; /*iOSで慣性スクロール有効化*/
+  }
+  .gnav._open {
+    display: block;/* _open がついたら表示。classのつけ外しはJSで */
+  }
+  .gnav__list {
+    border-top: 1px solid #e7e7e7;
+  }
+  .gnav__item {
+    border-bottom: 1px solid #e7e7e7;
+  }
+  .gnav__link {
+    display: block;
+    padding: 15px 20px;
+  }
+  .gnav__link._current {
+    padding-left: 15px;
+    border-left: 5px solid #37952F;
+  }
+}
+@media screen and (min-width: 992px),print {
+  .gnav {
+    display: block;
+    position: static;
+    width: auto;
+    height: auto;
+  }
+  .gnav__list {
+    display: flex;
+  }
+  .gnav__link {
+    display: block;
+    padding: 1em;
+    font-size: 18px;
+  }
+  .gnav__link._current::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: #37952F;
+  }
+}
+
+/*----------------------------------------
+	main-contents
+----------------------------------------*/
+.main-contents {
+  margin-top: 50px;
+}
+@media screen and (min-width: 992px),print {
+  .main-contents {
+    margin-top: 100px;
+  }
+}
+
+/*----------------------------------------
+	footer
+----------------------------------------*/
+.footer {
+  padding: 0 20px;
+  background: #333;
+  color: #fff;
+}
+.footer__menu > li{
+  border-bottom: 1px solid #707070;
+}
+.footer__menu a {
+  display: block;
+  padding: 1em 20px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+}
+.footer__copyright {
+  padding: 40px 0;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+}
+@media screen and (min-width: 768px),print {
+  .footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 50px;
+  }
+  .footer__menu {
+    border-right: 1px solid #707070;
+  }
+  .footer__menu > li {
+    display: inline-block;
+    border-left: 1px solid #707070;
+    border-bottom: 0;
+  }
+  .footer__menu  a {
+    padding: 0 1em;
+  }
+  .footer__menu a:hover {
+    text-decoration: underline;
+  }
+}
+
+/*----------------------------------------
+	container
+----------------------------------------*/
+.container {
+  max-width: 1120px;
+  margin: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+
+/*----------------------------------------
+	section
+----------------------------------------*/
+.section {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.section + .section {
+  padding-top: 0;
+}
+@media screen and (min-width: 768px),print {
+  .section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+/*以下章末練習問題④用に追加した汎用コンポーネントブロックとなります。
+命名規則はmindBEMingの原則に則り、単語つなぎはケバブケース、
+セパレーターは[Block]__[Element]--[Modifire] としています。*/
+
+/*----------------------------------------
+	ボタン
+----------------------------------------*/
+/*今回は全てのボタンを「ベース＋サイズモディファイア＋種類モディファイア」の組み合わせで
+指定する想定で設計しました。各ページでのボタンの使われ方の全貌が判明していれば
+どれかひとつを「標準ボタン」として指定し、その他をモディファイアで上書きすることもできますが、
+提示された資料（カンプ）だけではどれかを「標準」と定めるだけの根拠に乏しかったため、
+より汎用的に作れるようにしておきました。*/
+
+/*ボタンベース
+-----------------------------------*/
+/*a,button,inputなどに適用される予定なのでベースの表示・挙動が同一になるように調整*/
+.button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: inline-block;
+  width: 100%;
+  border: 2px solid transparent;
+  font-family: inherit;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/*ボタンサイズ
+-----------------------------------*/
+/*大サイズ*/
+.button--lg {
+  max-width: 400px;
+  padding: 20px;
+  font-size: 18px;
+}
+/*中サイズ*/
+.button--md {
+  max-width: 300px;
+  padding: 20px;
+  font-size: 16px;
+}
+/*小サイズ*/
+.button--sm {
+  width: auto;
+  min-width: 150px;
+  padding: 10px;
+  font-size: 14px;
+}
+
+/*ボタン種類
+-----------------------------------*/
+/*標準*/
+.button--default {
+  background: #37952F;
+  color: #fff;
+}
+.button--default:hover,
+.button--default:focus {
+  opacity: 0.7;
+  color: #fff;
+}
+
+/*枠線*/
+.button--outline {
+  border: 2px solid #37952F;
+  background: #fff;
+  color: #333;
+}
+.button--outline:hover,
+.button--outlien:focus {
+  background: #EAF5E9;
+  color: #333;
+}
+
+/*透過*/
+.button--ghost {
+  border: 2px solid #fff;
+  color: #fff;
+}
+.button--ghost:hover,
+.button--ghost:focus {
+  background: rgba(255,255,255,0.3);
+  color: #fff;
+}
+
+/*Action*/
+.button--action {
+  background: #FF7600;
+  color: #fff;
+}
+.button--action:hover,
+.button--action:focus {
+  opacity: 0.7;
+  color: #fff;
+}
+
+/*Disabled*/
+.button--disabled, /*a要素などdisabled属性を持たない要素をdisabled表示にする場合*/
+.button[disabled] {
+  background: #ccc;
+  color: #fff;
+  opacity: 1;
+  cursor: default;
+}
+
+/*ボタンレイアウト
+-----------------------------------*/
+.button-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.button-center .button:not(:first-child){
+  margin-top: 20px;
+}
+@media screen and (min-width:768px),print {
+  .button-center {
+    flex-direction: row;
+    justify-content: center;
+  }
+  .button-center .button:not(:first-child) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+}
+
+/*----------------------------------------
+	テキストスタイル
+----------------------------------------*/
+/*
+本文、インラインスタイルの指定からベースの文字スタイルとリンクスタイルを設定。
+本来はresetに次ぐbaseスタイルとして定義するところですが、コンポーネント一覧との
+対比がしやすいようにここに記述しておきます。
+なお、bodyに対して本文のline-hieghtを一律に当てるかどうかは議論が分かれるところです。
+大きなline-heightが一律に当たっていると、上下方向のハーフリーディング（文字の上下に
+つけられるline-height由来の余白）が大きくなり、1px単位での厳密な余白サイズ指定が
+難しくなります。ピクセルパーフェクトが求められるのであればbodyはline-hegiht:1としておき、
+各パーツごとに必要なline-heightを個別に当てる方が良い場合もあります。
+*/
+
+/*基本テキストスタイル*/
+body {
+  color: #333;
+  font-family: 'Noto Sans JP', sans-serif;
+  line-height: 1.75;
+}
+/*基本リンクスタイル*/
+a {
+  color: #37952F;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #70cc33;
+  text-decoration: none;
+}
+/*強調*/
+.text-strong {
+  font-weight: bold;
+}
+/*警告*/
+.text-alert {
+  color: #DF5656;
+  font-weight: bold;
+}
+/*注釈*/
+.text-note {
+  margin-left: 1em;
+  text-indent: -1em;
+  color: #707070;
+  font-size: 0.875em;
+}
+
+/*----------------------------------------
+	リスト
+----------------------------------------*/
+/*ノーマル*/
+.list-normal > li:not(:first-child) {
+  margin-top: 1em;
+}
+.list-normal > li{
+  position: relative;
+  padding-left: 1em;
+}
+.list-normal > li::before {
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #37952F;
+}
+/*矢印リンク*/
+.list-arrow > li:not(:first-child) {
+  margin-top: 1em;
+}
+.list-arrow > li{
+  position: relative;
+  padding-left: 1em;
+}
+.list-arrow > li::before {
+  position: absolute;
+  left: 0;
+  top: 0.75em;
+  content: "";
+  display: block;
+  width: 0.625em;
+  height: 0.625em;
+  border-top: 2px solid #37952F;
+  border-right: 2px solid #37952F;
+  transform: rotate(45deg);
+}
+.list-arrow a {
+  color: inherit;
+  text-decoration: none;
+}
+.list-arrow a:hover,
+.list-arrow a:focus {
+  color: #37952F;
+}
+/*数字リンク*/
+.list-decimal > li:not(:first-child) {
+  margin-top: 1em;
+}
+.list-decimal > li {
+  margin-left: 1em;
+  list-style-type: decimal;
+}
+
+/*----------------------------------------
+	枠囲み
+----------------------------------------*/
+/*枠囲み（標準）*/
+.frame {
+  border: 2px solid #37952F;
+  padding: 40px;
+}
+.frame__title {
+  padding-left: 20px;
+  border-left: 2px solid #37952F;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.frame__title + * {
+  margin-top: 30px;
+}
+/*枠囲み（警告）*/
+.frame--alert {
+  border: 2px solid #DF5656;
+  color: #DF5656;
+  font-weight: bold;
+}
+.frame--alert .frame__title {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+  border-left: 0;
+}
+.frame--alert .frame__title::before {
+  flex-shrink: 0;
+  content: "";
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  background: url(../img/icon_attention.svg) center center / contain no-repeat;
+  vertical-align: middle;
+}
+
+/*----------------------------------------
+	ページタイトル
+----------------------------------------*/
+/*
+このパーツはブロック／エレメント／モディファイアの組み合わせがいくつも考えられるため、
+人によって作り方がかなり違うことになると思われます。
+
+パターンＡ：（ブロック3種類、中身のパーツは全てElement）
+・ページタイトル大
+・ページタイトル中
+・ページタイトル小
+
+パターンＢ：（ブロック4種類）
+・ページタイトル文言（共通）
+・ページタイトルエリア大
+・ページタイトルエリア中
+・ページタイトルエリア小
+
+パターンＣ：（ブロック2種類、中身のパーツはElement、小はビジュアルなしのモディファイア）
+・ページタイトル（ビジュアル付き）
+・ページタイトル（ビジュアルなし）
+
+etc...
+*/
+
+/*
+今回の完成サンプルコードでは「パターンB」を採用しています。
+カンプを精査すると、ページタイトルエリアの大・中・小いずれも、タイトル文言自体のサイズ等のスタイルは共通でした。
+そこでタイトル文言は「page-title」という共通のブロック、
+それを含んだページヘッダーエリアはそれぞれ大・中・小で別ブロックとすることにしました。
+ただし、中に含まれるタイトル文言のスタイルが全て同一だからといって必ずしも共通のブロックに
+しなければならないということではありません。
+スタイル指定が多少重複したとしても、パターンAのように大・中・小それぞれを別ブロックとして独立させておいても構いません。
+独立していた場合はタイトル文言部分が共通でなくなった場合も、他のブロックを気にせず修正することができるメリットがあります。
+またビジュアル付きとビジュアルなしでスタイルの類似性が分かれているので、２つのブロックに分類して、
+差分はモディファイアで上書きするという方法も考えられます。
+どこをブロックとするのかによって制作・運用上のメリット／デメリットが変わってきますので、そのバランスを考慮して
+自分が重視するメリットが得られる作り方を選択すれば良いでしょう。
+*/
+
+
+
+/*ページタイトル(大・中・小共通)
+--------------------------------------*/
+.page-title {
+  line-height: 1.5;
+}
+.page-title__sub {
+  display: block;
+  color: #37952F;
+  font-family: 'Oswald',sans-serif;
+  font-size: 20px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+.page-title__main {
+  display: block;
+  font-size: 30px;
+  letter-spacing: 0.2em;
+}
+@media screen and (min-width:768px),print {
+  .page-title__sub {
+    font-size: 24px;
+  }
+  .page-title__main {
+    font-size: 48px;
+  }
+}
+/*ページヘッダー領域
+--------------------------------------*/
+/*大*/
+.page-header-lg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(200/375*100vw);
+  padding: 0 20px;
+  background-position: center center;
+  background-size: cover;
+  text-align: center;
+}
+.page-header-lg__service {
+  background-image: url(../img/bg_header_service.jpg);
+}
+@media screen and (min-width:768px),print {
+  .page-header-lg {
+    justify-content: flex-start;
+    height: 400px;
+    padding: 0 50px;
+    text-align: left;
+  }
+}
+/*中*/
+.page-header-md {
+  padding: 80px 20px;
+  background: #EAF5E9;
+  text-align: center;
+}
+.page-header-md__lead {
+  margin-top: 40px;
+}
+@media screen and (min-width:768px),print {
+  .page-header-md {
+    padding: 100px 0;
+  }
+  .page-header-md__lead {
+    margin-top: 50px;
+  }
+}
+/*小*/
+.page-header-sm {
+  padding: 70px 20px;
+  background: #EAF5E9;
+  text-align: center;
+}
+
+/*----------------------------------------
+	見出し
+----------------------------------------*/
+/*下層ページのh1は上記ページタイトル文言が当てられることになりますので、
+基本的に見出し類はh2-h6が使用されます。デザイン上おおまかにh2・h3といった要素を想定して
+作ってはありますが、実際どのレベルの見出しにそのスタイルが当たるかは分からないというのが実情です。
+汎用見出しとして用意されているものの種類がかなり多いので、今回は命名に-lv2といったレベル数を
+採用しました。lv2は英語メインと日本語メインの2パターンありますが、スタイルの共通性があまり無いので
+モディファイアではなく別ブロックとしています。
+
+仮にデザイン的に見出しに付属している罫線が文字色と同じなのであれば、border-colorに
+「currentColor（現在選択されている文字色）」を使うように設計することで、白抜きパターンの
+モディファイアは作らなくても良かったのですが、残念ながら文字色と罫線色が異なるため、
+白抜き専用のモディファイアも必要となっています。
+*/
+
+
+/*大見出し
+-----------------------------------*/
+/*英語メイン*/
+.heading-lv2-en {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.heading-lv2-en__main {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+}
+.heading-lv2-en__sub {
+  display: block;
+  margin-top: 0.5em;
+  color: #37952F;
+  font-size: 16px;
+  font-weight: bold;
+}
+.heading-lv2-en--white {
+  color: #fff;
+}
+.heading-lv2-en--white .heading-lv2-en__sub {
+  color: inherit;
+}
+@media screen and (min-width: 768px),print {
+  .heading-lv2-en__main {
+    font-size: 48px;
+  }
+  .heading-lv2-en__sub {
+    font-size: 20px;
+  }
+}
+/*日本語メイン*/
+.heading-lv2-ja {
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.heading-lv2-ja::after {
+  content: "";
+  display: block;
+  width: 100px;
+  margin: 30px auto 0;
+  border-top: 1px solid #37952F;
+}
+.heading-lv2-ja__main {
+  display: block;
+  font-size: 28px;
+}
+.heading-lv2-ja__sub {
+  display: block;
+  margin-bottom: 0.5em;
+  font-size: 16px;
+}
+.heading-lv2-ja--white {
+  color: #fff;
+}
+.heading-lv2-ja--white::after {
+  border-color: #fff;
+}
+@media screen and (min-width: 768px),print {
+  .heading-lv2-ja__main {
+    font-size: 40px;
+  }
+  .heaing-lv2-ja__sub {
+    font-size: 18px;
+  }
+}
+
+/*中見出し
+-----------------------------------*/
+.heading-lv3 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.heading-lv3::after {
+  content: "";
+  display: block;
+  width: 50px;
+  margin-top: 20px;
+  border-top: 1px solid #37952F;
+}
+.heading-lv3--center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.heading-lv3--white {
+  color: #fff;
+}
+.heading-lv3--white::after {
+  border-color: #fff;
+}
+@media screen and (min-width: 768px),print {
+  .heading-lv3 {
+    font-size: 28px;
+  }
+}
+
+/*小見出し
+-----------------------------------*/
+.heading-lv4 {
+  padding-left: 20px;
+  border-left: 2px solid #37952F;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.heading-lv4--white {
+  color: #fff;
+  border-color: #fff;
+}
+@media screen and (min-width: 768px),print {
+  .heading-lv4 {
+    font-size: 24px;
+  }
+}
+
+/*小見出し以下
+-----------------------------------*/
+.heading-lv5 {
+  color: #37952F;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+.heading-lv6 {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
+/*----------------------------------------
+	グリッド
+----------------------------------------*/
+/* 今回はアイテム一覧・カード一覧ともにグリッド仕様が同一だったので、
+グリッドのみの独立したブロックを用意しました。これはこのサイト専用に独自で作成したグリッドであり、
+現状分かっている範囲でのグリッドパターンしか用意してありませんので、バリエーションが増えるごとに
+随時モディファイア等を追加していくことになります。
+
+仮にデザイン側が汎用的なグリッドシステムに従ってレイアウトしてくれるのであれば、
+都度グリッドパターンを追加するのではなく、最初に汎用的に使えるグリッドシステムをあらかじめ網羅的に
+準備しておくのも良いでしょう。Bootstrap等のCSSフレームワークが参考になりますので、
+そうしたものを参考に独自で作るか、あるいは最初からBootstrap等のCSSフレームワークを導入してしまうのも
+選択肢の一つです。
+*/
+
+/*なお今回の動作環境で「IE11でも大きくは崩れない」というのが条件になっていますので、
+auto-fitなどを利用したgridレイアウトは採用を見送っています。
+また、flexboxでのgapプロパティについてもIE11以外にSafariの対応バージョンが14.1から、
+iOS Safariの対応バージョンが14.5からということで、比較的最近であるため、
+念の為様子見として採用を見送っています。
+これらの条件を無視できる案件であれば、gridレイアウト、またはflexbox+gapプロパティを使って
+実装しても構いません。
+*/
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: -40px;
+}
+.grid__item {
+  margin-top: 40px;
+}
+
+/*PC4カラム用*/
+.grid--pc4col .grid__item {
+  width: calc((100% - 20px)/2);
+}
+@media screen and (min-width: 568px) {
+  .grid--pc4col .grid__item {
+    width: calc((100% - 40px)/3);
+  }
+  .grid--pc4col::after {
+    content: "";
+    display: block;
+    width: calc((100% - 40px)/3);
+  }
+}
+@media screen and (min-width: 768px),print {
+  .grid--pc4col .grid__item,
+  .grid--pc4col::after {
+    width: calc((100% - 60px)/4);
+  }
+  .grid--pc4col::before {
+    content: "";
+    display: block;
+    width: calc((100% - 60px)/4);
+    order: 1;
+  }
+}
+/*PC3カラム用*/
+.grid--pc3col {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 568px) {
+  .grid--pc3col {
+    max-width: none;
+  }
+  .grid--pc3col .grid__item {
+    width: calc((100% - 20px)/2);
+  }
+}
+@media screen and (min-width: 768px),print {
+  .grid--pc3col .grid__item {
+    width: calc((100% - 40px)/3);
+  }
+  .grid--pc3col::after {
+    content: "";
+    display: block;
+    width: calc((100% - 40px)/3);
+  }
+}
+/*PC2カラム用*/
+.grid--pc2col {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px),print {
+  .grid--pc2col {
+    max-width: none;
+  }
+  .grid--pc2col .grid__item {
+    width: calc((100% - 20px)/2);
+  }
+}
+
+
+/*----------------------------------------
+	item
+----------------------------------------*/
+/*レイアウトはグリッド用ブロックに任せているので、
+ここでは単体のアイテムブロックとして設計しています。*/
+.item {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+/*hover仕様*/
+/*リンクとして利用されたりされなかったりすることが確定しているため、
+hoverスタイルはa要素で構築された場合に限るように要素を限定してあります。*/
+a.item:hover,
+a.item:focus {
+  color: #37952F;
+}
+a.item:hover .item__image img,
+a.item:focus .item__image img {
+  transform: scale(1.2);
+}
+/*画像（アスペクト比維持して表示）*/
+/*CMSなどで素材のアスペクト比がバラバラになるケースを想定して、object-fitで指定の比率になるように組んであります。*/
+.item__image {
+  position: relative;
+  overflow: hidden;
+}
+.item__image::before {
+  content: "";
+  display: block;
+  padding-top: calc((164/256)*100%);
+}
+.item__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none; /*resetで一律max-width: 100%にしているので解除*/
+  object-fit: cover;
+  transition: 0.5s;
+}
+/*キャプション*/
+.item__caption {
+  margin-top: 0.56em; /*ブロックの表示サイズによって文字サイズが変わるので余白も連動して同一比率で変わるようにem単位で指定しています。（pxでも可）*/
+  font-weight: bold;
+}
+/*説明テキスト*/
+.item__description {
+  margin-top: 0.2em; /*ブロックの表示サイズによって文字サイズが変わるので余白も連動して同一比率で変わるようにem単位で指定しています。（pxでも可）*/
+}
+/*PC4カラムのSPレイアウトで配置された場合だけの指定*/
+@media screen and (max-width: 767px) {
+  .grid--pc4col .item {
+    font-size: 14px;
+  }
+}
+
+/*----------------------------------------
+	card
+----------------------------------------*/
+/*アイテム同様、単体のカードブロックとして設計しています*/
+.card {
+  display: block;
+  border: 1px solid #ccc;
+  box-shadow: 3px 3px 6px rgba(0,0,0,0.07);
+  color: inherit;
+  text-decoration: none;
+  line-height: 1.5;
+  transition: 0.3s;
+}
+/*hover仕様（a要素で構築された場合のみ）*/
+/*基本的にリンクとして使用されるとは思いますが、念の為リンクなし表示のみのカードとしてレイアウトされることも想定して
+hoverスタイルはa要素で構築された場合に限るように要素を限定してあります。*/
+a.card:hover,
+a.card:focus {
+  border: 1px solid #70CC33;
+  color: inherit;
+}
+a.card:hover .card__image img,
+a.card:focus .card__image img {
+  transform: scale(1.2);
+}
+a.card:hover .card__btn,
+a.card:focus .card__btn {
+  opacity: 0.8;
+}
+a.card:hover .card__btn::after,
+a.card:focus .card__btn::after {
+  right: 15px;
+}
+/*サムネイル画像（アスペクト比維持して表示）*/
+/*CMSなどで素材のアスペクト比がバラバラになるケースを想定して、object-fitで指定の比率になるように組んであります。*/
+.card__image {
+  position: relative;
+  overflow: hidden;
+}
+.card__image::before {
+  content: "";
+  display: block;
+  padding-top: calc((164/256)*100%);
+}
+.card__image img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;  /*resetで一律max-width: 100%にしているので解除*/
+  object-fit: cover;
+  transition: 0.5s;
+}
+/*カードボディ部*/
+.card__body {
+  padding: 30px 20px 20px 20px;
+}
+.card__title {
+  font-size: 20px;
+}
+.card__text {
+  margin-top: 10px;
+}
+/*buttonブロックを使うことも考えましたが、カードの中にボタンが入ってもa要素は使えませんし、
+ここだけ矢印がついていたり、ボタンのサイズも微妙に汎用ボタンとは異なったりするなど、
+差分が多いためカード専用のElementとして設計することにしています。*/
+.card__btn {
+  position: relative;
+  margin-top: 30px;
+  padding: 10px;
+  background: #37952F;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.card__btn::after {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  content: "";
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+  transition: 0.3s;
+}
+

@@ -1,0 +1,77 @@
+/*サンプル表示のためのレイアウト指定*/
+.case {
+  max-width: 1000px;
+  margin: 50px auto;
+  padding: 30px;
+  border: 1px solid #e7e7e7;
+}
+.case-item {
+  margin: 30px 0;
+}
+.case-item * + * {
+  margin-top: 15px;
+}
+.fz12 {
+  font-size: 12px;
+}
+.fz16 {
+  font-size: 16px;
+}
+.fz20 {
+  font-size: 20px;
+}
+
+/*本文の字下げ：
+「字下げ」とは「全角１文字分」の空白スペースを段落の冒頭に設定することです。あらゆる環境で確実に「全角１文字分」を再現するにはemを使う必要があります。*/
+.indent-1 {
+  text-indent: 1em;
+}
+
+/*リンクに付随するアイコン類：
+サイズをemで指定することで親要素の文字サイズに合わせて自動的に伸縮表示されるため、同じclassを使い回してもテキストとのサイズバランスが崩れません*/
+.arw::before {
+  content: "";
+  display: inline-block;
+  width: 0.5em;
+  height: 0.5em;
+  margin-right: 0.5em;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  transform: rotate(45deg);
+}
+
+/*行送り：
+行送りには例外的に単位なしの倍数を指定しますが、この場合は「em」として計算される仕様となっています。*/
+.article {
+  line-height: 2;
+}
+
+/*文字サイズ（pxとの比較）*/
+.rem-text {
+  font-size: 1rem;
+}
+.px-text {
+  font-size: 16px;
+}
+
+/*文字サイズ（emとの比較）*/
+.rem-list li{
+  font-size: 1.125rem;
+}
+.em-list li{
+  font-size: 1.125em; 
+}
+
+/*縦横比維持*/
+.vw-box {
+  width: 50vw;
+  height: 50vw;
+  background: #ccc;
+}
+
+/*vwで文字サイズ指定：
+vwはビューポート幅に連動するので、文字サイズも画像のようになめらかに伸縮させることが可能です。折返しを発生させたくないタイポグラフィをテキストで実装する際に特に重宝します。*/
+.vw-text {
+  font-size: 5vw;
+}
+

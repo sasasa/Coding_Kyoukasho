@@ -1,0 +1,23 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/*flexboxでレイアウトすることを想定した初期スタイル*/
+.btns {
+	background: #e7e7e7;
+}
+.btns__item {
+	margin: 10px;
+  width: 80%;
+  max-width: 300px;
+	border: 1px dashed #999;
+}
+.btn {
+	display: block;
+	padding: 15px;
+	background: skyblue;
+	border-radius: 8px;
+	text-align: center;
+	text-decoration: none;
+}

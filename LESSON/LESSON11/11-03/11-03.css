@@ -1,0 +1,41 @@
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+
+/*for SP*/
+/*SPレイアウトを標準tableとして組む*/
+.table03 {
+	width: 100%;
+	table-layout: fixed; 
+	border-collapse: collapse;
+}
+.table03 th,
+.table03 td {
+	padding: 15px;
+	border: 1px solid #ccc;
+}
+.table03 th {
+	background: #f7f7f7;
+}
+/*for PC*/
+/*PCレイアウトでtrが横並びとなるように上書き*/
+@media screen and (min-width: 768px) {
+	.table03 tbody{ /*内部的にtable直下にはtbodyが補完されるのでtbodyを対象セレクタとする*/
+		width: 100%;
+		display: flex;
+	}
+	.table03 tr {
+		display: block;
+		width: 20%;
+		margin-left: -1px;
+	}
+	.table03 th,
+	.table03 td {
+		display: block;
+		width: 100%;
+		margin-top: -1px;
+		margin-left: -1px;
+	}
+}

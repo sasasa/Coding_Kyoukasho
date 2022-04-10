@@ -1,0 +1,57 @@
+.container {
+  max-width: 880px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.section {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  line-height: 1.8;
+}
+.section + .section {
+  padding-top: 0;
+}
+.sub-section {
+  margin-top: 60px;
+}
+.aside-section {
+  padding: 30px;
+  background: #eef4f8;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+/*Lv2*/
+.heading-lv2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+  line-height: 1.5;
+}
+.heading-lv2::after { /*罫線は必須なので親の疑似要素で設定する*/
+  display: block;
+  content: "";
+  display: block;
+  width: 40px;
+  margin-top: 20px; /*サブタイトルの有無に関わらず罫線上の余白を確保する*/
+  border-top: 1px solid;
+}
+.heading-lv2__main {
+  font-size: 28px;
+}
+.heading-lv2__sub { 
+  margin-top: 10px; /*サブタイトルとその上の余白をセットにしておく*/
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*Lv3*/
+.heading-lv3 { 
+  margin-bottom: 20px;
+  padding-left: 1em;
+  border-left: 4px solid #558ebd;
+  font-size: 22px;
+  line-height: 1.5;
+}

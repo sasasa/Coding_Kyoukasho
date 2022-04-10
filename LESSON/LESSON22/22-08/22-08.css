@@ -1,0 +1,178 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Base
+----------------------------------------*/
+html,body {
+  height: 100%;
+}
+a {
+  color: #509422;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #70cc33;
+}
+
+/*----------------------------------------
+	Header
+----------------------------------------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+}
+.header__logo {
+  margin-left: 15px;
+  font-size: 20px;
+}
+@media screen and (min-width: 960px) {
+  .header {
+    height: 100px;
+  }
+  .header__logo {
+    font-size: 34px;
+  }
+}
+
+/*----------------------------------------
+	Logo
+----------------------------------------*/
+.logo { 
+  color: #509422;
+  font-family: 'Fjalla One', sans-serif;
+}
+
+/*----------------------------------------
+	Hamburger
+----------------------------------------*/
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
+  background: #509422;
+  border: 0;
+  color: #fff;
+  cursor: pointer;
+}
+/*三本線*/
+.hamburger__line {
+  position: relative;
+  top: 12px;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+  transition: 0.3s;
+}
+.hamburger__line::before {
+  top: -8px;
+}
+.hamburger__line::after {
+  bottom: -8px;
+}
+/*ボタンテキスト*/
+.hamburger__txt {
+  color: #fff;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+
+/*OPEN時スタイル*/
+.hamburger.is-open .hamburger__line{
+  background: transparent;
+}
+.hamburger.is-open .hamburger__line::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+.hamburger.is-open .hamburger__line::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+@media screen and (min-width: 960px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*----------------------------------------
+	Gnav
+----------------------------------------*/
+@media screen and (max-width: 959px) {
+  .gnav {
+    display: none;
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 50px 20px;
+    background: #dbe7db;
+    text-align: center;
+    overflow-y: auto;
+  }
+  .gnav__list {
+    border-top: 1px dashed #aaa;
+  }
+  .gnav__item {
+    border-bottom: 1px dashed #aaa;
+  }
+  .gnav__link {
+    display: block;
+    padding: 20px;
+    color: #000;
+    font-weight: bold;
+  }
+}
+@media screen and (min-width: 960px) {
+  .gnav {
+    display: block !important;
+  }
+  .gnav__list {
+    display: flex;
+  }
+  .gnav__item {
+    margin: 0 1em;
+  }
+  .gnav__link {
+    position: relative;
+    display: block;
+    padding: 1em 0;
+    color: #000;
+    font-weight: bold;
+  }
+  .gnav__link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 4px;
+    background: #509422;
+    transition: transform 0.3s;
+    transform: scale(0,1);
+  }
+  .gnav__link:hover::before {
+    transform: scale(1,1)
+  }
+}
+
+

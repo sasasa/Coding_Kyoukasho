@@ -1,0 +1,41 @@
+@charset "UTF-8";
+h1 {
+  display: none;
+}
+/*----------------------------------------
+	Layout
+----------------------------------------*/
+.header {
+  height: 100px; /*ダミー*/
+  background: #509422;
+}
+.contents {
+  margin: 20px 0
+}
+.main {
+  background: #e5f3db;
+  height: 300px; /*ダミー*/
+}
+.sidebar {
+  background: #aeda90;
+}
+.footer {
+  background: #509422;
+  height: 100px; /*ダミー*/
+}
+@media screen and (min-width: 768px),print {
+  .contents {
+    display: flex;
+    flex-direction: row-reverse; /*左右入れ替え*/
+    justify-content: space-between;
+  }
+  .main {
+    flex-grow: 1;
+    margin-left: 20px;
+  }
+  .sidebar {
+    width: 30%;
+    max-width: 260px;
+  }
+}
+

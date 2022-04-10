@@ -1,0 +1,39 @@
+/*サンプル表示用のダミースタイル*/
+h1 {
+  display: none;
+}
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	Table
+----------------------------------------*/
+/*for PC*/
+.table01 {
+	width: 100%;
+	table-layout: fixed; 
+	border-collapse: collapse;
+}
+.table01 th,
+.table01 td {
+	padding: 1em;
+	border: 1px solid #ccc;
+}
+.table01 th {
+	width: 7.2em;
+	background: #f7f7f7;
+}
+
+/*均等割付①*/
+.tal-justify {
+	text-align-last: justify;
+}
+
+/*均等割付②*/
+.justify {
+	display: flex;
+	justify-content: space-between;
+}

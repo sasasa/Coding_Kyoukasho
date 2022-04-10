@@ -1,0 +1,181 @@
+.container {
+  max-width: 1080px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.heading {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+a {
+	transition: color .3s;
+}
+a:hover {
+	opacity: 0.7;
+}
+
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.card {
+	display: block;
+	border: 1px solid #e7e7e7;
+	border-radius: 5px;
+	background: #fff;
+	color: inherit;
+	text-decoration: none;
+	transition: color .3s;
+}
+.card__thumb {
+	position: relative;
+	transition: .3s;
+}
+.card__thumb::before {
+	content: "";
+	display: block;
+	padding-top: 56.25%;
+}
+.card__thumb img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	max-width: none;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 5px 5px 0 0;
+}
+.card__txt {
+	margin: 20px;
+}
+
+/*----------------------------------------
+	Card一覧（カード専用レイアウト）
+----------------------------------------*/
+.card-list {
+	display: flex;
+	flex-direction: column;
+	margin-top: -20px; /*1行目の上マージンを相殺*/
+}
+.card-list__item {
+	margin-top: 20px;
+}
+
+
+@media screen and (min-width: 768px),print {
+	/*PCレイアウトで2カラム表示*/
+	.card-list--col2 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col2 .card-list__item {
+		width: calc((100% - 20px) / 2);
+	}
+
+	/*PCレイアウトで3カラム表示*/
+	.card-list--col3 {
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: space-between;
+	}
+	.card-list--col3 .card-list__item {
+		width: calc((100% - 40px) / 3);
+	}
+}
+
+/*----------------------------------------
+	Pickup
+----------------------------------------*/
+.pickup {
+	padding: 30px;
+	background: #feefff;
+}
+.pickup__body {
+	margin-top: 20px;
+}
+.pickup__btn { /*このBlock内でのボタンレイアウトをElementとして定義*/
+	margin-top: 20px;
+	text-align: right;
+}
+@media screen and (min-width: 768px) {
+	.pickup {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+	.pickup__card {
+		width: 40%;
+	}
+	.pickup__body {
+		width: 57%;
+		margin-top: 0;
+		line-height: 2;
+	}
+}
+
+
+/*----------------------------------------
+	button
+----------------------------------------*/
+/*標準サイズ*/
+.btn {
+  display: inline-block;
+  min-width: 200px;
+  padding: 15px 30px;
+  border: 2px solid transparent; /*反転タイプとサイズに差が出ないようにあらかじめ透過borderを設定*/
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+	line-height: 1.4;
+  transition: .3s;
+  cursor: pointer; /*button要素でも指カーソルにする*/
+}
+.btn:hover {
+  opacity: 0.7; /*要素に関わらずhoverで透過0.7とする*/
+}
+
+/*大サイズ*/
+.btn--large {
+  width: 100%;
+  max-width: 320px;
+  padding: 20px 30px;
+  font-size: 1.2em;
+  letter-spacing: 0.08em;
+}
+
+/*小サイズ*/
+.btn--small {
+  min-width: 0;
+  padding: 10px 20px;
+  font-size: 0.85em;
+}
+
+/*縦圧縮ボタン*/
+.btn--compressed {
+  padding: 5px 30px;
+}
+
+/*ボタン種別*/
+.btn--default {
+  background-color: #338833;
+}
+.btn--default-reverse { /*反転タイプ*/
+  color: #338833;
+  border: 2px solid;
+}
+.btn--primary {
+  background-color: #eb46a6;
+}
+.btn--primary-reverse { /*反転タイプ*/
+  color: #eb46a6;
+  border: 2px solid;
+}
+.btn--secondary {
+  background-color: #aaaaaa;
+}
+.btn--secondary-reverse { /*反転タイプ*/
+  color: #aaaaaa;
+  border: 2px solid;
+}

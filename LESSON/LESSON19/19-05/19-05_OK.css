@@ -1,0 +1,67 @@
+.container {
+  max-width: 1080px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+.heading {
+	margin-top: 60px;
+	margin-bottom: 20px;
+}
+a {
+	transition: .3s;
+}
+a:hover {
+	opacity: 0.7;
+}
+h2 {
+  margin-top: 60px;
+  margin-bottom: 20px;
+}
+
+/*----------------------------------------
+	button
+----------------------------------------*/
+/*ボタンレイアウト用*/
+.btns {
+  display: flex;
+  flex-direction: column; /*SPでは縦並び*/
+}
+.btns__item + .btns__item { /*ボタンが2つ並ぶ場合だけボタン間に余白をつける*/
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .btns {
+    flex-direction: row; /*PCでは横並び*/
+  }
+  .btns__item + .btns__item { /*PCではボタン間の余白を左に変更*/
+    margin-top: 0;
+    margin-left: 40px;
+  }
+}
+
+/*ボタン本体*/
+.btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 320px;
+  /*margin: 0 20px; ボタンに直接marginはつけない*/
+  padding: 15px 30px;
+  border: 2px solid transparent;
+  background-color: #338833;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: .3s;
+  cursor: pointer;
+}
+.btn:hover {
+  opacity: 0.7;
+}
+
+/*反転タイプ*/
+.btn--reverse {
+  color: #338833;
+  border: 2px solid;
+  background-color: #fff;
+}

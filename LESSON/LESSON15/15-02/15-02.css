@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+/*----------------------------------------
+	Base
+----------------------------------------*/
+html,body {
+  height: 100%;
+}
+a {
+  color: #509422;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover {
+  color: #70cc33;
+}
+
+/*----------------------------------------
+	Header
+----------------------------------------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #fff;
+  border-bottom: 1px solid #e7e7e7;
+}
+.header__logo {
+  margin-left: 15px;
+  font-size: 20px; /*どのサイズで表示するかは使用箇所で変わるのでElementで指定*/
+}
+@media screen and (min-width: 960px) {
+  .header {
+    height: 100px;
+  }
+  .header__logo {
+    font-size: 34px;
+  }
+}
+
+/*----------------------------------------
+	Logo
+----------------------------------------*/
+.logo { 
+  color: #509422;
+  font-family: 'Fjalla One', sans-serif;
+}
+/*最小単位では色とフォントだけ指定しておき、
+サイズやレイアウトは配置先で決定することで各所で使いまわししやすくなります*/
+
+/*----------------------------------------
+	Hamburger
+----------------------------------------*/
+.hamburger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  padding: 0;
+  background: #509422;
+  color: #fff;
+  cursor: pointer;
+}
+/*内枠*/
+.hamburger__inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50px;
+  height: 50px;
+  padding: 5px 8px;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+/*三本線*/
+.hamburger__line {
+  position: relative;
+  top: 10px;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before,
+.hamburger__line::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #fff;
+}
+.hamburger__line::before {
+  top: -8px;
+}
+.hamburger__line::after {
+  bottom: -8px;
+}
+/*ボタンテキスト*/
+.hamburger__txt {
+  color: #fff;
+  font-size: 10px;
+}
+@media screen and (min-width: 960px) {
+  .hamburger {
+    display: none;
+  }
+}
+
+/*----------------------------------------
+	Gnav
+----------------------------------------*/
+.gnav {
+  display: none;
+  /*SP用のメニュースタイルは本筋ではないので省略*/
+}
+@media screen and (min-width: 960px) {
+  .gnav {
+    display: block;
+  }
+  .gnav__list {
+    display: flex;
+  }
+  .gnav__item {
+    margin: 0 1em;
+  }
+  .gnav__link {
+    position: relative;
+    display: block;
+    padding: 1em 0;
+    color: #000;
+    font-weight: bold;
+  }
+  .gnav__link::before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 4px;
+    background: #509422;
+    transition: transform 0.3s;
+    transform: scale(0,1);
+  }
+  .gnav__link:hover::before {
+    transform: scale(1,1)
+  }
+}
+
+

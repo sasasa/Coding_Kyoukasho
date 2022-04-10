@@ -1,0 +1,22 @@
+/* 投稿記事導入
+------------------------------------------------------ */
+.post-intro {
+  max-width: 800px;
+  margin: auto;
+}
+.post-intro__eycatch {
+  img {
+    max-width: none;
+    width: 100%;
+    height: auto;
+  }
+}
+.post-intro__excerpt {
+  margin-top: 30px;
+  p:not(:first-child){
+    margin-top: 1em;
+  }
+  @include medium {
+    margin-top: 40px;
+  }
+}

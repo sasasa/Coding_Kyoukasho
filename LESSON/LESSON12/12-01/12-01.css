@@ -1,0 +1,77 @@
+body {
+	font-family: sans-serif;
+}
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+	font-size: 32px;
+	margin-bottom: 20px;
+}
+.inputBox,
+.default {
+	display: block;
+	margin: 20px 0;
+}
+.f14 {
+	font-size: 14px !important;
+}
+
+.inputBox input[type="text"],
+/* 
+テキストボックスのスタイルはtype="text"だけでなく、
+同一スタイルにしたいtype属性をすべて列挙しておくことが望ましいです。
+サンプルではデフォルト表示と比較したいのでclassで子孫セレクタとしていますが、
+サイト内共通で一律にフォームスタイルを適用することが多いはずなので、
+リセットCSS的に要素の基本スタイルとして設定することの方が多くなります。
+.inputBox input[type="search"], 
+.inputBox input[type="email"],
+.inputBox input[type="url"],
+.inputBox input[type="tel"],
+.inputBox input[type="number"],
+.inputBox input[type="password"], */
+.inputBox textarea {
+	-webkit-appearance: none;
+	appearance: none; /*ブラウザ標準スタイルシートを無効にする*/
+	width: 100%;
+	max-width: 300px;
+	padding: 10px 20px 8px 20px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-family: inherit;
+	font-size: 16px; /*16px以上を推奨*/
+}
+.inputBox textarea {
+	max-width: none;
+	font-family: inherit;
+}
+
+/*placeholderスタイルの調整
+----------------------------------*/
+/* Placeholder Google Chrome, Safari, Opera 15+, Android, iOS */
+.inputBox ::-webkit-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 18- */
+.inputBox :-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 19+ */
+.inputBox ::-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder IE 10+ */
+.inputBox :-ms-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}

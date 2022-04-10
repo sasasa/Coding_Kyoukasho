@@ -1,0 +1,83 @@
+/* カート
+------------------------------------------------------ */
+/*grid-template-areasを使ったgridレイアウトはIE11でも対応可能です。
+（※要Autoprefixer）*/
+.cart {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas: 
+    "cart-thumb cart-label"
+    "cart-thumb cart-btn";
+  gap: 10px 20px;
+}
+.cart__thumb {
+  grid-area: cart-thumb;
+}
+.cart__label {
+  grid-area: cart-label;
+  align-self: end;
+}
+.cart__btn {
+  grid-area: cart-btn;
+  align-self: start;
+  max-width: 184px;
+}
+
+/*PC/SPの2パターンだけだと、中間サイズでのレイアウトが不格好となってしまうことが
+判明したため、細かく段階を分けてボタンの縦積み／横積みを切り替えるようにして対応しました。レスポンシブでのコーディングではデザインカンプの段階では想像しづらい状態が
+発生しがちですので、ある程度コーディングで対応できるようにしてあげると喜ばれます。
+（念の為事前にデザイナーさんに確認は取りましょう）*/
+@include small {
+  .cart {
+    grid-template-columns: 100px 1fr 184px;
+    grid-template-rows: auto;
+    grid-template-areas: "cart-thumb cart-label cart-btn";
+  }
+  .cart__label {
+    align-self: center;
+  }
+  .cart__btn {
+    align-self: center;
+  }
+}
+@include medium {
+  .cart {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+      "cart-thumb cart-label"
+      "cart-thumb cart-btn";
+  }
+  .cart__label {
+    align-self: end;
+  }
+  .cart__btn {
+    align-self: start;
+  }
+}
+@include large {
+  .cart {
+    grid-template-columns: 100px 1fr 184px;
+    grid-template-rows: auto;
+    grid-template-areas: "cart-thumb cart-label cart-btn";
+  }
+  .cart__label {
+    align-self: center;
+  }
+  .cart__btn {
+    align-self: center;
+  }
+}
+
+/*バリエーションなし*/
+.cart-box._single {
+  .cart {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  .cart__btn {
+    flex-grow: 1;
+  }
+}

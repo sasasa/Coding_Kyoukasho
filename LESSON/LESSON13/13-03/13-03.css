@@ -1,0 +1,332 @@
+/* ==================================================================
+ページレイアウト
+=================================================================== */
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+.heading {
+	text-align: center;
+	font-size: 32px;
+}
+.lead {
+	margin-top: 30px;
+	text-align: center;
+}
+.form {
+	margin-top: 50px;
+}
+a {
+	color: #3D98B4;
+}
+a:hover {
+	text-decoration: none;
+}
+
+/* ==================================================================
+フォーム部品スタイル
+=================================================================== */
+
+/*テキストボックス・テキストエリア
+------------------------------------*/
+input[type="text"],
+input[type="search"], 
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+textarea {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 100%;
+	padding: 10px 20px 8px 20px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+}
+input[type="password"] {
+	width: 100%;
+	padding: 10px 20px 8px 20px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+	font-size: 16px;
+}
+
+/*placeholderスタイルの調整
+----------------------------------*/
+/* Placeholder Google Chrome, Safari, Opera 15+, Android, iOS */
+::-webkit-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 18- */
+:-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder Firefox 19+ */
+::-moz-placeholder {
+  opacity: 1;
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/* Placeholder IE 10+ */
+:-ms-input-placeholder {
+  color: #ccc !important;
+  font-style: normal;
+}
+
+/*ラジオボタン・チェックボックス
+------------------------------------*/
+input[type="radio"],
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+}
+/*クリック範囲*/
+input[type="radio"]+span,
+input[type="checkbox"]+span {
+  display: inline-block;
+  position: relative;
+  margin: 0 2em 0 0;
+  padding: 0.3em 0.3em 0.3em 2em;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+/*フォーカス時*/
+input[type="radio"]:focus+span,
+input[type="checkbox"]:focus+span {
+  outline: 1px solid #ccc;
+}
+/*ラジオボタンスタイル*/
+input[type="radio"]+span:before {
+	content: "";
+  position: absolute;
+  top: 0.25em;
+  left: 0;
+  width: 1.375em;
+  height: 1.375em;
+	border: 1px solid #999;
+  border-radius: 50%;
+  line-height: 1;
+  background: #fff;
+}
+/*ラジオボタンチェック印（未選択）*/
+input[type="radio"]+span:after {
+	content: "";
+  display: none;
+}
+/*ラジオボタンチェック印（選択）*/
+input[type="radio"]:checked+span:after {
+  display: block;
+  position: absolute;
+  top: 0.45em;
+  left: 0.2em;
+  width: 1em;
+  height: 1em;
+  margin: 0;
+  padding: 0;
+  border-radius: 50%;
+  background: #3D98B4;
+  line-height: 1;
+}
+/*チェックボックススタイル*/
+input[type="checkbox"]+span:before {
+  position: absolute;
+  top: 0.3em;
+  left: 0;
+	content: "";
+  width: 1.25em;
+  height: 1.25em;
+	border: 1px solid #999;
+	background: #fff;
+  line-height: 1;
+  vertical-align: middle;
+}
+/*チェックボックス未チェック時*/
+input[type="checkbox"]+span:after {
+	content: "";
+  display: none;
+}
+/*チェックボックスチェック時*/
+input[type="checkbox"]:checked+span:after {
+  display: block;
+  position: absolute;
+  top: 0.3em;
+  left: 0.4em;
+  width: 0.5em;
+  height: 1em;
+  content: "";
+  border-bottom: 3px solid #3D98B4;
+  border-right: 3px solid #3D98B4;
+  transform: rotate(45deg);
+}
+
+/*セレクトボックス
+------------------------------------*/
+select {
+	-webkit-appearance: none;
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: 10px 30px 8px 10px;
+	border-radius: 4px;
+	border: 1px solid #ccc;
+}
+.selectWrap {
+	position: relative;
+	display: block;
+}
+.selectWrap::after {
+	position: absolute;
+	right: 10px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	content: "";
+	display: block;
+	width: 8px;
+	height: 8px;
+	border-right: 2px solid #999;
+	border-bottom: 2px solid #999;
+	transform: rotate(45deg);
+	pointer-events: none;
+}
+
+/* ==================================================================
+フォームレイアウト
+=================================================================== */
+/*大枠レイアウト
+---------------------------------*/
+.form {
+	border-top: 1px dashed #ccc;
+}
+.form__item {
+	padding: 20px 0;
+	border-bottom: 1px dashed #ccc;
+}
+.form__ttl {
+	display: inline-block;
+	margin-bottom: 5px;
+	font-weight: bold;
+}
+legend.form__ttl { /*legend要素のデフォルト位置から下にずらす*/
+	margin-bottom: 5px;
+	transform: translateY(1.5em);
+}
+@media screen and (min-width: 768px),print {
+	.form__item::after { /*clearfixでfloat解除*/
+		content: "";
+		display: block;
+		clear: both;
+	}
+	.form__ttl {
+		float: left; /*fieldsetはtable・flex・grid効かないため*/
+		width: 30%;
+	}
+	.form__body {
+		width: 70%;
+		margin-left: 30%;
+	}
+	legend.form__ttl {
+		transform: translateY(0); /*legend要素の位置戻す*/
+	}
+}
+
+/*入力フィールド
+---------------------------------*/
+.inputField.-half {
+	width: 50%;
+}
+
+/*補足説明文
+---------------------------------*/
+.inputNote {
+	display: block;
+	margin-top: 5px;
+	color: #999;
+	font-size: 0.8em;
+}
+
+/*水平ラジオボタン選択肢リスト
+---------------------------------*/
+.radioList {
+	display: flex;
+	align-items: center;
+}
+
+/*横並びレイアウト
+---------------------------------*/
+.inlineBlock {
+	display: flex;
+	align-items: center;
+}
+.inlineBlock label {
+	padding: 0 0.5em;
+}
+
+/*必須・任意ラベル
+---------------------------------*/
+.label-required,
+.label-any {
+	display: inline-block;
+	margin-left: 0.5em;
+	padding: 0.3em 0.5em;
+	border-radius: 4px;
+	color: #fff;
+	font-size: 0.7em;
+	font-weight: normal;
+	line-height: 1;
+}
+.label-required {
+	background: #c00;
+}
+.label-any {
+	background: #3D98B4;
+}
+
+/*同意エリア
+---------------------------------*/
+.acceptArea {
+	margin-top: 30px;
+	padding: 30px;
+	border: 1px solid #ccc;
+}
+.acceptArea__txt {
+	margin-bottom: 10px;
+}
+.acceptArea__check {
+	display: block;
+	text-align: center;
+}
+
+
+/*送信ボタンエリア
+---------------------------------*/
+.btnArea {
+	margin-top: 50px;
+	text-align: center;
+}
+.submitBtn {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 90%;
+	max-width: 300px;
+	margin: 0;
+	padding: 15px;
+	border: 0;
+	border-radius: 50px;
+	background: #3D98B4;
+	color: #fff;
+	cursor: pointer;
+	transition: opacity .3s;
+}
+.submitBtn:hover {
+	opacity: 0.7;
+}

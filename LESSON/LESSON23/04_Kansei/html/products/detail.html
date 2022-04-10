@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品詳細 | ハンドメイド猫グッズのお店 l'atelier Queue</title>
+  <meta name="description" content="ハンドメイド猫グッズのお店 l'atelier Queueの商品詳細ページです。">
+  <link rel="stylesheet" href="/assets/css/common.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <p class="header__logo"><a href="/" aria-label="トップページへ戻る"><img src="/assets/img/logo_under_header.svg" alt="-nekonokomono- l'atelier Queue"></a></p>
+  </header>
+  <!-- for PC -->
+  <nav id="gnav" class="gnav" aria-label="メインメニュー">
+    <ul class="gnav__list">
+      <li class="gnav__item"><a href="/products/" class="gnav__link">商品一覧</a></li>
+      <li class="gnav__item"><a href="/blog/" class="gnav__link">ねこブログ</a></li>
+      <li class="gnav__item"><a href="/staff/" class="gnav__link">ねこ店員紹介</a></li>
+      <li class="gnav__item"><a href="/faq/" class="gnav__link">よくあるご質問</a></li>
+      <li class="gnav__item"><a href="/contact/" class="gnav__link">お問い合わせ</a></li>
+    </ul>
+  </nav>
+  <!-- for SP -->
+  <button id="hamburger" class="hamburger" aria-label="メニューを開く" aria-controls="spmenu" aria-expanded="false">
+    <span class="hamburger__line" aria-hidden="true"></span>
+    <span class="hamburger__txt">Menu</span>
+  </button>
+  <nav id="spmenu" class="spmenu" aria-label="スマホ用メニュー">
+    <div class="spmenu__inner">
+      <div class="spmenu__logo"><img src="/assets/img/logo_small.svg" alt="l'atelier Queueロゴ" width="76" height="103" ></div>
+      <ul class="spmenu__list">
+        <li class="spmenu__item"><a href="/" class="spmenu__link">トップページ</a></li>
+        <li class="spmenu__item"><a href="/products/" class="spmenu__link">商品一覧</a></li>
+        <li class="spmenu__item"><a href="/blog/" class="spmenu__link">ねこブログ</a></li>
+        <li class="spmenu__item"><a href="/staff/" class="spmenu__link">ねこ店員紹介</a></li>
+        <li class="spmenu__item"><a href="/faq/" class="spmenu__link">よくあるご質問</a></li>
+        <li class="spmenu__item"><a href="/contact/" class="spmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="spmenu-s">
+        <li class="spmenu-s__item"><a href="/law/" class="spmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="spmenu-s__item"><a href="/privacy/" class="spmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+    </div>　
+  </nav>
+
+  <!-- パンくず -->
+  <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+    <ol class="breadcrumb__list">
+      <li class="breadcrumb__item"><a href="/">ホーム</a></li>
+      <li class="breadcrumb__item"><a href="/products/">商品一覧</a></li>
+      <li class="breadcrumb__item"><a href="/products/category/">その他雑貨</a></li>
+      <li class="breadcrumb__item"><a href="#">【焼印付】爪とぎ型キーホルダー</a></li>
+    </ol>
+  </nav>
+
+  <main class="main-contents">
+    <div class="container">
+
+      <div class="pd-detail">
+
+        <!-- 上部カートBOX -->
+        <div class="pd-detail__cart cart-box">
+          <h1 class="cart-box__title">【焼印付】爪とぎ型キーホルダー</h1>
+          <p class="cart-box__id">ZK-0012</p>
+          <p class="cart-box__price">価格<strong>000</strong>円<small>（税込000円）</small></p>
+          <div class="cart-box__variation">
+            <div class="cart">
+              <div class="cart__thumb"><img src="/assets/img/dmy_zk0012_a.jpg" alt="" width="100" height="100"></div>
+              <div class="cart__label">使用前タイプ</div>
+              <div class="cart__btn">
+                <form action="#" method="POST">
+                  <button class="btn btn--cart" aria-label="【焼印付】爪とぎ型キーホルダー（使用前タイプ）をカートに入れる">カートに入れる</button>
+                </form>
+              </div>
+            </div>
+            <div class="cart">
+              <div class="cart__thumb"><img src="/assets/img/dmy_zk0012_b.jpg" alt="" width="100" height="100"></div>
+              <div class="cart__label">使用後タイプ</div>
+              <div class="cart__btn">
+                <form action="#" method="POST">
+                  <button class="btn btn--cart" aria-label="【焼印付】爪とぎ型キーホルダー（使用後タイプ）をカートに入れる">カートに入れる</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- サムネイル画像によるタブ切り替えなので、WAI-ARIAでタブUIとしてのマークアップを追加しています -->
+        <div class="pd-detail__ph pd-mv">
+          <div id="panel_mv01" 
+            class="pd-mv__main" 
+            role="tabpanel" 
+            aria-hidden="false">
+            <img src="/assets/img/dmy_pd001.jpg" alt="商品写真1の拡大写真" width="532" height="532">
+          </div>
+          <div id="panel_mv02" 
+            class="pd-mv__main" 
+            role="tabpanel" 
+            aria-hidden="true">
+            <img src="/assets/img/dmy_pd001_02.jpg" alt="商品写真2の拡大写真" width="532" height="532">
+          </div>
+          <div id="panel_mv03" 
+            class="pd-mv__main" 
+            role="tabpanel" 
+            aria-hidden="true">
+            <img src="/assets/img/dmy_pd001_03.jpg" alt="商品写真3の拡大写真" width="532" height="532">
+          </div>
+          <ul class="pd-mv__thumbs" role="tablist">
+            <li role="presentation">
+              <a href="#panel_mv01" 
+                role="tab" 
+                aria-controls="panel_mv01" 
+                aria-expanded="true" 
+                aria-selected="true">
+                <img src="/assets/img/dmy_pd001.jpg" alt="商品写真1" width="96" height="96">
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#panel_mv02" 
+                role="tab" 
+                aria-controls="panel_mv02" 
+                aria-expanded="false" 
+                aria-selected="false">
+                <img src="/assets/img/dmy_pd001_02.jpg" alt="商品写真2" width="96" height="96">
+              </a>
+            </li>
+            <li role="presentation">
+              <a href="#panel_mv03" 
+                role="tab" 
+                aria-controls="panel_mv03" 
+                aria-expanded="false" 
+                aria-selected="false">
+                <img src="/assets/img/dmy_pd001_03.jpg" alt="商品写真3" width="96" height="96">
+              </a>
+            </li>
+          </ul>
+        </div>
+        <section class="pd-detail__info">
+          <h2 class="pd-detail__info-title">商品情報</h2>
+          <!-- プレーンテキストが入ってくるフィールドなのでベタテキスト前提となっています。 -->
+          <p>あの「猫の爪とぎ」が可愛らしいミニチュアサイズのキーホルダーになりました！<br>
+            <br>
+            小さくても作りはしっかり。外側ケースは手触りの良いパイン材の木枠、裏面には当店ロゴの猫型焼印付きでオシャレ♪<br>
+            <br>
+            使用前タイプ、使用後タイプの2種類をご用意しています。<br>
+            <br>
+            ■サイズ：H：約100 × W：23 × D：約15（mm）<br>
+            ■重量：約72g<br>
+            ■素材：パイン材・ダンボール・アルミ（ボールチェーン）</p>
+        </section>
+      </div>
+
+      <!-- ブログ本文エリアと同じ投稿コンテンツが入る前提です。 -->
+      <div class="post-body">
+        <img src="/assets/img/dmy_zk0012_cont01.jpg" alt="" width="800" height="540" class="alignnone">
+        <p>裏面の焼印はひとつひとつオーナーが手押しで押印しています！ 手で押しているのでひとつひとつ焼色や場所などが微妙に違いますが、そこは「手作りの味」ということでご容赦くださいませ！</p>
+        <p>本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。</p>
+        <p>本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。本文テキスト16px・行間1.75フリーテキストが入ります。</p>
+      </div>
+
+      <!-- 下部カートBOX・バリエーションなし -->
+      <div class="cart-box _bottom _single">
+        <div class="cart-box__body">
+          <p class="cart-box__title">【焼印付】爪とぎ型キーホルダー</p>
+          <p class="cart-box__id">ZK-0012</p>
+          <p class="cart-box__price">価格<strong>000</strong>円<small>（税込000円）</small></p>
+          <div class="cart">
+            <div class="cart__btn">
+              <form action="#" method="POST">
+                <button class="btn btn--cart" aria-label="【焼印付】爪とぎ型キーホルダー（使用前タイプ）をカートに入れる">カートに入れる</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="cart-box__thumb"><img src="/assets/img/dmy_pd001.jpg" alt="" width="200" height="200"></div>
+      </div>
+
+      <!-- 下部カートBOX・バリエーションあり -->
+      <div class="cart-box _bottom">
+        <p class="cart-box__title">【焼印付】爪とぎ型キーホルダー</p>
+        <p class="cart-box__id">ZK-0012</p>
+        <p class="cart-box__price">価格<strong>000</strong>円<small>（税込000円）</small></p>
+        <div class="cart-box__variation">
+          <div class="cart">
+            <div class="cart__thumb"><img src="/assets/img/dmy_zk0012_a.jpg" alt="" width="100" height="100"></div>
+            <div class="cart__label">使用前タイプ</div>
+            <div class="cart__btn">
+              <form action="#" method="POST">
+                <button class="btn btn--cart" aria-label="【焼印付】爪とぎ型キーホルダー（使用前タイプ）をカートに入れる">カートに入れる</button>
+              </form>
+            </div>
+          </div>
+          <div class="cart">
+            <div class="cart__thumb"><img src="/assets/img/dmy_zk0012_b.jpg" alt="" width="100" height="100"></div>
+            <div class="cart__label">使用後タイプ</div>
+            <div class="cart__btn">
+              <form action="#" method="POST">
+                <button class="btn btn--cart" aria-label="【焼印付】爪とぎ型キーホルダー（使用後タイプ）をカートに入れる">カートに入れる</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="post-nav" aria-label="投稿ナビゲーション">
+        <a href="#" class="post-nav__btn _prev">前の商品</a>
+        <a href="#" class="post-nav__btn _next">次の商品</a>
+        <a href="/products/category/" class="post-nav__back">「その他雑貨」カテゴリトップへ戻る</a>
+      </nav>
+
+    </div>
+  </main>
+  <footer class="footer">
+    <p class="pagetop"><a href="#top"><img src="/assets/img/btn_pagetop.svg" alt="ページの先頭へ戻る"></a></p>
+    <div class="footer__inner">
+      <div class="footer__logo"><img src="/assets/img/logo_small_wh.svg" alt="l'atelier Queueロゴ" width="76" height="103" loading="lazy"></div>
+      <ul class="ftmenu">
+        <li class="ftmenu__item"><a href="/" class="ftmenu__link">トップページ</a></li>
+        <li class="ftmenu__item"><a href="/products/" class="ftmenu__link">商品一覧</a></li>
+        <li class="ftmenu__item"><a href="/blog/" class="ftmenu__link">ねこブログ</a></li>
+        <li class="ftmenu__item"><a href="/staff/" class="ftmenu__link">ねこ店員紹介</a></li>
+        <li class="ftmenu__item"><a href="/faq/" class="ftmenu__link">よくあるご質問</a></li>
+        <li class="ftmenu__item"><a href="/contact/" class="ftmenu__link">お問い合わせ</a></li>
+      </ul>
+      <ul class="ftmenu-s">
+        <li class="ftmenu-s__item"><a href="/law/" class="ftmenu-s__link">特定商取引法に関する表記</a></li>
+        <li class="ftmenu-s__item"><a href="/privacy/" class="ftmenu-s__link">プライバシーポリシー</a></li>
+      </ul>
+      <p class="footer__copyright"><small lang="en">&copy; l’atelier Queue All Rights Reserved. 2021</small></p>
+    </div>
+  </footer>
+</body>
+</html>

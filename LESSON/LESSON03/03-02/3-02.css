@@ -1,0 +1,24 @@
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+}
+
+/*ボタン*/
+.btns {
+	background: #e7e7e7;
+}
+.btns__item {
+	margin: 10px;
+	border: 1px dashed #999;
+}
+
+/*ボタン形状にするための指定を追加*/
+.btn {
+	width: 80%;
+	max-width: 300px;
+	padding: 15px;
+	background: skyblue;
+	border-radius: 8px;
+	text-align: center;
+	text-decoration: none;
+}

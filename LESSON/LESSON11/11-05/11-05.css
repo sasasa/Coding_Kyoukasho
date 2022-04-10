@@ -1,0 +1,62 @@
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+
+.tableWrapper {
+	width: 100%;
+	height: 300px;/*縦スクロールのために高さを固定*/
+	overflow: auto;/*stickyの包含ブロック化*/
+}
+.table05 {
+	width: 920px;/*横スクロールのために幅を固定*/
+	table-layout: fixed;
+	border-collapse: collapse;
+}
+.table05 th,
+.table05 td {
+	padding: 10px;
+	border: 1px solid #ccc;
+}
+.table05 thead th {
+	position: sticky;/*粘着表示*/
+	top: 0;  /*包含ブロックの上端に張り付き*/
+	z-index: 1;
+	background: #ddd;
+}
+.table05 thead th:first-child {/*左上の見出しセル*/
+	top: 0; /*包含ブロックの上端に張り付き*/
+	left: 0; /*包含ブロックの左端に張り付き*/
+	z-index: 2;
+}
+.table05 tbody th {
+	position: sticky; /*粘着表示*/
+	left: 0; /*包含ブロックの左端に張り付き*/
+	background: #f7f7f7;
+}
+
+/*固定要素の罫線を補う*/
+/*表組みのthをsticky表示しても罫線はスクロールしてしまい罫線分だけスクロールするコンテンツが見えてしまうため、疑似要素で罫線を補っています。*/
+.table05 thead th::before,
+.table05 thead th:first-child::after,
+.table05 tbody th::before {
+	content: "";
+	position: absolute;
+	z-index: 1;
+	display: block;
+	background: #ddd;
+}
+.table05 thead th::before {
+	left: 0;
+	top: -1px;
+	width: 100%;
+	height: 1px;
+}
+.table05 tbody th::before,
+.table05 thead th:first-child::after {
+	left: -1px;
+	top: 0;
+	width: 1px;
+	height: 100%;
+}

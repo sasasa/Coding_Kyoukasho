@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>21-05</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="21-05.css">
+</head>
+<body>
+  <h1>装飾用画像のalt指定</h1>
+
+  <div class="container">
+  
+    <div class="sample">
+      <!-- NG例（alt属性なし） -->
+      <a href="#" class="btn"><img src="img/icon_mail.png" class="btn__icon">お問い合わせ</a>
+    </div>
+    <p>※alt属性なし</p>
+
+    <div class="sample">
+      <!-- OK例（alt属性の値が空） -->
+      <a href="#" class="btn"><img src="img/icon_mail.png" class="btn__icon" alt="">お問い合わせ</a>
+    </div>
+    <p>※alt属性の値が空</p>
+    
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>22-04</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="22-04.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+</head>
+<body>
+<h1>アクセシブルな名前</h1>
+
+<div class="container">
+
+  <div class="sample">
+    <!-- 「送信」というコンテンツ由来のアクセシブルな名前を持つ -->
+    <button>送信</button>
+  </div>
+
+  <div class="sample">
+    <!-- 「インフォメーション」という著者由来のアクセシブルな名前を持つ -->
+    <a href="#" aria-label="インフォメーション" class="mark">！</a>
+  </div>
+
+  <div class="sample">
+    <!-- navigationロールはコンテンツ由来の名前を持たないのでアクセシブルな名前は無い（必須ではないので無くても構わない） -->
+    <nav>ナビゲーション</nav>
+  </div>
+
+  <div class="sample">
+    <!-- presentationロール、noneロールには著者由来のアクセシブルな名前を設定できない（aria-label等を設定してはいけない） -->
+    <i class="fa fa-arrow-right" role="presentation"></i>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+/* table
+------------------------------------------------------ */
+.table {
+  width: 100%;
+  th {
+    padding: 20px;
+    border: 1px solid $c_key1;
+    border-right: 0;
+    background: $c_key2;
+    font-weight: bold;
+    text-align: left;
+    vertical-align: middle;
+  }
+  td {
+    padding: 20px;
+    border: 1px solid $c_key1;
+    border-left: 0;
+    background: $c_white;
+    text-align: left;
+    vertical-align: middle;
+  }
+}
+/*type01:そのまま縮小表示*/
+.table._type01 {
+  @include x-small {
+    font-size: 12px;
+    th,td {
+      padding: 10px 15px;
+    }
+  }
+}

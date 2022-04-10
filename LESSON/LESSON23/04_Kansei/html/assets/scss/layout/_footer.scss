@@ -1,0 +1,46 @@
+/* footer
+------------------------------------------------------ */
+.footer {
+  position: relative;
+  background: $c_text;
+  color: $c_white;
+  text-align: center;
+  a {
+    &:hover,
+    &:active {
+      color: $c_key1;
+    }
+  }
+}
+.footer__inner {
+  max-width: $width;
+  margin: auto;
+  padding: 50px 20px;
+}
+.footer__copyright {
+  margin-top: 60px;
+  font-size: 12px;
+}
+@include medium {
+  .ftmenu {
+    margin-top: 20px;
+    border: 0;
+    line-height: 1;
+  }
+  .ftmenu__item {
+    display: inline-block;
+    border: 0;
+    &:not(:first-child) {
+      border-left: 1px solid;
+    }
+  }
+  .ftmenu__link {
+    display: block;
+    padding: 0 5px;
+    font-weight: normal;
+    font-size: 12px;
+  }
+  .ftmenu-s {
+    margin-top: 10px;
+  }
+}

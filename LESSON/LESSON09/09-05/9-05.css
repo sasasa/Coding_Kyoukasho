@@ -1,0 +1,101 @@
+html,body {
+	overflow-x: hidden; /*横スクロールの発生を防止*/
+}
+
+/*----------------------------------------
+	container
+----------------------------------------*/
+.container { /*一律でページ全体のコンテンツ最大幅を固定*/
+  max-width: 1040px;
+	margin: 0 auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	section
+----------------------------------------*/
+.section {
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+.section + .section {
+	padding-top: 0;
+}
+
+/*----------------------------------------
+	Alternate
+----------------------------------------*/
+.alternate {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.alternate__body {
+	padding: 30px;
+}
+.alternate__ttl {
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 0.2em;
+}
+.alternate__sttl {
+	display: block;
+	font-size: 10px;
+}
+.alternate__txt {
+	margin-top: 20px;
+	line-height: 1.7;
+}
+.alternate__thumb img {
+	max-width: none;
+	width: 100%;
+}
+.alternate__thumb {
+	position: relative;
+}
+.alternate__thumb::after {
+	position: absolute;
+	top: -30px;
+	z-index: -1;
+	content: "";
+	display: block;
+	width: 100%;
+	height: 100%;
+	background: #cdecf0;
+}
+.alternate._normal .alternate__thumb::after {
+	right: 30px; /*基準点が右端となるようにrightでずらす*/
+}
+.alternate._reverse .alternate__thumb::after {
+	left: 30px; /*基準点が左端となるようにleftでずらす*/
+}
+
+/*for PC*/
+@media screen and (min-width: 768px),print {
+	.alternate {
+		flex-direction: row-reverse;
+	}
+	.alternate._reverse {
+		flex-direction: row;
+	}
+	.alternate__body {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.alternate__thumb {
+		width: 50%;
+	}
+	.alternate__thumb img {
+		height: 100%;
+		object-fit: cover;
+	}
+	.alternate._normal .alternate__thumb::after {
+		right: 50px;
+		width: 50vw; /*widthでボックス幅自体を広げる*/
+	}
+	.alternate._reverse .alternate__thumb::after {
+		left: 50px;
+		width: 50vw;
+	}
+}

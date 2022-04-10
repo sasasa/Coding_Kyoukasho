@@ -1,0 +1,183 @@
+/* 投稿記事本文エリア
+------------------------------------------------------ */
+/*CMSのリッチテキストエディタで基本的なタグが直接入力されてくる前提で、投稿本文エリアだけは要素に直接スタイルが当たるように設計しています。
+入力者がCSSを意識しなくてもそれなりのスタイルが維持されるようにしておくのがポイントです。プロパティの継承と上書き、隣接セレクタ、マージンの相殺といったCSS本来のルールを活用してスタイル定義しましょう。*/
+
+.post-body {
+  max-width: 800px;
+  margin: 80px auto 0;
+
+  //floatのclear忘れがあっても本文エリア内で解除されるようにしておく
+  &::after { 
+    content:"";
+    display: block;
+    clear: both;
+  }
+  @include medium {
+    margin: 100px auto 0;
+  }
+
+  //post-body直下の要素（見出しを除く）に1.75emの上マージン
+  >*:not(h2,h3,h4,h5,h6) {
+    margin-top: 1.75em;
+  }
+
+  //見出し要素に固有のスタイルを定義。見出し下余白は一律指定の1.75emを上書きすることで指定サイズの余白を確保
+  h2 {
+    margin-top: 80px;
+    padding-bottom: 5px;
+    border-bottom: 2px solid $c_key1;
+    font-size: 24px;
+    & + * {
+      margin-top: 25px;
+    }
+    @include medium {
+      margin-top: 100px;
+      font-size: 30px;
+      & + * {
+        margin-top: 40px;
+      }
+    }
+  }
+
+  h3 {
+    margin-top: 40px;
+    padding-left: 20px;
+    border-left: 4px solid $c_key1;
+    font-size: 20px;
+    & + * {
+      margin-top: 20px;
+    }
+    @include medium {
+      margin-top: 50px;
+      font-size: 24px;
+      & + * {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  h4 {
+    margin-top: 30px;
+    color: $c_key3;
+    font-size: 18px;
+    & + * {
+      margin-top: 15px;
+    }
+    @include medium {
+      margin-top: 40px;
+      font-size: 20px;
+      & + * {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  h5 {
+    margin-top: 30px;
+    & + * {
+      margin-top: 10px;
+    }
+    @include medium {
+      margin-top: 30px;
+      font-size: 18px;
+      & + * {
+        margin-top: 15px;
+      }
+    }
+  }
+
+  h6 {
+    margin-top: 30px;
+    color: #666;
+    & + * {
+      margin-top: 10px;
+    }
+    @include medium {
+      margin-top: 30px;
+      font-size: 16px;
+      & + * {
+        margin-top: 10px;
+      }
+    }
+  }
+
+  ul {
+    >li {
+      margin-top: 1.5em;
+      position: relative;
+      padding-left: 1em;
+      &::before {
+        position: absolute;
+        left: 0;
+        top: 0.75em;
+        content: "";
+        display: block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: $c_key1;
+      }
+    }
+  }
+
+  ol {
+    >li {
+      margin-top: 1.5em;
+      margin-left: 1em;
+      list-style-type: decimal;
+    }
+  }
+
+  table {
+    width: 100%;
+    margin-top: 1.5em;
+    th {
+      padding: 20px;
+      border: 1px solid $c_key1;
+      background: $c_key2;
+      font-weight: bold;
+      text-align: left;
+      vertical-align: middle;
+    }
+    td {
+      padding: 20px;
+      border: 1px solid $c_key1;
+      background: $c_white;
+      text-align: left;
+      vertical-align: middle;
+    }
+  }
+
+  //投稿画面から画像を配置した場合についてくるclassを利用して画像のレイアウトパターンを定義
+
+  //モバイルでは全て1カラムセンター寄せ配置
+  img.alignnone,
+  img.alignleft,
+  img.alignright,
+  img.aligncenter {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  @include medium {
+    img.alignnone {
+      margin-left: 0;
+    }
+    img.alignleft { //画像左配置：回り込み
+      float: left;
+      max-width: 380px;
+      margin-right: 20px;
+      margin-bottom: 10px;
+    }
+    img.alignright { //画像右配置：回り込み
+      float: right;
+      max-width: 380px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

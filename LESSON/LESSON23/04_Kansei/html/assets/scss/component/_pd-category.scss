@@ -1,0 +1,23 @@
+/* 商品カテゴリー
+------------------------------------------------------ */
+.pd-category {
+  display: flex;
+  align-items: center;
+  border: 1px solid $c_gray1;
+  text-decoration: none;
+  line-height: 1.5;
+  &:hover,
+  &:focus {
+    background: $c_key2;
+    border-color: $c_key1;
+    color: $c_text;
+  }
+}
+.pd-category__thumb {
+  flex-shrink: 0;
+  width: min((120/375)*100vw,120px);
+}
+.pd-category__title {
+  padding: 10px 10px 10px 20px;
+  font-size: min((16/375)*100vw,18px);
+}

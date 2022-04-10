@@ -1,0 +1,16 @@
+/* tag
+------------------------------------------------------ */
+.tag {
+  display: inline-block;
+  min-width: 92px;
+  padding: 4px 10px;
+  background: $c_key2;
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  &--new {
+    background: $c_red1;
+    color: $c_white;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,71 @@
+/* ==================================================================
+ページレイアウト
+=================================================================== */
+.container {
+	max-width: 1400px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+h1 {
+	font-size: 32px;
+}
+h2 {
+	margin-top: 40px;
+	margin-bottom: 10px;
+}
+
+/*送信ボタン
+---------------------------------*/
+.btn {
+	-webkit-appearance: none;
+	appearance: none;
+	width: 260px;
+	margin: 0;
+	padding: 15px;
+	border: 0;
+	border-radius: 50px;
+	background: #3D98B4;
+	color: #fff;
+	line-height: 1.4;
+	cursor: pointer;
+	transition: opacity .3s;
+}
+.btn:hover {
+	opacity: 0.7;
+}
+
+/*矢印付き*/
+.btn02 {
+	position: relative;
+	display: inline-block;
+}
+.btn02::after {
+	position: absolute;
+	right: 20px;
+	top: 0;
+	bottom: 0;
+	margin: auto;
+	content:"";
+	display: block;
+	width: 0.7em;
+	height: 0.7em;
+	border-top: 2px solid;
+	border-right: 2px solid;
+	color: #fff;
+	transform: rotate(45deg);
+}
+
+/*テキスト装飾あり*/
+.btn03 {
+	padding: 10px 15px;
+	
+}
+.btn03 .txt01 {
+	display: block;
+	font-size: 0.85em;
+}
+.btn03 .txt02 {
+	font-size: 20px;
+	font-weight: bold;
+	letter-spacing: 0.2em;
+}

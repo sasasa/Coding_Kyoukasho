@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-04</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="12-04.css">
+</head>
+<body>
+  <div class="container">
+    <h1>数字入力サンプル</h1>
+    <form action="#">
+
+    <h2>type="number" OK例</h2>
+    <div class="inputField">
+      数量：<input type="number" name="num"> 個
+    </div>
+
+    <h2>type="number" NG例</h2>
+    <div class="inputField">
+      郵便番号：
+      <input type="number" name="zip1" placeholder="001"> - 
+      <input type="number" name="zip2" placeholder="0001">
+    </div>
+    <div class="inputField">
+      クレジットカード番号：
+      <input type="number" name="credit1" placeholder="0000"> 
+      <input type="number" name="credit2" placeholder="0000"> 
+      <input type="number" name="credit3" placeholder="0000"> 
+      <input type="number" name="credit4" placeholder="0000">
+    </div>
+
+    <h2>type="text" + inputmode</h2>
+    <div class="inputField">
+      郵便番号：
+      <input type="text" name="zip1" placeholder="001" inputmode="numeric"> - 
+      <input type="text" name="zip2" placeholder="0001" inputmode="numeric">
+    </div>
+    <div class="inputField">
+      クレジットカード番号：
+      <input type="text" name="credit1" placeholder="0000" inputmode="numeric"> 
+      <input type="text" name="credit2" placeholder="0000" inputmode="numeric"> 
+      <input type="text" name="credit3" placeholder="0000" inputmode="numeric"> 
+      <input type="text" name="credit4" placeholder="0000" inputmode="numeric">
+    </div>
+
+    </form>
+  </div>
+</body>
+</html>

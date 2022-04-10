@@ -1,0 +1,29 @@
+/* 商品メイン写真
+------------------------------------------------------ */
+.pd-mv__thumbs {
+  display: flex;
+  margin-top: 5px;
+  li {
+    width: calc(100% / 5);
+  }
+  a {
+    display: block;
+    border: 5px solid transparent;
+    &[aria-selected="true"] {
+      border-color: $c_key1;
+    }
+    &:hover,
+    &:focus {
+      opacity: 0.7;
+    }
+  }
+  @include medium {
+    margin-top: 12px;
+    li {
+      width: calc((100% - 40px) / 5);
+      &:not(:first-child){
+        margin-left: 10px;
+      }
+    }
+  }
+}

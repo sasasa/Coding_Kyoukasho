@@ -1,0 +1,23 @@
+.container {
+  max-width: 1440px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+
+
+/*----------------------------------------
+	Google Map
+----------------------------------------*/
+.map {
+	position: relative;
+	max-width: 700px;
+	margin: auto;
+	padding-top: 56.25%; /* 9÷16×100 */
+}
+.map iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}

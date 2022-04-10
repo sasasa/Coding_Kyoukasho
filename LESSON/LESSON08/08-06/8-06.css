@@ -1,0 +1,101 @@
+.container {
+  max-width: 1440px;
+  margin: 30px auto;
+	padding: 0 20px;
+}
+
+/*----------------------------------------
+	Alternate
+----------------------------------------*/
+.alternate {
+	display: flex;
+	flex-direction: column-reverse;
+}
+.alternate + .alternate {
+	margin-top: 30px;
+}
+.alternate__body {
+	padding: 30px;
+	background: #f9fae9;
+}
+.alternate__ttl {
+	text-align: center;
+	font-size: 18px;
+	letter-spacing: 0.2em;
+}
+.alternate__sttl {
+	display: block;
+	font-size: 10px;
+}
+.alternate__txt {
+	margin-top: 20px;
+	line-height: 1.7;
+}
+.alternate__thumb img {
+	max-width: none;
+	width: 100%;
+}
+/*ずらし用の指定*/
+@media screen and (max-width: 767px) {
+	.alternate__body {
+		margin-top: -40px;
+		padding-top: 60px;
+	}
+	.alternate._normal .alternate__thumb {
+		margin-left: -20px;
+	}
+	.alternate._normal .alternate__body {
+		margin-right: -20px;
+	}
+	.alternate._reverse .alternate__thumb{
+		margin-right: -20px;
+	}
+	.alternate._reverse .alternate__body{
+		margin-left: -20px;
+	}
+}
+
+@media screen and (min-width: 768px),print {
+	.alternate {
+		flex-direction: row-reverse;
+		/* border: 1px solid red; */
+	}
+	.alternate + .alternate {
+		margin-top: 80px; /*後続ボックスとの余白を確保*/
+	}
+	.alternate._reverse {
+		flex-direction: row;
+	}
+	.alternate__body {
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+	}
+	.alternate__thumb {
+		width: 50%;
+	}
+	.alternate__thumb img {
+		height: 100%;
+		object-fit: cover;
+	}
+	/*ずらし用の指定*/
+	/*【補足】比較のためあえてずらす前の指定とは別にずらすために追加したプロパティ類を分けて記述しています。実際にはセレクタを統合する必要があります*/
+	.alternate__body {
+		position: relative;
+		top: 40px; /*元の位置を基準に単純に40px下にずらす*/
+		width: calc(50% + 80px); /*あらかじめ80px分広げる*/
+	}
+	.alternate__thumb {
+		position: relative;
+		z-index: 1;
+	}
+	.alternate._normal .alternate__body {
+		margin-left: -80px; /*ネガティブマージンで広げた分を相殺*/
+		padding-left: 110px; /*重なり分の余白を確保*/
+	}
+	.alternate._reverse .alternate__body {
+		margin-right: -80px;
+		padding-right: 110px;
+	}
+}

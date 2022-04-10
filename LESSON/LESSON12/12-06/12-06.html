@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>12-06</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="12-06.css">
+</head>
+<body>
+  <div class="container">
+    <h1>テキストボックスに入力選択肢を提供</h1>
+    <form action="#">
+
+    <div class="inputField">
+      <p>一番好きな猫の品種はなんですか？（自由入力可）</p>
+      <input type="text" name="cat" list="catList">
+      <datalist id="catList">
+        <option>スコティッシュ・フォールド</option>
+        <option>マンチカン</option>
+        <option>アメリカンショートヘア</option>
+        <option>ロシアンブルー</option>
+        <option>ラグドール</option>
+        <option>メイン・クーン</option>
+        <option>ベンガル</option>
+        <option>シンガプーラ</option>
+        <option>ペルシャ</option>
+        <option>混血種（MIX）</option>
+      </datalist>
+    </div>
+
+    </form>
+  </div>
+</body>
+</html>

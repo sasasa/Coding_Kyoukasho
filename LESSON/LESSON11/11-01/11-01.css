@@ -1,0 +1,21 @@
+.container {
+	max-width: 1000px;
+	margin: 30px auto;
+	padding: 0 30px;
+}
+
+/*伸縮する表組み*/
+.table01 {
+	width: 100%; /*親要素の幅いっぱいで伸縮*/
+	table-layout: fixed; /*各セル幅を均等に保つ*/
+	border-collapse: collapse; /*隣り合うセルの罫線を重ねて表示*/
+}
+.table01 th,
+.table01 td {
+	padding: 15px;
+	border: 1px solid #ccc;
+	text-align: center;
+}
+.table01 th {
+	background: #f7f7f7;
+}

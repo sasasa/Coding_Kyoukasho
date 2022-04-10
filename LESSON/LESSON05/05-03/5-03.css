@@ -1,0 +1,59 @@
+/*----------------------------------------
+	Container
+----------------------------------------*/
+.container {
+  max-width: 1000px;
+  margin: 30px auto;
+  border-left: 1px dashed red;
+  border-right: 1px dashed red;
+}
+
+/*----------------------------------------
+	card本体
+----------------------------------------*/
+.card {
+  display: block;
+  padding: 15px;
+  border: 1px solid #e7e7e7;
+  border-radius: 10px;
+  color: inherit;
+  text-decoration: none;
+}
+.card:hover {
+  box-shadow: 0 0 15px #e7e7e7;
+}
+.card__ttl {
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+  border-bottom: 4px solid skyblue;
+  font-size: 1.25em;
+}
+.card__txt {
+  line-height: 1.7;
+}
+
+/*----------------------------------------
+	card一覧レイアウト
+----------------------------------------*/
+.cardList__item {
+  margin-top: 30px;
+}
+/*for PC*/
+@media screen and (min-width: 768px),print {
+  .cardList {
+    display: flex;
+    margin-top: 30px;
+  }
+  .cardList._space-between {
+    justify-content: space-between;
+  }
+  .cardList._space-around {
+    justify-content: space-around;
+  }
+  .cardList._space-evenly {
+    justify-content: space-evenly;
+  }
+  .cardList__item {
+    width: calc((100% - 80px) / 3);
+  }
+}

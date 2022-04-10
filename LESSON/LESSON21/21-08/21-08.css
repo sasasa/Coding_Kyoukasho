@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*サンプル表示用のダミースタイル*/
+h1 {
+  display: none;
+}
+body {
+  margin: 20px;
+  color: #615d5d;
+}
+.container {
+  max-width: 1080px;
+  margin: auto;
+}
+
+/*----------------------------------------
+	heading
+----------------------------------------*/
+.heading-lv2 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+.heading-lv2::before {
+  content: "";
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  background: url(img/icon_cat.png) 0 0 / contain no-repeat;
+  vertical-align: bottom;
+}
+.heading-lv2::after {
+  content: "";
+  display: block;
+  margin-left: 20px;
+  height: 5px;
+  background: #e6d4d4;
+  flex-grow: 1;
+}
+
+/*----------------------------------------
+	graph
+----------------------------------------*/
+.graph {
+  margin: 30px auto;
+  padding: 30px;
+  max-width: 640px;
+  border: 1px solid;
+}
+.graph__title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.graph__note {
+  color: #aaa;
+  font-size: 12px;
+  text-align: center;
+}
